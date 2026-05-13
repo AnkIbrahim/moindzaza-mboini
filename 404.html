@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Page introuvable — Moindzaza Mboini</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+    body { background: var(--abyss); }
+    .error-page {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 40px var(--gutter); position: relative; overflow: hidden;
+    }
+    .error-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 30% 70%, rgba(19,168,196,.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 80% 30%, rgba(212,162,76,.06) 0%, transparent 55%);
+    }
+    .error-content { position: relative; z-index: 2; max-width: 520px; }
+    .error-num {
+      font-family: var(--font-display);
+      font-size: clamp(7rem, 20vw, 14rem);
+      font-weight: 700; line-height: 1;
+      background: linear-gradient(135deg, var(--aqua), var(--lagoon));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+    .error-icon { font-size: 3rem; margin-bottom: 20px; animation: bob 3s ease-in-out infinite; }
+    .error-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--white); margin-bottom: 16px;
+    }
+    .error-content p { font-size: .95rem; color: var(--foam); opacity: .75; line-height: 1.8; margin-bottom: 36px; }
+    .error-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    /* wave anim */
+    .e-waves { position: absolute; bottom: 0; left: 0; right: 0; pointer-events: none; }
+    .e-waves svg { display: block; width: 100%; }
+    @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+  </style>
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+
+<nav class="navbar solid" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">🌊</div>
+    <div class="nav-logo-text"><span class="nav-logo-main">Moindzaza Mboini</span><span class="nav-logo-sub">Ngazidja · Comores</span></div>
+  </a>
+</nav>
+
+<div class="error-page">
+  <div class="error-bg"></div>
+  <div class="error-content">
+    <div class="error-icon">🌊</div>
+    <div class="error-num">404</div>
+    <h2>Cette vague s'est perdue en mer…</h2>
+    <p>La page que vous cherchez n'existe pas ou a été déplacée. Revenez sur le rivage de Moindzaza Mboini !</p>
+    <div class="error-links">
+      <a href="index.html" class="btn btn-ocean">← Retour à l'accueil</a>
+      <a href="contact.html" class="btn btn-outline-light">Nous contacter</a>
+    </div>
+  </div>
+  <div class="e-waves">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,80 C360,120 1080,30 1440,80 L1440,120 L0,120 Z" fill="rgba(19,168,196,.08)"/>
+      <path d="M0,95 C480,115 960,60 1440,95 L1440,120 L0,120 Z" fill="rgba(19,168,196,.05)"/>
+    </svg>
+  </div>
+</div>
+
+<script src="shared.js"></script>
+</body>
+</html>

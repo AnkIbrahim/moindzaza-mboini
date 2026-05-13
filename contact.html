@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Contact — Moindzaza Mboini</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <link rel="stylesheet" href="inner.css"/>
+  <link rel="stylesheet" href="components.css"/>
+</head>
+<body>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="icon-pin" viewBox="0 0 24 24">
+    <path d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+    <circle cx="12" cy="11" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  </symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24">
+    <path d="M21 16.2v2.8a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3 5.18 2 2 0 0 1 5 3h2.8a2 2 0 0 1 2 1.72l.36 2.46a2 2 0 0 1-.58 1.7l-1.4 1.4a16 16 0 0 0 5.4 5.4l1.4-1.4a2 2 0 0 1 1.7-.58l2.46.36A2 2 0 0 1 21 16.2Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+  </symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24">
+    <rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="m5.5 8.5 6.5 5 6.5-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+  </symbol>
+  <symbol id="icon-globe" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="M3.5 12h17M12 3a14.5 14.5 0 0 1 0 18M12 3a14.5 14.5 0 0 0 0 18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+  </symbol>
+  <symbol id="icon-clock" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+  </symbol>
+  <symbol id="icon-building" viewBox="0 0 24 24">
+    <path d="M4 20V7.5L12 4l8 3.5V20M9 20v-4h6v4M8 10h.01M12 10h.01M16 10h.01M8 13h.01M12 13h.01M16 13h.01" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+  </symbol>
+  <symbol id="icon-ball" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="m12 7 3 2.2-1.1 3.6h-3.8L9 9.2 12 7Zm0 0-3.8-1.1M15 9.2l2.8-1.6M10.1 12.8 8 15.8M13.9 12.8 16 15.8M8 15.8l1.1 3.3M16 15.8l-1.1 3.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
+  </symbol>
+  <symbol id="icon-book" viewBox="0 0 24 24">
+    <path d="M5 5.5A2.5 2.5 0 0 1 7.5 3H19v16H7.5A2.5 2.5 0 0 0 5 21V5.5Zm0 0V19" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+    <path d="M9 7h6M9 10h6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/>
+  </symbol>
+  <symbol id="icon-leaf" viewBox="0 0 24 24">
+    <path d="M19 5c-8 0-12 4.5-12 10a5 5 0 0 0 5 5c5.5 0 7-4 7-15Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+    <path d="M8 16c2-2 4.5-4 8-5.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/>
+  </symbol>
+</svg>
+<div id="progress-bar"></div>
+<canvas id="bg-canvas"></canvas>
+
+<div id="page-loader">
+  <div class="loader-brand">Contact</div>
+  <div class="loader-sub">Moindzaza Mboini</div>
+  <div class="loader-waves"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-mark">🌊</div><div class="nav-logo-text"><span class="nav-logo-main">Moindzaza Mboini</span><span class="nav-logo-sub">Ngazidja · Comores</span></div></a>
+  <div class="nav-menu">
+    <div class="nav-item"><a href="index.html" class="nav-link">Accueil</a></div>
+    <div class="nav-item"><a href="histoire.html" class="nav-link">Histoire</a></div>
+    <div class="nav-item has-drop"><a href="#" class="nav-link">Associations ▾</a>
+      <div class="nav-drop"><a href="comite.html">Comité Local</a><a href="angelus.html">Angelus Club</a><a href="acm.html">ACM</a><a href="twamaya.html">Twamaya No Urahafu</a></div>
+    </div>
+    <div class="nav-item"><a href="plage.html" class="nav-link">La Plage</a></div>
+    <div class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></div>
+  </div>
+  <a href="contact.html" class="nav-cta">Nous Rejoindre</a>
+  <button type="button" class="hamburger" id="hamburger" aria-label="Ouvrir le menu de navigation" title="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Accueil</a><a href="histoire.html">Histoire</a>
+  <span class="mob-cat">Associations</span>
+  <a href="comite.html">Comité Local</a><a href="angelus.html">Angelus Club</a><a href="acm.html">ACM</a><a href="twamaya.html">Twamaya</a>
+  <a href="plage.html">La Plage</a><a href="contact.html">Contact</a>
+</div>
+
+<header class="page-hero" style="background:linear-gradient(155deg,#020f1a,#073b5c,#0b6b8a) !important">
+  <div class="page-hero-overlay"></div>
+  <div class="ph-deco">✉️</div>
+  <div class="page-hero-content">
+    <span class="page-hero-tag">Parlons-nous · Rejoignez-nous</span>
+    <h1>Nous <em>Contacter</em></h1>
+    <p>Une question, un projet, un témoignage ou l'envie de rejoindre une de nos associations — nous sommes à votre écoute.</p>
+  </div>
+  <div class="page-hero-wave"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,50 C480,80 960,10 1440,50 L1440,80 L0,80 Z" fill="var(--ivory)"/></svg></div>
+</header>
+
+<section class="section">
+  <div class="contact-grid">
+    <div class="reveal-left">
+      <span class="eyebrow">Coordonnées</span>
+      <h2 class="h2 mb-md">On est <em>là</em><br/>pour vous</h2>
+      <p class="lead mb-lg">Que vous soyez habitant, membre de la diaspora ou simplement ami de Moindzaza Mboini, n'hésitez pas à nous écrire.</p>
+
+      <div class="contact-info-list">
+        <div class="ci-item"><div class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-pin"/></svg></div><div><strong>Adresse</strong><span>Moindzaza Mboini, Ngazidja, Union des Comores</span></div></div>
+        <div class="ci-item"><div class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-phone"/></svg></div><div><strong>Téléphone</strong><span>+269 XXX XXX (Comité Local)</span></div></div>
+        <div class="ci-item"><div class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-mail"/></svg></div><div><strong>Email</strong><span>contact.moindzaza@gmail.com</span></div></div>
+        <div class="ci-item"><div class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-globe"/></svg></div><div><strong>Réseaux sociaux</strong><span>Facebook · WhatsApp · YouTube</span></div></div>
+        <div class="ci-item"><div class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-clock"/></svg></div><div><strong>Disponibilité</strong><span>Lun – Sam · 8h00 à 18h00 (heure locale)</span></div></div>
+      </div>
+
+      <h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--deep);margin:36px 0 20px">Contacter une <em>association</em></h3>
+      <div class="assoc-contacts">
+        <a href="comite.html" class="assoc-contact-item">
+          <span class="aci-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-building"/></svg></span>
+          <div><strong>Comité Local</strong><span>Gouvernance & Projets</span></div>
+        </a>
+        <a href="angelus.html" class="assoc-contact-item">
+          <span class="aci-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-ball"/></svg></span>
+          <div><strong>Angelus Club</strong><span>Football & Inscriptions</span></div>
+        </a>
+        <a href="acm.html" class="assoc-contact-item">
+          <span class="aci-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-book"/></svg></span>
+          <div><strong>ACM</strong><span>Cours & Culture</span></div>
+        </a>
+        <a href="twamaya.html" class="assoc-contact-item">
+          <span class="aci-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-leaf"/></svg></span>
+          <div><strong>Twamaya No Urahafu</strong><span>Bénévolat propreté</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal-right">
+      <div class="form-card">
+        <span class="eyebrow">Formulaire</span>
+        <h3 style="font-family:var(--font-display);font-size:1.6rem;color:var(--deep);margin-bottom:28px">Envoyez-nous<br/>un <em>message</em></h3>
+        <form id="main-contact-form">
+          <div class="form-row">
+            <div class="form-group"><label>Prénom *</label><input type="text" placeholder="Votre prénom" required/></div>
+            <div class="form-group"><label>Nom *</label><input type="text" placeholder="Votre nom" required/></div>
+          </div>
+          <div class="form-group"><label>Email ou Téléphone *</label><input type="text" placeholder="contact@exemple.com ou +269 XXX XXX" required/></div>
+          <div class="form-group">
+            <label>Objet de votre message *</label>
+            <select title="Objet de votre message" aria-label="Objet de votre message" required>
+              <option value="">Choisir un objet</option>
+              <option>Rejoindre le Comité Local</option>
+              <option>Rejoindre l'Angelus Club</option>
+              <option>Rejoindre l'ACM (bénévole enseignant)</option>
+              <option>Rejoindre Twamaya No Urahafu</option>
+              <option>Cours de soutien (inscription enfant)</option>
+              <option>Cours de vacances (inscription)</option>
+              <option>Journée de la Culture 2026</option>
+              <option>Signalement environnemental</option>
+              <option>Proposition de projet</option>
+              <option>Partager un témoignage / photo historique</option>
+              <option>Demande d'information générale</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Message *</label><textarea rows="5" placeholder="Décrivez votre demande, projet ou témoignage..." required></textarea></div>
+          <div class="form-group">
+            <label>Je suis…</label>
+            <select title="Je suis" aria-label="Je suis">
+              <option>Habitant de Moindzaza Mboini</option>
+              <option>Membre de la diaspora comorienne</option>
+              <option>Ami(e) du village</option>
+              <option>Journaliste / Chercheur</option>
+              <option>Partenaire institutionnel</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-ocean" style="width:100%;justify-content:center;font-size:.78rem;padding:15px">Envoyer le message 🌊</button>
+          <div class="form-success" id="contact-success">✅ Votre message a bien été envoyé ! Nous vous répondrons dans les plus brefs délais.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream)">
+  <div class="section-inner">
+    <span class="eyebrow center reveal">Questions fréquentes</span>
+    <h2 class="h2 center mb-lg reveal" data-delay="100">FAQ — <em>Foire aux questions</em></h2>
+    <div class="faq-list">
+      <div class="faq-item reveal" data-delay="0">
+        <button type="button" class="faq-q">Comment rejoindre une association de Moindzaza Mboini ? <span>+</span></button>
+        <div class="faq-a"><p>Il vous suffit de remplir le formulaire de contact ci-dessus en sélectionnant l'association souhaitée. Un responsable vous contactera rapidement pour les démarches d'adhésion.</p></div>
+      </div>
+      <div class="faq-item reveal" data-delay="100">
+        <button type="button" class="faq-q">Comment inscrire mon enfant aux cours de soutien ou de vacances de l'ACM ? <span>+</span></button>
+        <div class="faq-a"><p>Les inscriptions se font via le formulaire en ligne ou directement auprès des responsables de l'ACM. Les cours sont gratuits ou à participation symbolique. La rentrée des cours de vacances est en juillet.</p></div>
+      </div>
+      <div class="faq-item reveal" data-delay="200">
+        <button type="button" class="faq-q">Quand a lieu la Journée de la Culture ? <span>+</span></button>
+        <div class="faq-a"><p>La Journée de la Culture organisée par l'ACM se tient chaque année en juillet, pendant les vacances scolaires. Le programme exact est annoncé chaque année sur les réseaux sociaux du village.</p></div>
+      </div>
+      <div class="faq-item reveal" data-delay="300">
+        <button type="button" class="faq-q">Comment participer aux actions de Twamaya No Urahafu ? <span>+</span></button>
+        <div class="faq-a"><p>Les opérations de nettoyage ont lieu chaque mois. Consultez l'agenda sur la page Twamaya ou inscrivez-vous via le formulaire. Aucune expérience requise — juste de la bonne volonté !</p></div>
+      </div>
+      <div class="faq-item reveal" data-delay="400">
+        <button type="button" class="faq-q">Je suis de la diaspora, puis-je contribuer depuis l'étranger ? <span>+</span></button>
+        <div class="faq-a"><p>Absolument ! La diaspora comorienne joue un rôle essentiel dans le développement de Moindzaza Mboini. Vous pouvez contribuer financièrement, partager vos compétences à distance, ou participer lors de vos séjours au village. Contactez-nous !</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-info-list { display:flex; flex-direction:column; gap:16px; margin-bottom:8px; }
+  .ci-item { display:flex; gap:14px; align-items:flex-start; }
+  .ci-icon { width:44px; height:44px; margin-top:2px; flex-shrink:0; display:flex; align-items:center; justify-content:center; border-radius:14px; background:linear-gradient(135deg,rgba(19,168,196,.18),rgba(7,59,92,.08)); color:var(--ocean); box-shadow:0 10px 24px rgba(4,28,46,.08); }
+  .ci-icon svg { width:20px; height:20px; display:block; }
+  .ci-item strong { display:block; font-size:.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--ocean); margin-bottom:3px; }
+  .ci-item span { font-size:.85rem; color:var(--muted); }
+  .assoc-contacts { display:flex; flex-direction:column; gap:10px; }
+  .assoc-contact-item { display:flex; align-items:center; gap:14px; padding:12px 16px; border-radius:12px; background:var(--white); border:1px solid var(--border); text-decoration:none; transition:all .3s; }
+  .assoc-contact-item:hover { background:rgba(19,168,196,.07); border-color:rgba(19,168,196,.3); transform:translateX(4px); }
+  .aci-icon { width:42px; height:42px; display:flex; align-items:center; justify-content:center; border-radius:12px; background:linear-gradient(135deg,var(--ocean),var(--lagoon)); color:var(--white); box-shadow:0 12px 26px rgba(7,59,92,.18); }
+  .aci-icon svg { width:20px; height:20px; display:block; }
+  .assoc-contact-item strong { display:block; font-size:.85rem; color:var(--deep); margin-bottom:2px; }
+  .assoc-contact-item span { font-size:.72rem; color:var(--muted); }
+  .faq-list { max-width:800px; margin:0 auto; }
+  .faq-item { border-bottom:1px solid var(--border); }
+  .faq-q { width:100%; background:none; border:none; padding:20px 0; display:flex; justify-content:space-between; align-items:center; font-family:var(--font-display); font-size:1.05rem; color:var(--deep); cursor:pointer; text-align:left; gap:16px; }
+  .faq-q span { font-size:1.3rem; color:var(--lagoon); flex-shrink:0; transition:transform .3s; }
+  .faq-item.open .faq-q span { transform:rotate(45deg); }
+  .faq-a { display:none; padding:0 0 20px; }
+  .faq-item.open .faq-a { display:block; }
+  .faq-a p { font-size:.88rem; color:var(--muted); line-height:1.85; }
+</style>
+
+<footer class="site-footer">
+  <div class="footer-wave-top"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C480,60 960,0 1440,30 L1440,0 L0,0 Z" fill="var(--ivory)"/></svg></div>
+  <div class="footer-grid">
+    <div><div class="nav-logo" style="margin-bottom:0"><div class="nav-logo-mark">🌊</div><div class="nav-logo-text"><span class="nav-logo-main">Moindzaza Mboini</span><span class="nav-logo-sub">Ngazidja · Comores</span></div></div><p class="footer-brand-desc">Village côtier de Ngazidja, riche d'histoire et de culture.</p></div>
+    <div class="footer-col"><h5>Village</h5><a href="index.html">Accueil</a><a href="histoire.html">Histoire</a><a href="plage.html">La Plage</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h5>Associations</h5><a href="comite.html">Comité Local</a><a href="angelus.html">Angelus Club</a><a href="acm.html">ACM</a><a href="twamaya.html">Twamaya</a></div>
+    <div class="footer-col"><h5>Contact</h5><span>Moindzaza Mboini</span><span>Ngazidja, Comores</span><span>contact.moindzaza@gmail.com</span></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Moindzaza Mboini · Tous droits réservés</p></div>
+</footer>
+
+<button type="button" id="back-top">↑</button>
+<script src="shared.js"></script>
+<script src="inner.js"></script>
+</body>
+</html>

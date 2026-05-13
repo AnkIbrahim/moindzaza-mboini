@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Comité Local — Moindzaza Mboini</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <link rel="stylesheet" href="inner.css"/>
+  <link rel="stylesheet" href="components.css"/>
+</head>
+<body>
+<div id="progress-bar"></div>
+<canvas id="bg-canvas"></canvas>
+<div id="page-loader">
+  <div class="loader-brand">Comité Local</div>
+  <div class="loader-sub">Moindzaza Mboini</div>
+  <div class="loader-waves"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">🌊</div>
+    <div class="nav-logo-text"><span class="nav-logo-main">Moindzaza Mboini</span><span class="nav-logo-sub">Ngazidja · Comores</span></div>
+  </a>
+  <div class="nav-menu">
+    <div class="nav-item"><a href="index.html" class="nav-link">Accueil</a></div>
+    <div class="nav-item"><a href="histoire.html" class="nav-link">Histoire</a></div>
+    <div class="nav-item has-drop">
+      <a href="#" class="nav-link active">Associations ▾</a>
+      <div class="nav-drop">
+        <a href="comite.html">Comité Local</a>
+        <a href="angelus.html">Angelus Club</a>
+        <a href="acm.html">ACM — Éducation</a>
+        <a href="twamaya.html">Twamaya No Urahafu</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="plage.html" class="nav-link">La Plage</a></div>
+    <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+  </div>
+  <a href="contact.html" class="nav-cta">Nous Rejoindre</a>
+  <button type="button" class="hamburger" id="hamburger" aria-label="Ouvrir le menu de navigation" title="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Accueil</a><a href="histoire.html">Histoire</a>
+  <span class="mob-cat">Associations</span>
+  <a href="comite.html">Comité Local</a><a href="angelus.html">Angelus Club</a>
+  <a href="acm.html">ACM</a><a href="twamaya.html">Twamaya</a>
+  <a href="plage.html">La Plage</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<header class="page-hero" style="background:linear-gradient(155deg,#020f1a,#0b3d5c,#0b6b8a)">
+  <div class="page-hero-overlay"></div>
+  <div class="ph-deco">🏛️</div>
+  <div class="page-hero-content">
+    <span class="page-hero-tag">Gouvernance · Représentation · Développement</span>
+    <h1>Comité Local de<br/><em>Moindzaza Mboini</em></h1>
+    <p>La structure citoyenne au cœur du village — coordonner, représenter et bâtir ensemble un avenir meilleur pour notre communauté.</p>
+  </div>
+  <div class="page-hero-wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,50 C480,80 960,10 1440,50 L1440,80 L0,80 Z" fill="var(--ivory)"/>
+    </svg>
+  </div>
+</header>
+
+<!-- PRÉSENTATION -->
+<section class="section">
+  <div class="section-inner">
+    <div class="two-col-grid">
+      <div class="reveal-left">
+        <span class="eyebrow">Qui sommes-nous</span>
+        <h2 class="h2 mb-md">Un comité <em>au service</em><br/>de la communauté</h2>
+        <p class="lead mb-md">Le Comité Local de Moindzaza Mboini est la structure représentative officielle du village. Il regroupe des citoyens élus et bénévoles engagés pour améliorer les conditions de vie, renforcer la cohésion sociale et promouvoir le développement durable.</p>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.85;margin-bottom:24px">Fondé dans les années 1990, le comité coordonne les différentes associations du village, dialogue avec les autorités locales et nationales, et porte la voix des habitants de Moindzaza Mboini dans les instances décisionnelles.</p>
+        <div class="info-box">
+          <p>💡 <strong>Mission principale :</strong> Fédérer les énergies du village autour de projets concrets qui améliorent la vie quotidienne des habitants — des plus jeunes aux plus anciens.</p>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="comite-stats-card">
+          <div class="csc-item"><span class="csc-num" data-count="47">0</span><span class="csc-lbl">Membres actifs</span></div>
+          <div class="csc-item"><span class="csc-num" data-count="120">0</span><span class="csc-lbl">Projets réalisés</span></div>
+          <div class="csc-item"><span class="csc-num" data-count="30">0</span><span class="csc-lbl">Ans d'existence</span></div>
+          <div class="csc-item"><span class="csc-num" data-count="1200">0</span><span class="csc-lbl">Habitants représentés</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSIONS -->
+<section class="section" style="background:var(--cream)">
+  <div class="section-inner">
+    <span class="eyebrow center reveal">Ce que nous faisons</span>
+    <h2 class="h2 center mb-lg reveal" data-delay="100">Nos <em>Missions</em></h2>
+    <div class="program-grid">
+      <div class="prog-card reveal" data-delay="0" style="--prog-color:var(--lagoon)">
+        <div class="prog-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-wave"/></svg></div>
+        <h4>Protection du Littoral</h4>
+        <p>Préservation des plages et du milieu marin de Moindzaza Mboini. Coordination avec Twamaya No Urahafu pour des opérations régulières de nettoyage et de sensibilisation environnementale.</p>
+        <div class="prog-bar"></div>
+      </div>
+      <div class="prog-card reveal" data-delay="100" style="--prog-color:var(--gold)">
+        <div class="prog-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-school"/></svg></div>
+        <h4>Éducation & Jeunesse</h4>
+        <p>Soutien actif à l'ACM pour les cours de soutien et cours de vacances. Plaidoyer pour la construction et la rénovation d'infrastructures scolaires dans le village.</p>
+        <div class="prog-bar"></div>
+      </div>
+      <div class="prog-card reveal" data-delay="200" style="--prog-color:var(--coral)">
+        <div class="prog-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-health"/></svg></div>
+        <h4>Santé Communautaire</h4>
+        <p>Organisation de campagnes de santé publique, sensibilisation aux maladies endémiques et facilitation de l'accès aux soins pour les habitants les plus vulnérables.</p>
+        <div class="prog-bar"></div>
+      </div>
+      <div class="prog-card reveal" data-delay="300" style="--prog-color:var(--palm)">
+        <div class="prog-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-build"/></svg></div>
+        <h4>Infrastructures</h4>
+        <p>Plaidoyer auprès des autorités pour l'amélioration des routes, de l'accès à l'eau potable, à l'électricité et aux réseaux de communication dans le village.</p>
+        <div class="prog-bar"></div>
+      </div>
+      <div class="prog-card reveal" data-delay="400" style="--prog-color:var(--current)">
+        <div class="prog-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-fish"/></svg></div>
+        <h4>Économie Locale</h4>
+        <p>Appui aux pêcheurs artisanaux, soutien au commerce local, valorisation des produits traditionnels et développement de micro-projets générateurs de revenus.</p>
+        <div class="prog-bar"></div>
+      </div>
+      <div class="prog-card reveal" data-delay="500" style="--prog-color:var(--sand-dark)">
+        <div class="prog-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-hands"/></svg></div>
+        <h4>Cohésion Sociale</h4>
+        <p>Médiation des conflits communautaires, organisation d'événements fédérateurs et renforcement des liens entre les différentes générations et familles du village.</p>
+        <div class="prog-bar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUREAU -->
+<section class="section">
+  <div class="section-inner">
+    <span class="eyebrow center reveal">Gouvernance</span>
+    <h2 class="h2 center mb-lg reveal" data-delay="100">Le <em>Bureau</em> du Comité</h2>
+
+    <!-- PRÉSIDENT FEATURED -->
+    <div class="president-card reveal">
+      <div class="pc-avatar">👔</div>
+      <div class="pc-info">
+        <span class="eyebrow">Président</span>
+        <h3>Ali Mohamed Saïd</h3>
+        <p>Engagé depuis plus de 15 ans pour le développement de Moindzaza Mboini, Ali Mohamed Saïd préside le comité avec vision et détermination. Ancien pêcheur reconverti en entrepreneur local, il incarne l'esprit de résilience et d'innovation de notre communauté. Sous sa présidence, le comité a initié plus de 40 projets concrets pour le village.</p>
+        <div class="pc-badges">
+          <span class="pc-badge">🏅 15 ans d'engagement</span>
+          <span class="pc-badge">🏗️ 40+ projets pilotés</span>
+          <span class="pc-badge">🤝 Médiateur communautaire</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-grid mt-lg">
+      <div class="team-card card reveal" data-delay="0">
+        <div class="team-avatar">👩🏿</div>
+        <h4>Fatouma Abdallah</h4>
+        <span class="team-role">Secrétaire Générale</span>
+        <p>Garante de l'organisation administrative et de la communication officielle du comité.</p>
+      </div>
+      <div class="team-card card reveal" data-delay="100">
+        <div class="team-avatar">🧑🏿</div>
+        <h4>Hamada Youssouf</h4>
+        <span class="team-role">Trésorier</span>
+        <p>Responsable de la gestion financière transparente et rigoureuse des ressources du comité.</p>
+      </div>
+      <div class="team-card card reveal" data-delay="200">
+        <div class="team-avatar">👩🏿‍🦱</div>
+        <h4>Mariama Combo</h4>
+        <span class="team-role">Responsable Jeunesse</span>
+        <p>Anime les programmes dédiés à la jeunesse et assure le lien avec les associations sportives et culturelles.</p>
+      </div>
+      <div class="team-card card reveal" data-delay="300">
+        <div class="team-avatar">👴🏿</div>
+        <h4>Mchangama Ali</h4>
+        <span class="team-role">Conseiller Senior</span>
+        <p>Sage du village, il guide les orientations stratégiques du comité avec son expérience et sa sagesse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS RÉCENTS -->
+<section class="section" style="background:linear-gradient(180deg,var(--cream),var(--ivory))">
+  <div class="section-inner">
+    <span class="eyebrow center reveal">Réalisations</span>
+    <h2 class="h2 center mb-lg reveal" data-delay="100">Projets <em>récents</em></h2>
+    <div class="projects-list">
+      <div class="proj-item reveal" data-delay="0">
+        <div class="pi-icon" style="background:var(--lagoon)" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-water-drop"/></svg></div>
+        <div class="pi-body">
+          <h4>Réhabilitation du réseau d'eau potable</h4>
+          <p>Coordination avec les autorités pour la rénovation de 2 km de canalisations, améliorant l'accès à l'eau pour 300 familles.</p>
+          <span class="pi-status done">✅ Réalisé — 2024</span>
+        </div>
+      </div>
+      <div class="proj-item reveal" data-delay="100">
+        <div class="pi-icon" style="background:var(--gold)" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-bulb"/></svg></div>
+        <div class="pi-body">
+          <h4>Éclairage public des ruelles principales</h4>
+          <p>Installation de 25 lampadaires solaires dans les ruelles principales du village pour améliorer la sécurité nocturne.</p>
+          <span class="pi-status done">✅ Réalisé — 2025</span>
+        </div>
+      </div>
+      <div class="proj-item reveal" data-delay="200">
+        <div class="pi-icon" style="background:var(--palm)" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-tree"/></svg></div>
+        <div class="pi-body">
+          <h4>Plantation d'arbres le long du littoral</h4>
+          <p>En partenariat avec Twamaya No Urahafu, plantation de 150 cocotiers et arbres locaux pour lutter contre l'érosion côtière.</p>
+          <span class="pi-status progress">🔄 En cours — 2026</span>
+        </div>
+      </div>
+      <div class="proj-item reveal" data-delay="300">
+        <div class="pi-icon" style="background:var(--coral)" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-house"/></svg></div>
+        <div class="pi-body">
+          <h4>Maison communautaire polyvalente</h4>
+          <p>Construction d'un espace commun pour accueillir les réunions, cours de l'ACM, et activités culturelles du village.</p>
+          <span class="pi-status planned">📋 Planifié — 2026-2027</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inner-cta reveal">
+  <div class="ic-content">
+    <h3>Rejoignez le Comité Local</h3>
+    <p>Vous souhaitez vous engager pour votre village ? Le comité accueille toutes les bonnes volontés.</p>
+    <a href="contact.html" class="btn btn-ocean">Nous rejoindre</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-wave-top"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C480,60 960,0 1440,30 L1440,0 L0,0 Z" fill="var(--ivory)"/></svg></div>
+  <div class="footer-grid">
+    <div><div class="nav-logo" style="margin-bottom:0"><div class="nav-logo-mark">🌊</div><div class="nav-logo-text"><span class="nav-logo-main">Moindzaza Mboini</span><span class="nav-logo-sub">Ngazidja · Comores</span></div></div><p class="footer-brand-desc">Village côtier de Ngazidja, riche d'histoire et de culture.</p></div>
+    <div class="footer-col"><h5>Village</h5><a href="index.html">Accueil</a><a href="histoire.html">Histoire</a><a href="plage.html">La Plage</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h5>Associations</h5><a href="comite.html">Comité Local</a><a href="angelus.html">Angelus Club</a><a href="acm.html">ACM</a><a href="twamaya.html">Twamaya</a></div>
+    <div class="footer-col"><h5>Contact</h5><span>Moindzaza Mboini</span><span>Ngazidja, Comores</span></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Moindzaza Mboini · Tous droits réservés</p></div>
+</footer>
+<button type="button" id="back-top">↑</button>
+<script src="shared.js"></script>
+<script src="inner.js"></script>
+</body>
+</html>

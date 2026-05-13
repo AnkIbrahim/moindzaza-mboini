@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Twamaya No Urahafu — Moindzaza Mboini</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <link rel="stylesheet" href="inner.css"/>
+  <link rel="stylesheet" href="components.css"/>
+  <style>
+    .page-hero { background:linear-gradient(155deg,#021008,#0e3820,#3a8f5c) !important; }
+    .eyebrow { color:#3a8f5c !important; }
+    .h2 em { color:#2d7040 !important; }
+    .action-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+    .action-card { background:var(--white); border-radius:var(--radius-lg); padding:32px; border:1px solid rgba(58,143,92,.15); box-shadow:var(--shadow-sm); transition:all .35s; position:relative; overflow:hidden; }
+    .action-card:hover { transform:translateY(-6px); box-shadow:var(--shadow); border-color:rgba(58,143,92,.4); }
+    .action-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:4px; background:var(--palm); transform:scaleX(0); transform-origin:left; transition:transform .4s; }
+    .action-card:hover::after { transform:scaleX(1); }
+    .ac2-icon {
+      width:2.2rem; height:2.2rem;
+      margin-bottom:14px;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--palm);
+    }
+    .ac2-icon .svg-icon { width:100%; height:100%; }
+    .action-card h4 { font-family:var(--font-display); font-size:1.2rem; color:var(--deep); margin-bottom:10px; }
+    .action-card p { font-size:.83rem; color:var(--muted); line-height:1.75; }
+    .impact-bar { display:flex; flex-direction:column; gap:16px; }
+    .ib-item { display:flex; align-items:center; gap:16px; }
+    .ib-label { font-size:.82rem; color:var(--ocean); min-width:180px; font-weight:500; }
+    .ib-track { flex:1; height:8px; background:rgba(58,143,92,.12); border-radius:4px; overflow:hidden; }
+    .ib-fill { height:100%; background:linear-gradient(to right,var(--palm),var(--lagoon)); border-radius:4px; width:0; transition:width 1.5s ease; }
+    .ib-val { font-family:var(--font-display); font-size:.95rem; font-weight:700; color:var(--palm); min-width:48px; text-align:right; }
+  </style>
+</head>
+<body>
+<div id="progress-bar"></div><canvas id="bg-canvas"></canvas>
+<div id="page-loader">
+  <div class="loader-brand">Twamaya No Urahafu</div>
+  <div class="loader-sub">Moindzaza Mboini</div>
+  <div class="loader-waves"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-mark">🌊</div><div class="nav-logo-text"><span class="nav-logo-main">Moindzaza Mboini</span><span class="nav-logo-sub">Ngazidja · Comores</span></div></a>
+  <div class="nav-menu">
+    <div class="nav-item"><a href="index.html" class="nav-link">Accueil</a></div>
+    <div class="nav-item"><a href="histoire.html" class="nav-link">Histoire</a></div>
+    <div class="nav-item has-drop"><a href="#" class="nav-link active">Associations ▾</a>
+      <div class="nav-drop"><a href="comite.html">Comité Local</a><a href="angelus.html">Angelus Club</a><a href="acm.html">ACM</a><a href="twamaya.html">Twamaya No Urahafu</a></div>
+    </div>
+    <div class="nav-item"><a href="plage.html" class="nav-link">La Plage</a></div>
+    <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+  </div>
+  <a href="contact.html" class="nav-cta">Nous Rejoindre</a>
+  <button type="button" class="hamburger" id="hamburger" aria-label="Ouvrir le menu de navigation" title="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Accueil</a><a href="histoire.html">Histoire</a>
+  <span class="mob-cat">Associations</span>
+  <a href="comite.html">Comité Local</a><a href="angelus.html">Angelus Club</a><a href="acm.html">ACM</a><a href="twamaya.html">Twamaya</a>
+  <a href="plage.html">La Plage</a><a href="contact.html">Contact</a>
+</div>
+
+<header class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="ph-deco">🌿</div>
+  <div class="page-hero-content">
+    <span class="page-hero-tag">Propreté · Environnement · Beauté du Village</span>
+    <h1><em>Twamaya No Urahafu</em></h1>
+    <p>"Twamaya No Urahafu" — Ensemble pour la propreté. L'association qui mobilise les habitants de Moindzaza Mboini pour entretenir, embellir et protéger notre cadre de vie.</p>
+  </div>
+  <div class="page-hero-wave"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,50 C480,80 960,10 1440,50 L1440,80 L0,80 Z" fill="var(--ivory)"/></svg></div>
+</header>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="two-col-grid">
+      <div class="reveal-left">
+        <span class="eyebrow">Notre mission</span>
+        <h2 class="h2 mb-md"><em>Ensemble</em> pour un<br/>village propre et beau</h2>
+        <p class="lead mb-md">Twamaya No Urahafu est née d'un constat simple et d'une volonté collective forte : Moindzaza Mboini mérite un cadre de vie propre, sain et beau. Fondée en 2015, l'association mobilise régulièrement bénévoles et habitants pour des actions concrètes sur le terrain.</p>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.85;margin-bottom:24px">Son nom, en shikomori, signifie littéralement "Nous et la propreté" — une déclaration d'appartenance et d'engagement de la communauté envers son environnement quotidien.</p>
+        <div class="info-box" style="border-color:var(--palm);background:rgba(58,143,92,.06)">
+          <p style="color:#2d7040">🌿 <strong>Slogan :</strong> "Un village propre est un village qui se respecte." — Twamaya No Urahafu, 2015.</p>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="comite-stats-card" style="background:linear-gradient(135deg,#021008,#0e3820)">
+          <div class="csc-item"><span class="csc-num" data-count="2015">2015</span><span class="csc-lbl">Année de fondation</span></div>
+          <div class="csc-item"><span class="csc-num" data-count="120">0</span><span class="csc-lbl">Membres bénévoles</span></div>
+          <div class="csc-item"><span class="csc-num" data-count="50">0</span><span class="csc-lbl">Opérations/an</span></div>
+          <div class="csc-item"><span class="csc-num" data-count="500">0</span><span class="csc-lbl">Sacs de déchets collectés</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIONS -->
+<section class="section" style="background:var(--cream)">
+  <div class="section-inner">
+    <span class="eyebrow center reveal">Ce que nous faisons</span>
+    <h2 class="h2 center mb-lg reveal" data-delay="100">Nos <em>actions</em> concrètes</h2>
+    <div class="action-grid">
+      <div class="action-card reveal" data-delay="0"><div class="ac2-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-wave"/></svg></div><h4>Nettoyage de la Plage</h4><p>Chaque mois, des dizaines de bénévoles nettoient le littoral de Moindzaza Mboini. Ramassage des déchets, dépôt dans les poubelles, sensibilisation des visiteurs.</p></div>
+      <div class="action-card reveal" data-delay="100"><div class="ac2-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-broom"/></svg></div><h4>Nettoyage des Ruelles</h4><p>Balayage et désinfection des ruelles et chemins du village. Chaque quartier est pris en charge régulièrement par une équipe de bénévoles de l'association.</p></div>
+      <div class="action-card reveal" data-delay="200"><div class="ac2-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-tree"/></svg></div><h4>Plantation & Verdissement</h4><p>Plantation d'arbres et de plantes le long des routes et sur la plage pour lutter contre l'érosion et embellir les espaces publics du village.</p></div>
+      <div class="action-card reveal" data-delay="300"><div class="ac2-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-trash"/></svg></div><h4>Gestion des Déchets</h4><p>Installation de poubelles dans les lieux publics, sensibilisation au tri des déchets et organisation de collectes spéciales pour les déchets encombrants.</p></div>
+      <div class="action-card reveal" data-delay="400"><div class="ac2-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-water-drop"/></svg></div><h4>Assainissement</h4><p>Surveillance et nettoyage des canaux d'évacuation des eaux pour prévenir les inondations et la prolifération des moustiques pendant la saison des pluies.</p></div>
+      <div class="action-card reveal" data-delay="500"><div class="ac2-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-megaphone"/></svg></div><h4>Sensibilisation</h4><p>Campagnes de sensibilisation dans les écoles, lors des rassemblements communautaires et sur les réseaux sociaux pour promouvoir une culture de la propreté.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="section">
+  <div class="section-inner">
+    <div class="two-col-grid">
+      <div class="reveal-left">
+        <span class="eyebrow">Résultats</span>
+        <h2 class="h2 mb-lg">Notre <em>impact</em><br/>mesurable</h2>
+        <div class="impact-bar">
+          <div class="ib-item"><span class="ib-label">Plage nettoyée</span><div class="ib-track"><div class="ib-fill" data-width="92"></div></div><span class="ib-val">92%</span></div>
+          <div class="ib-item"><span class="ib-label">Ruelles entretenues</span><div class="ib-track"><div class="ib-fill" data-width="85"></div></div><span class="ib-val">85%</span></div>
+          <div class="ib-item"><span class="ib-label">Arbres plantés (2023-26)</span><div class="ib-track"><div class="ib-fill" data-width="78"></div></div><span class="ib-val">150+</span></div>
+          <div class="ib-item"><span class="ib-label">Habitants sensibilisés</span><div class="ib-track"><div class="ib-fill" data-width="95"></div></div><span class="ib-val">95%</span></div>
+          <div class="ib-item"><span class="ib-label">Satisfaction communauté</span><div class="ib-track"><div class="ib-fill" data-width="98"></div></div><span class="ib-val">98%</span></div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <span class="eyebrow">Prochaine action</span>
+        <h2 class="h2 mb-md">Agenda <em>bénévolat</em></h2>
+        <div class="upcoming-list">
+          <div class="upcoming-item"><div class="ui-date"><span class="uid-day">17</span><span class="uid-month">Mai</span></div><div class="ui-info"><h4>Nettoyage mensuel de la plage</h4><p>Rendez-vous à 7h00 sur la plage principale</p><span class="ui-venue">🏖️ Plage de Moindzaza Mboini</span></div><span class="ui-badge home" style="background:var(--palm)">Bénévolat</span></div>
+          <div class="upcoming-item"><div class="ui-date"><span class="uid-day">25</span><span class="uid-month">Mai</span></div><div class="ui-info"><h4>Plantation de cocotiers</h4><p>Zone littorale nord — apporter des gants</p><span class="ui-venue">🌴 Littoral Nord</span></div><span class="ui-badge home" style="background:var(--palm)">Plantation</span></div>
+          <div class="upcoming-item"><div class="ui-date"><span class="uid-day">01</span><span class="uid-month">Jun</span></div><div class="ui-info"><h4>Sensibilisation dans les écoles</h4><p>Présentation sur l'environnement et la propreté</p><span class="ui-venue">🏫 École primaire du village</span></div><span class="ui-badge home" style="background:var(--lagoon)">Éducation</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inner-cta reveal">
+  <div class="ic-content">
+    <h3>Rejoins Twamaya No Urahafu !</h3>
+    <p>Chaque geste compte. Rejoins les bénévoles qui gardent Moindzaza Mboini beau et propre.</p>
+    <a href="contact.html" class="btn btn-ocean">Devenir bénévole</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-wave-top"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C480,60 960,0 1440,30 L1440,0 L0,0 Z" fill="var(--ivory)"/></svg></div>
+  <div class="footer-grid">
+    <div><div class="nav-logo" style="margin-bottom:0"><div class="nav-logo-mark">🌊</div><div class="nav-logo-text"><span class="nav-logo-main">Moindzaza Mboini</span><span class="nav-logo-sub">Ngazidja · Comores</span></div></div><p class="footer-brand-desc">Village côtier de Ngazidja, riche d'histoire et de culture.</p></div>
+    <div class="footer-col"><h5>Village</h5><a href="index.html">Accueil</a><a href="histoire.html">Histoire</a><a href="plage.html">La Plage</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h5>Associations</h5><a href="comite.html">Comité Local</a><a href="angelus.html">Angelus Club</a><a href="acm.html">ACM</a><a href="twamaya.html">Twamaya</a></div>
+    <div class="footer-col"><h5>Contact</h5><span>Moindzaza Mboini</span><span>Ngazidja, Comores</span></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Moindzaza Mboini · Tous droits réservés</p></div>
+</footer>
+<button type="button" id="back-top">↑</button>
+<script src="shared.js"></script>
+<script src="inner.js"></script>
+</body>
+</html>
