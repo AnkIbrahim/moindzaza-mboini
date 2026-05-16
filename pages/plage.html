@@ -1,72 +1,454 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="La Plage de Moindzaza Mboini — joyau naturel de Ngazidja, Comores."/>
+  <meta name="theme-color" content="#020f1a"/>
   <title>La Plage de Moindzaza Mboini</title>
+
+  <!-- Font Awesome v6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
   <link rel="stylesheet" href="../css/shared.css"/>
   <link rel="stylesheet" href="../css/inner.css"/>
   <link rel="stylesheet" href="../css/components.css"/>
-  <!-- Font Awesome v6 CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
   <style>
-    .page-hero { background:linear-gradient(155deg,#020f1a,#073b5c,#13a8c4) !important; min-height:65vh !important; }
-    .beach-feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-    .bf-card { border-radius:var(--radius-lg); overflow:hidden; background:var(--white); border:1px solid var(--border); box-shadow:var(--shadow-sm); transition:all .35s; }
-    .bf-card:hover { transform:translateY(-6px); box-shadow:var(--shadow); }
-    .bf-visual { height:180px; display:flex; align-items:center; justify-content:center; font-size:3.5rem; }
-    .bf-visual i { font-size:3.5rem; color:var(--white); opacity:.92; }
-    .bf-body { padding:20px 22px; }
-    .bf-body h4 { font-family:var(--font-display); font-size:1.1rem; color:var(--deep); margin-bottom:8px; }
-    .bf-body p  { font-size:.82rem; color:var(--muted); line-height:1.75; }
-    /* TIDE TABLE */
-    .tide-table { width:100%; border-collapse:collapse; }
-    .tide-table th { background:var(--ocean); color:var(--white); padding:12px 16px; text-align:left; font-size:.7rem; letter-spacing:2px; text-transform:uppercase; }
-    .tide-table td { padding:12px 16px; border-bottom:1px solid var(--border); font-size:.85rem; color:var(--muted); }
-    .tide-table tr:hover td { background:rgba(19,168,196,.05); }
-    .tide-high { color:var(--lagoon); font-weight:600; }
-    .tide-low  { color:var(--sand-dark); font-weight:600; }
-    /* GALLERY */
-    .beach-gallery { display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:200px 200px; gap:12px; }
-    .bg-item { border-radius:var(--radius); overflow:hidden; display:flex; align-items:center; justify-content:center; font-size:3rem; position:relative; cursor:pointer; transition:transform .3s; }
-    .bg-item i { font-size:3rem; color:rgba(255,255,255,.82); }
-    .bg-item:hover { transform:scale(1.03); z-index:2; }
-    .bg-item:nth-child(1) { grid-column:span 2; grid-row:span 2; }
-    .bg-item:nth-child(1) i { font-size:5rem; }
-    .bg-label { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(2,15,26,.85),transparent); padding:16px 14px 10px; font-size:.72rem; color:var(--foam); opacity:0; transition:opacity .3s; }
-    .bg-item:hover .bg-label { opacity:1; }
-    /* ACTIVITIES */
-    .activity-chips { display:flex; flex-wrap:wrap; gap:12px; }
-    .act-chip { display:flex; align-items:center; gap:8px; padding:10px 18px; border-radius:50px; background:var(--white); border:1px solid var(--border); font-size:.82rem; color:var(--ocean); box-shadow:var(--shadow-sm); transition:all .3s; }
-    .act-chip:hover { background:var(--lagoon); color:var(--white); transform:translateY(-3px); box-shadow:var(--glow); border-color:var(--lagoon); }
-    .act-chip i { font-size:1rem; }
-    /* LOADER */
-    .loader-icon { font-size:2.2rem; color:var(--lagoon); margin-bottom:8px; }
-    /* NAVBAR logo icon */
-    .nav-logo-mark i { font-size:1.4rem; color:var(--lagoon); }
-    /* Hero deco icon */
-    .ph-deco i { font-size:clamp(4rem,10vw,8rem); color:rgba(255,255,255,.12); }
-    /* Info box icon */
-    .ib-icon i { font-size:1.1rem; }
-    /* Footer icon */
-    .footer-brand-icon i { font-size:1.4rem; color:var(--lagoon); }
-    /* Mobile menu icons */
-    .mob-icon i { font-size:.95rem; margin-right:6px; color:var(--lagoon); }
-    /* Back to top icon */
-    #back-top i { font-size:1rem; }
-    /* Contact link icon */
-    .contact-icon i { margin-right:6px; }
-    /* Protection section icons */
-    .protect-icon i { font-size:2rem; color:#5cbf85; margin-bottom:12px; }
+  /* ── PALETTE PLAGE ──────────────────────────────── */
+  :root {
+    --accent:       #13a8c4;
+    --accent-light: rgba(19,168,196,.12);
+    --accent-mid:   #0b6b8a;
+  }
+
+  /* ── HERO ───────────────────────────────────────── */
+  .page-hero {
+    background: linear-gradient(155deg,#020f1a,#073b5c,#13a8c4) !important;
+    min-height: 65vh !important;
+  }
+
+  .eyebrow       { color: #5dd6e8 !important; }
+  .h2 em         { color: #13a8c4 !important; }
+  .tl-dot        { background: #13a8c4 !important; box-shadow: 0 0 0 5px rgba(19,168,196,.2) !important; }
+  .tl-year       { color: #13a8c4 !important; }
+
+  /* ── FEATURE CARDS (style prog-card / palm-card) ── */
+  .beach-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+  }
+
+  .bf-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    box-shadow: var(--shadow-sm);
+    transition: .35s ease;
+    padding: 26px 22px 22px;
+  }
+
+  .bf-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(19,168,196,.15);
+  }
+
+  /* Icône style prog-icon / palm-icon */
+  .bf-icon {
+    background: rgba(19,168,196,.12);
+    color: #13a8c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 13px;
+    margin-bottom: 16px;
+    flex-shrink: 0;
+  }
+
+  .bf-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--deep);
+    margin-bottom: 10px;
+  }
+
+  .bf-card p {
+    font-size: .84rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  /* ── STATS CARD ─────────────────────────────────── */
+  .comite-stats-card {
+    background: linear-gradient(135deg,#020f1a,#073b5c,#0b6b8a) !important;
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  }
+
+  .csc-num { color: #7de8f5; }
+
+  /* ── GALERIE ────────────────────────────────────── */
+  .beach-gallery {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 200px 200px;
+    gap: 12px;
+  }
+
+  .bg-item {
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform .3s;
+  }
+
+  .bg-item i {
+    font-size: 2.8rem;
+    color: rgba(255,255,255,.78);
+    transition: transform .3s;
+  }
+
+  .bg-item:hover { transform: scale(1.03); z-index: 2; }
+  .bg-item:hover i { transform: scale(1.12); }
+
+  .bg-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .bg-item:nth-child(1) i { font-size: 4.5rem; }
+
+  .bg-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top,rgba(2,15,26,.88),transparent);
+    padding: 20px 16px 12px;
+    font-size: .75rem;
+    color: var(--foam);
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  .bg-item:hover .bg-label { opacity: 1; }
+
+  /* ── ACTIVITÉS ──────────────────────────────────── */
+  .activity-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .act-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 50px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    font-size: .82rem;
+    color: var(--ocean);
+    box-shadow: var(--shadow-sm);
+    transition: all .3s;
+    cursor: default;
+  }
+
+  .act-chip:hover {
+    background: var(--lagoon);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--glow);
+    border-color: var(--lagoon);
+  }
+
+  .act-chip i { font-size: .95rem; }
+
+  /* ── TIDE TABLE ─────────────────────────────────── */
+  .tide-table-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .tide-table { width: 100%; border-collapse: collapse; }
+
+  .tide-table th {
+    background: var(--ocean);
+    color: var(--white);
+    padding: 12px 14px;
+    text-align: left;
+    font-size: .68rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .tide-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: .83rem;
+    color: var(--muted);
+  }
+
+  .tide-table tr:last-child td { border-bottom: none; }
+  .tide-table tr:hover td { background: rgba(19,168,196,.05); }
+
+  .tide-high { color: var(--lagoon); font-weight: 600; }
+  .tide-low  { color: var(--sand-dark); font-weight: 600; }
+  .tide-high i, .tide-low i { margin-right: 4px; font-size: .78rem; }
+
+  /* ── INFO BOX (style angelus) ───────────────────── */
+  .info-box {
+    background: rgba(19,168,196,.08);
+    border-left: 4px solid #13a8c4;
+    padding: 18px;
+    border-radius: 14px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .info-box > i {
+    color: #13a8c4;
+    font-size: 1.2rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .info-box p { margin: 0; font-size: .88rem; line-height: 1.7; }
+
+  /* ── CTA SECTION (style inner-cta angelus) ──────── */
+  .plage-cta {
+    background: linear-gradient(135deg,#021008,#0e3820);
+    color: white;
+    padding: clamp(56px,9vw,100px) 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .plage-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right,rgba(255,255,255,.1),transparent 40%);
+    pointer-events: none;
+  }
+
+  .plage-cta .cta-lead-icon {
+    font-size: 2.4rem;
+    color: #5cbf85;
+    margin-bottom: 18px;
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+
+  .plage-cta h2 {
+    position: relative;
+    z-index: 2;
+    color: white !important;
+    margin-bottom: 16px;
+  }
+
+  .plage-cta h2 em { color: #5cbf85 !important; font-style: normal; }
+
+  .plage-cta p {
+    position: relative;
+    z-index: 2;
+    color: rgba(255,255,255,.82);
+    max-width: 580px;
+    margin: 0 auto 36px;
+    line-height: 1.85;
+  }
+
+  .plage-cta .cta-btns {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-nature {
+    background: white;
+    color: #0e3820 !important;
+    border: none;
+    font-weight: 700;
+    transition: .3s ease;
+  }
+
+  .btn-nature:hover {
+    transform: translateY(-3px);
+    background: #e8f5e9;
+    box-shadow: 0 12px 30px rgba(255,255,255,.18);
+  }
+
+  /* ── SCROLL BUTTON ──────────────────────────────── */
+  #back-top {
+    background: linear-gradient(135deg,#073b5c,#13a8c4);
+    color: white;
+    border: none;
+    box-shadow: 0 10px 25px rgba(19,168,196,.3);
+  }
+
+  #back-top:hover { transform: translateY(-4px); }
+
+  /* ══════════════════════════════════════════════════
+     RESPONSIVE — TABLETTE (≤ 900px)
+  ══════════════════════════════════════════════════ */
+  @media (max-width: 900px) {
+
+    .beach-feature-grid {
+      grid-template-columns: repeat(2,1fr);
+      gap: 18px;
+    }
+
+    .beach-gallery {
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: 170px 170px 170px;
+      gap: 10px;
+    }
+
+    .bg-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+    .bg-item:nth-child(1) i { font-size: 3rem; }
+  }
+
+  /* ══════════════════════════════════════════════════
+     RESPONSIVE — MOBILE (≤ 640px)
+  ══════════════════════════════════════════════════ */
+  @media (max-width: 640px) {
+
+    /* HERO */
+    .page-hero { min-height: 52vh !important; }
+    .page-hero-content h1 { font-size: clamp(1.75rem,7vw,2.6rem); }
+    .page-hero-content p  { font-size: .86rem; line-height: 1.65; }
+    .ph-deco i            { font-size: 3.2rem; }
+
+    /* SECTIONS */
+    .section { padding: clamp(36px,7vw,72px) 0; }
+    .section-inner { padding: 0 16px; }
+
+    /* TYPOGRAPHIE */
+    .eyebrow { font-size: .68rem; }
+    .h2 { font-size: clamp(1.35rem,5.5vw,2rem); }
+    .lead { font-size: .92rem; }
+
+    /* GRILLES → 1 colonne */
+    .two-col-grid      { grid-template-columns: 1fr !important; gap: 28px; }
+    .beach-feature-grid { grid-template-columns: 1fr; gap: 14px; }
+
+    /* BF-CARD : layout horizontal sur mobile */
+    .bf-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 16px;
+    }
+
+    .bf-icon {
+      width: 44px;
+      height: 44px;
+      font-size: 1.15rem;
+      border-radius: 11px;
+      margin-bottom: 0;
+    }
+
+    .bf-card h4 { font-size: .96rem; margin-bottom: 5px; }
+    .bf-card p  { font-size: .8rem; }
+
+    /* GALERIE → 2 colonnes */
+    .beach-gallery {
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: repeat(3,130px);
+      gap: 8px;
+    }
+
+    .bg-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+    .bg-item:nth-child(1) i { font-size: 2.4rem; }
+    .bg-item i { font-size: 1.8rem; }
+    /* Labels toujours visibles sur mobile (pas de hover) */
+    .bg-label { opacity: 1; padding: 12px 10px 8px; font-size: .66rem; }
+
+    /* STATS */
+    .comite-stats-card {
+      display: grid !important;
+      grid-template-columns: repeat(2,1fr) !important;
+      gap: 0 !important;
+    }
+
+    /* ACTIVITÉS */
+    .activity-chips { gap: 7px; }
+    .act-chip { padding: 7px 12px; font-size: .76rem; }
+
+    /* TIDE TABLE : scroll horizontal */
+    .tide-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .tide-table th,
+    .tide-table td {
+      padding: 9px 11px;
+      white-space: nowrap;
+      font-size: .77rem;
+    }
+
+    /* INFO BOX */
+    .info-box { padding: 14px 14px; gap: 10px; }
+    .info-box p { font-size: .82rem; }
+
+    /* CTA */
+    .plage-cta { padding: 44px 18px; }
+    .plage-cta .cta-lead-icon { font-size: 2rem; margin-bottom: 14px; }
+    .plage-cta h2 { font-size: clamp(1.3rem,5vw,1.9rem); }
+    .plage-cta p  { font-size: .84rem; margin-bottom: 26px; }
+    .plage-cta .cta-btns { flex-direction: column; align-items: center; gap: 10px; }
+    .plage-cta .cta-btns .btn { width: 100%; max-width: 280px; justify-content: center; }
+
+    /* FOOTER */
+    .footer-grid { grid-template-columns: 1fr !important; gap: 24px; }
+    .footer-col h5 { margin-top: 0; }
+
+    /* MOBILE MENU icons */
+    .mob-icon { font-size: .88rem; margin-right: 8px; }
+  }
+
+  /* ══════════════════════════════════════════════════
+     TRÈS PETIT (≤ 380px)
+  ══════════════════════════════════════════════════ */
+  @media (max-width: 380px) {
+    .act-chip { padding: 6px 10px; font-size: .72rem; }
+
+    .beach-gallery {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6,110px);
+    }
+
+    .bg-item:nth-child(1) { grid-column: span 1; }
+
+    .tide-table th,
+    .tide-table td { padding: 8px 9px; font-size: .72rem; }
+  }
   </style>
 </head>
 <body>
-<div id="progress-bar"></div><canvas id="bg-canvas"></canvas>
+<div id="progress-bar"></div>
+<canvas id="bg-canvas"></canvas>
+
 <div id="page-loader">
   <div class="loader-brand">La Plage</div>
   <div class="loader-sub">Moindzaza Mboini · Océan Indien</div>
   <div class="loader-waves"><span></span><span></span><span></span><span></span><span></span></div>
 </div>
 
+<!-- ══ NAVBAR ═════════════════════════════════════ -->
 <nav class="navbar" id="navbar">
   <a href="../index.html" class="nav-logo">
     <div class="nav-logo-mark"><i class="fa-solid fa-water" aria-hidden="true"></i></div>
@@ -100,46 +482,59 @@
   </button>
 </nav>
 
+<!-- ══ MENU MOBILE ════════════════════════════════ -->
 <div class="mobile-menu" id="mobile-menu">
   <a href="../index.html"><i class="fa-solid fa-house mob-icon" aria-hidden="true"></i>Accueil</a>
   <a href="histoires/histoire.html"><i class="fa-solid fa-book-open mob-icon" aria-hidden="true"></i>Histoire</a>
   <span class="mob-cat">Associations</span>
   <a href="comite.html"><i class="fa-solid fa-people-group mob-icon" aria-hidden="true"></i>Comité Local</a>
-  <a href="angelus.html"><i class="fa-solid fa-star mob-icon" aria-hidden="true"></i>Angelus Club</a>
-  <a href="acm.html"><i class="fa-solid fa-circle-nodes mob-icon" aria-hidden="true"></i>ACM</a>
+  <a href="angelus.html"><i class="fa-solid fa-futbol mob-icon" aria-hidden="true"></i>Angelus Club</a>
+  <a href="acm.html"><i class="fa-solid fa-graduation-cap mob-icon" aria-hidden="true"></i>ACM</a>
   <a href="twamaya.html"><i class="fa-solid fa-leaf mob-icon" aria-hidden="true"></i>Twamaya</a>
   <a href="plage.html"><i class="fa-solid fa-umbrella-beach mob-icon" aria-hidden="true"></i>La Plage</a>
   <a href="contact.html"><i class="fa-solid fa-envelope mob-icon" aria-hidden="true"></i>Contact</a>
 </div>
 
-<header class="page-hero">
-  <div class="page-hero-overlay"></div>
-  <div class="ph-deco"><i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i></div>
+<!-- ══ PAGE HERO ══════════════════════════════════ -->
+<header class="page-hero" role="banner">
+  <div class="page-hero-overlay" aria-hidden="true"></div>
+  <div class="ph-deco" aria-hidden="true">
+    <i class="fa-solid fa-umbrella-beach"></i>
+  </div>
   <div class="page-hero-content">
     <span class="page-hero-tag">Océan Indien · Ngazidja · Joyau Naturel</span>
     <h1>La <em>Plage</em> de<br/>Moindzaza Mboini</h1>
     <p>Eaux turquoise, sable blanc immaculé, cocotiers et couchers de soleil somptueux — la plage de Moindzaza Mboini est l'un des plus beaux joyaux naturels de Ngazidja.</p>
   </div>
-  <div class="page-hero-wave">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,50 C480,80 960,10 1440,50 L1440,80 L0,80 Z" fill="var(--ivory)"/></svg>
+  <div class="page-hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,50 C480,80 960,10 1440,50 L1440,80 L0,80 Z" fill="var(--ivory)"/>
+    </svg>
   </div>
 </header>
 
-<!-- INTRO -->
-<section class="section">
+<!-- ══ INTRO ═══════════════════════════════════════ -->
+<section class="section" aria-labelledby="intro-heading">
   <div class="section-inner">
     <div class="two-col-grid">
       <div class="reveal-left">
         <span class="eyebrow">Notre joyau</span>
-        <h2 class="h2 mb-md">Une plage <em>d'exception</em><br/>sur l'Océan Indien</h2>
-        <p class="lead mb-md">La plage de Moindzaza Mboini est bien plus qu'un simple lieu de baignade — c'est le cœur battant du village, le lieu de vie, de pêche, de jeu et de contemplation pour toutes les générations.</p>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.85;margin-bottom:24px">Avec ses 3 kilomètres de côtes bordées de palmiers et de cocotiers, ses eaux d'un turquoise profond et sa faune marine exceptionnelle, cette plage est un trésor naturel que la communauté s'engage à préserver, notamment grâce à l'action de Twamaya No Urahafu.</p>
+        <h2 class="h2 mb-md" id="intro-heading">
+          Une plage <em>d'exception</em><br/>sur l'Océan Indien
+        </h2>
+        <p class="lead mb-md">
+          La plage de Moindzaza Mboini est bien plus qu'un simple lieu de baignade — c'est le cœur battant du village, le lieu de vie, de pêche, de jeu et de contemplation pour toutes les générations.
+        </p>
+        <p style="color:var(--muted);font-size:clamp(.82rem,1.2vw,.9rem);line-height:1.85;margin-bottom:24px">
+          Avec ses 3 kilomètres de côtes bordées de palmiers et de cocotiers, ses eaux d'un turquoise profond et sa faune marine exceptionnelle, cette plage est un trésor naturel que la communauté s'engage à préserver, notamment grâce à l'action de Twamaya No Urahafu.
+        </p>
         <div class="info-box">
-          <p><i class="fa-solid fa-temperature-half" aria-hidden="true"></i> <strong>Conditions idéales :</strong> Température de l'eau ~26°C toute l'année · Meilleure période pour la plongée : avril à octobre.</p>
+          <i class="fa-solid fa-temperature-half" aria-hidden="true"></i>
+          <p><strong>Conditions idéales :</strong> Température de l'eau ~26°C toute l'année · Meilleure période pour la plongée : avril à octobre.</p>
         </div>
       </div>
       <div class="reveal-right">
-        <div class="comite-stats-card" style="background:linear-gradient(135deg,#020f1a,#073b5c,#0b6b8a)">
+        <div class="comite-stats-card">
           <div class="csc-item"><span class="csc-num" data-count="3">0</span><span class="csc-lbl">km de côtes</span></div>
           <div class="csc-item"><span class="csc-num">26°</span><span class="csc-lbl">Temp. eau (°C)</span></div>
           <div class="csc-item"><span class="csc-num">300+</span><span class="csc-lbl">Espèces marines</span></div>
@@ -150,204 +545,236 @@
   </div>
 </section>
 
-<!-- GALERIE -->
-<section class="section" style="background:var(--cream)">
+<!-- ══ GALERIE ══════════════════════════════════════ -->
+<section class="section" style="background:var(--cream)" aria-labelledby="gallery-heading">
   <div class="section-inner">
     <span class="eyebrow center reveal">En images</span>
-    <h2 class="h2 center mb-lg reveal" data-delay="100">Galerie <em>photos</em></h2>
+    <h2 class="h2 center mb-lg reveal" data-delay="100" id="gallery-heading">Galerie <em>photos</em></h2>
     <div class="beach-gallery reveal">
-      <div class="bg-item" style="background:linear-gradient(135deg,#020f1a,#073b5c,#13a8c4)">
-        <i class="fa-solid fa-water" aria-label="Vue panoramique de la plage"></i>
+      <div class="bg-item" style="background:linear-gradient(135deg,#020f1a,#073b5c,#13a8c4)" aria-label="Vue panoramique de la plage">
+        <i class="fa-solid fa-water" aria-hidden="true"></i>
         <div class="bg-label">Vue panoramique de la plage</div>
       </div>
-      <div class="bg-item" style="background:linear-gradient(135deg,#d4a24c,#8a6010)">
-        <i class="fa-solid fa-sun" aria-label="Coucher de soleil"></i>
+      <div class="bg-item" style="background:linear-gradient(135deg,#d4a24c,#8a6010)" aria-label="Coucher de soleil">
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
         <div class="bg-label">Coucher de soleil</div>
       </div>
-      <div class="bg-item" style="background:linear-gradient(135deg,#0b6b8a,#13a8c4)">
-        <i class="fa-solid fa-fish" aria-label="Faune marine"></i>
+      <div class="bg-item" style="background:linear-gradient(135deg,#0b6b8a,#13a8c4)" aria-label="Faune marine">
+        <i class="fa-solid fa-fish" aria-hidden="true"></i>
         <div class="bg-label">Faune marine</div>
       </div>
-      <div class="bg-item" style="background:linear-gradient(135deg,#3a8f5c,#1a4028)">
-        <i class="fa-solid fa-tree" aria-label="Les cocotiers du bord de mer"></i>
+      <div class="bg-item" style="background:linear-gradient(135deg,#3a8f5c,#1a4028)" aria-label="Cocotiers du bord de mer">
+        <i class="fa-solid fa-tree" aria-hidden="true"></i>
         <div class="bg-label">Les cocotiers du bord de mer</div>
       </div>
-      <div class="bg-item" style="background:linear-gradient(135deg,#073b5c,#0b6b8a)">
-        <i class="fa-solid fa-sailboat" aria-label="Pêcheurs traditionnels"></i>
+      <div class="bg-item" style="background:linear-gradient(135deg,#073b5c,#0b6b8a)" aria-label="Pêcheurs traditionnels">
+        <i class="fa-solid fa-sailboat" aria-hidden="true"></i>
         <div class="bg-label">Pêcheurs traditionnels</div>
       </div>
-      <div class="bg-item" style="background:linear-gradient(135deg,#c4956a,#7a4010)">
-        <i class="fa-solid fa-person-swimming" aria-label="Sports nautiques"></i>
+      <div class="bg-item" style="background:linear-gradient(135deg,#c4956a,#7a4010)" aria-label="Sports nautiques">
+        <i class="fa-solid fa-person-swimming" aria-hidden="true"></i>
         <div class="bg-label">Sports nautiques</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CARACTÉRISTIQUES -->
-<section class="section">
+<!-- ══ CARACTÉRISTIQUES ═════════════════════════════ -->
+<section class="section" aria-labelledby="features-heading">
   <div class="section-inner">
     <span class="eyebrow center reveal">Découvrir</span>
-    <h2 class="h2 center mb-lg reveal" data-delay="100">Ce qui rend notre plage <em>unique</em></h2>
+    <h2 class="h2 center mb-lg reveal" data-delay="100" id="features-heading">
+      Ce qui rend notre plage <em>unique</em>
+    </h2>
     <div class="beach-feature-grid">
+
       <div class="bf-card reveal" data-delay="0">
-        <div class="bf-visual" style="background:linear-gradient(135deg,#020f1a,#0b6b8a)">
-          <i class="fa-solid fa-otter" aria-hidden="true"></i>
-          <!-- Note: FA6 free doesn't include turtle; otter is closest marine animal available. Swap for fa-fish if preferred. -->
-        </div>
-        <div class="bf-body">
+        <div class="bf-icon" aria-hidden="true"><i class="fa-solid fa-otter"></i></div>
+        <div class="bf-card-body">
           <h4>Tortues Marines</h4>
           <p>La plage de Moindzaza Mboini est un site de ponte des tortues marines vertes. Un spectacle naturel rare et protégé par la communauté.</p>
         </div>
       </div>
+
       <div class="bf-card reveal" data-delay="100">
-        <div class="bf-visual" style="background:linear-gradient(135deg,#073b5c,#13a8c4)">
-          <i class="fa-solid fa-water" aria-hidden="true"></i>
-        </div>
-        <div class="bf-body">
+        <div class="bf-icon" aria-hidden="true"><i class="fa-solid fa-water"></i></div>
+        <div class="bf-card-body">
           <h4>Récifs Coralliens</h4>
           <p>Des récifs coralliens colorés à quelques mètres du bord, abritant une biodiversité marine exceptionnelle pour les plongeurs et snorkeleurs.</p>
         </div>
       </div>
+
       <div class="bf-card reveal" data-delay="200">
-        <div class="bf-visual" style="background:linear-gradient(135deg,#d4a24c,#8a6010)">
-          <i class="fa-solid fa-sun" aria-hidden="true"></i>
+        <div class="bf-icon" aria-hidden="true" style="background:rgba(212,162,76,.14);color:#d4a24c;">
+          <i class="fa-solid fa-sun"></i>
         </div>
-        <div class="bf-body">
+        <div class="bf-card-body">
           <h4>Couchers de Soleil</h4>
           <p>Les couchers de soleil sur l'Océan Indien depuis la plage de Moindzaza Mboini sont parmi les plus spectaculaires de tout Ngazidja.</p>
         </div>
       </div>
+
       <div class="bf-card reveal" data-delay="300">
-        <div class="bf-visual" style="background:linear-gradient(135deg,#1a4028,#3a8f5c)">
-          <i class="fa-solid fa-tree" aria-hidden="true"></i>
+        <div class="bf-icon" aria-hidden="true" style="background:rgba(58,143,92,.14);color:#3a8f5c;">
+          <i class="fa-solid fa-tree"></i>
         </div>
-        <div class="bf-body">
+        <div class="bf-card-body">
           <h4>Cocoteraie Naturelle</h4>
           <p>Une rangée de cocotiers centenaires borde la plage, offrant une ombre naturelle appréciée et un décor de carte postale inoubliable.</p>
         </div>
       </div>
+
       <div class="bf-card reveal" data-delay="400">
-        <div class="bf-visual" style="background:linear-gradient(135deg,#073b5c,#0b6b8a)">
-          <i class="fa-solid fa-fish" aria-hidden="true"></i>
-        </div>
-        <div class="bf-body">
+        <div class="bf-icon" aria-hidden="true"><i class="fa-solid fa-fish-fins"></i></div>
+        <div class="bf-card-body">
           <h4>Pêche Artisanale</h4>
           <p>Chaque matin, les pêcheurs de Moindzaza Mboini partent en mer dans leurs pirogues traditionnelles. Un spectacle authentique ancré dans la culture locale.</p>
         </div>
       </div>
+
       <div class="bf-card reveal" data-delay="500">
-        <div class="bf-visual" style="background:linear-gradient(135deg,#2dd4e8,#13a8c4)">
-          <i class="fa-solid fa-person-swimming" aria-hidden="true"></i>
-        </div>
-        <div class="bf-body">
+        <div class="bf-icon" aria-hidden="true"><i class="fa-solid fa-person-swimming"></i></div>
+        <div class="bf-card-body">
           <h4>Baignade &amp; Loisirs</h4>
           <p>Eaux calmes et peu profondes en certains endroits, idéales pour la baignade en famille. La plage est animée et sécurisée grâce aux initiatives communautaires.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ACTIVITÉS -->
-<section class="section" style="background:linear-gradient(180deg,var(--cream),var(--ivory))">
+<!-- ══ ACTIVITÉS & MARÉES ════════════════════════════ -->
+<section class="section" style="background:linear-gradient(180deg,var(--cream),var(--ivory))" aria-labelledby="activites-heading">
   <div class="section-inner">
     <div class="two-col-grid">
+
       <div class="reveal-left">
         <span class="eyebrow">À faire sur la plage</span>
-        <h2 class="h2 mb-lg">Activités &amp; <em>Loisirs</em></h2>
-        <div class="activity-chips">
-          <span class="act-chip"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i> Snorkeling</span>
-          <span class="act-chip"><i class="fa-solid fa-person-drowning" aria-hidden="true"></i> Plongée sous-marine</span>
-          <span class="act-chip"><i class="fa-solid fa-fish-fins" aria-hidden="true"></i> Pêche traditionnelle</span>
-          <span class="act-chip"><i class="fa-solid fa-person-surfing" aria-hidden="true"></i> Sports nautiques</span>
-          <span class="act-chip"><i class="fa-solid fa-sailboat" aria-hidden="true"></i> Sortie en pirogue</span>
-          <span class="act-chip"><i class="fa-solid fa-volleyball" aria-hidden="true"></i> Beach-volley</span>
-          <span class="act-chip"><i class="fa-solid fa-futbol" aria-hidden="true"></i> Football de plage</span>
-          <span class="act-chip"><i class="fa-solid fa-sun" aria-hidden="true"></i> Observation du coucher de soleil</span>
-          <span class="act-chip"><i class="fa-solid fa-binoculars" aria-hidden="true"></i> Observation des tortues (saison)</span>
-          <span class="act-chip"><i class="fa-solid fa-person-walking" aria-hidden="true"></i> Promenade sur le littoral</span>
-          <span class="act-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> Photographie nature</span>
-          <span class="act-chip"><i class="fa-solid fa-utensils" aria-hidden="true"></i> Grillades de poissons frais</span>
+        <h2 class="h2 mb-lg" id="activites-heading">Activités &amp; <em>Loisirs</em></h2>
+        <div class="activity-chips" role="list">
+          <span class="act-chip" role="listitem"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i>Snorkeling</span>
+          <span class="act-chip" role="listitem"><i class="fa-solid fa-person-drowning" aria-hidden="true"></i>Plongée sous-marine</span>
+          <span class="act-chip" role="listitem"><i class="fa-solid fa-fish-fins" aria-hidden="true"></i>Pêche traditionnelle</span>
+          <span class="act-chip" role="listitem"><i class="fa-solid fa-person-surfing" aria-hidden="true"></i>Sports nautiques</span>
+          <span class="act-chip" role="listitem"><i class="fa-solid fa-sailboat" aria-hidden="true"></i>Sortie en pirogue</span>
+          <span class="act-chip" role="listitem"><i class="fa-solid fa-volleyball" aria-hidden="true"></i>Beach-volley</span>
+          <span class="act-chip" role="listitem"><i class="fa-solid fa-futbol" aria-hidden="true"></i>Football de plage</span>
+          <span class="act-chip" role="listitem"><i class="fa-solid fa-sun" aria-hidden="true"></i>Couchers de soleil</span>
+          <span class="act-chip" role="listitem"><i class="fa-solid fa-binoculars" aria-hidden="true"></i>Observation tortues</span>
+          <span class="act-chip" role="listitem"><i class="fa-solid fa-person-walking" aria-hidden="true"></i>Promenade littorale</span>
+          <span class="act-chip" role="listitem"><i class="fa-solid fa-camera" aria-hidden="true"></i>Photographie nature</span>
+          <span class="act-chip" role="listitem"><i class="fa-solid fa-utensils" aria-hidden="true"></i>Grillades de poissons</span>
         </div>
       </div>
+
       <div class="reveal-right">
         <span class="eyebrow">Marées</span>
         <h2 class="h2 mb-md">Horaires des <em>marées</em></h2>
-        <table class="tide-table">
-          <thead>
-            <tr>
-              <th>Date</th><th>Heure</th><th>Type</th><th>Hauteur</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Lun 13 Mai</td><td>05h42</td><td class="tide-high"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Haute mer</td><td>2.8m</td></tr>
-            <tr><td>Lun 13 Mai</td><td>12h18</td><td class="tide-low"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i> Basse mer</td><td>0.4m</td></tr>
-            <tr><td>Lun 13 Mai</td><td>18h05</td><td class="tide-high"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Haute mer</td><td>2.6m</td></tr>
-            <tr><td>Mar 14 Mai</td><td>06h10</td><td class="tide-high"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Haute mer</td><td>2.7m</td></tr>
-            <tr><td>Mar 14 Mai</td><td>12h55</td><td class="tide-low"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i> Basse mer</td><td>0.5m</td></tr>
-            <tr><td>Mer 15 Mai</td><td>06h38</td><td class="tide-high"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Haute mer</td><td>2.9m</td></tr>
-          </tbody>
-        </table>
-        <p style="font-size:.72rem;color:var(--muted);margin-top:12px;">
-          <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Horaires indicatifs. Consulter les autorités maritimes locales.
+        <div class="tide-table-wrap">
+          <table class="tide-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Type</th>
+                <th>Hauteur</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Lun 13 Mai</td><td>05h42</td>
+                <td class="tide-high"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i>Haute mer</td>
+                <td>2.8 m</td>
+              </tr>
+              <tr>
+                <td>Lun 13 Mai</td><td>12h18</td>
+                <td class="tide-low"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i>Basse mer</td>
+                <td>0.4 m</td>
+              </tr>
+              <tr>
+                <td>Lun 13 Mai</td><td>18h05</td>
+                <td class="tide-high"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i>Haute mer</td>
+                <td>2.6 m</td>
+              </tr>
+              <tr>
+                <td>Mar 14 Mai</td><td>06h10</td>
+                <td class="tide-high"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i>Haute mer</td>
+                <td>2.7 m</td>
+              </tr>
+              <tr>
+                <td>Mar 14 Mai</td><td>12h55</td>
+                <td class="tide-low"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i>Basse mer</td>
+                <td>0.5 m</td>
+              </tr>
+              <tr>
+                <td>Mer 15 Mai</td><td>06h38</td>
+                <td class="tide-high"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i>Haute mer</td>
+                <td>2.9 m</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:.72rem;color:var(--muted);margin-top:12px;display:flex;align-items:center;gap:6px;">
+          <i class="fa-solid fa-circle-info" aria-hidden="true" style="color:var(--lagoon)"></i>
+          Horaires indicatifs. Consulter les autorités maritimes locales.
         </p>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- PROTECTION -->
-<section class="section" style="background:linear-gradient(135deg,#021008,#0e3820)">
-  <div class="section-inner" style="text-align:center">
-    <span class="eyebrow" style="color:#5cbf85">Engagement</span>
-    <div style="margin-bottom:16px">
-      <i class="fa-solid fa-leaf" style="font-size:2.2rem;color:#5cbf85;" aria-hidden="true"></i>
-    </div>
-    <h2 class="h2 light center mb-md">Protéger notre <em>plage</em></h2>
-    <p style="color:var(--foam);opacity:.8;max-width:580px;margin:0 auto 36px;line-height:1.85">
-      Grâce à Twamaya No Urahafu et à toute la communauté, la plage de Moindzaza Mboini est entretenue avec soin. Rejoignez nos actions mensuelles de nettoyage pour préserver ce trésor naturel.
-    </p>
-    <div class="flex justify-center gap-md flex-wrap">
-      <a href="twamaya.html" class="btn btn-ocean">
-        <i class="fa-solid fa-people-group" aria-hidden="true" style="margin-right:8px"></i>Rejoindre Twamaya
-      </a>
-      <a href="contact.html" class="btn btn-outline-light">
-        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true" style="margin-right:8px"></i>Signaler un problème
-      </a>
-    </div>
+<!-- ══ PROTECTION ═══════════════════════════════════ -->
+<section class="plage-cta" aria-labelledby="protection-heading">
+  <i class="fa-solid fa-leaf cta-lead-icon" aria-hidden="true"></i>
+  <h2 class="h2" id="protection-heading">Protéger notre <em>plage</em></h2>
+  <p>
+    Grâce à Twamaya No Urahafu et à toute la communauté, la plage de Moindzaza Mboini est entretenue avec soin.
+    Rejoignez nos actions mensuelles de nettoyage pour préserver ce trésor naturel.
+  </p>
+  <div class="cta-btns">
+    <a href="twamaya.html" class="btn btn-nature">
+      <i class="fa-solid fa-people-group" aria-hidden="true" style="margin-right:8px"></i>Rejoindre Twamaya
+    </a>
+    <a href="contact.html" class="btn btn-outline-light">
+      <i class="fa-solid fa-triangle-exclamation" aria-hidden="true" style="margin-right:8px"></i>Signaler un problème
+    </a>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="footer-wave-top">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C480,60 960,0 1440,30 L1440,0 L0,0 Z" fill="var(--deep)"/></svg>
+<!-- ══ FOOTER ══════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-wave-top" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C480,60 960,0 1440,30 L1440,0 L0,0 Z" fill="var(--deep)"/>
+    </svg>
   </div>
   <div class="footer-grid">
     <div>
-      <div class="nav-logo" style="margin-bottom:0">
-        <div class="nav-logo-mark"><i class="fa-solid fa-water" aria-hidden="true"></i></div>
+      <a href="../index.html" class="nav-logo" style="margin-bottom:0" aria-label="Moindzaza Mboini — Accueil">
+        <div class="nav-logo-mark" aria-hidden="true"><i class="fa-solid fa-water"></i></div>
         <div class="nav-logo-text">
           <span class="nav-logo-main">Moindzaza Mboini</span>
           <span class="nav-logo-sub">Ngazidja · Comores</span>
         </div>
-      </div>
+      </a>
       <p class="footer-brand-desc">Village côtier de Ngazidja, riche d'histoire et de culture.</p>
     </div>
-    <div class="footer-col">
+    <nav class="footer-col" aria-label="Liens village">
       <h5>Village</h5>
       <a href="../index.html">Accueil</a>
       <a href="histoires/histoire.html">Histoire</a>
       <a href="plage.html">La Plage</a>
       <a href="contact.html">Contact</a>
-    </div>
-    <div class="footer-col">
+    </nav>
+    <nav class="footer-col" aria-label="Liens associations">
       <h5>Associations</h5>
       <a href="comite.html">Comité Local</a>
       <a href="angelus.html">Angelus Club</a>
       <a href="acm.html">ACM</a>
       <a href="twamaya.html">Twamaya</a>
-    </div>
+    </nav>
     <div class="footer-col">
       <h5>Contact</h5>
       <span><i class="fa-solid fa-location-dot" aria-hidden="true" style="margin-right:6px;color:var(--lagoon)"></i>Moindzaza Mboini</span>
