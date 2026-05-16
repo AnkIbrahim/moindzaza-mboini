@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Le face-à-face de Boina et Lemoigne | Moindzaza Mboini</title>
+  <meta name="description" content="Foumbouni, février 1890 : le duel historique entre Boina Haziri, résistant comorien, et Le Moign Alfred, officier colonial français."/>
+
+  <link rel="stylesheet" href="../../../css/shared.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+  <link rel="stylesheet" href="../../../css/components.css">
+
+  <style>
+    /* ── PAGE-SPECIFIC ONLY ─────────────────────────────────── */
+
+    /* Hero — rouge sang de bataille */
+    .duel-hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--abyss) 0%, #2a0a08 45%, #5a1510 100%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 0 80px;
+      position: relative; overflow: hidden;
+    }
+    .duel-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+      background-size: 200px; pointer-events: none;
+    }
+    .duel-ring {
+      position: absolute; border-radius: 50%; pointer-events: none;
+    }
+    .duel-ring-1 { width:700px; height:700px; bottom:-120px; right:-180px; border:1px solid rgba(224,96,80,.12); }
+    .duel-ring-2 { width:1000px; height:1000px; bottom:-260px; right:-320px; border:1px solid rgba(224,96,80,.06); }
+    .duel-ring-3 { width:380px; height:380px; top:80px; left:-140px; border:1px solid rgba(212,162,76,.08); }
+
+    /* Hero split — deux protagonistes face à face */
+    .duel-vs-bar {
+      display: flex;
+      align-items: center;
+      gap: clamp(16px,3vw,32px);
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .duel-vs-pill {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 16px 8px 10px;
+      border-radius: 40px;
+      border: 1px solid;
+      font-size: .72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .duel-vs-pill.colonial {
+      border-color: rgba(212,162,76,.4);
+      color: var(--gold);
+      background: rgba(212,162,76,.08);
+    }
+    .duel-vs-pill.resistant {
+      border-color: rgba(29,168,192,.4);
+      color: var(--aqua);
+      background: rgba(29,168,192,.08);
+    }
+    .duel-vs-sep {
+      font-family: var(--font-display);
+      font-size: 1.4rem; color: rgba(255,255,255,.25);
+    }
+
+    .duel-hero-content {
+      max-width: 860px; margin: auto;
+      padding: 0 var(--gutter);
+      position: relative; z-index: 2;
+    }
+    .duel-hero-kicker {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: rgba(184,234,242,.45);
+      font-size: clamp(.85rem,1.3vw,1rem);
+      display: block; margin-bottom: 10px;
+    }
+    .duel-hero-tag {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: #e08070; font-size: .65rem;
+      letter-spacing: 4px; text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .duel-hero-tag::before {
+      content: ''; width: 28px; height: 1px; background: #e08070;
+    }
+    .duel-hero-title {
+      font-family: var(--font-display); font-weight: 700;
+      color: var(--white);
+      font-size: clamp(2.6rem,5.5vw,4.4rem);
+      line-height: 1.06; margin-bottom: 26px;
+    }
+    .duel-hero-title em { color: var(--gold); font-style: normal; }
+    .duel-hero-lead {
+      font-family: var(--font-serif);
+      color: rgba(184,234,242,.72);
+      font-size: clamp(.9rem,1.4vw,1.08rem);
+      line-height: 1.85; max-width: 620px; margin-bottom: 48px;
+    }
+    .duel-hero-meta { display: flex; gap: clamp(24px,5vw,48px); flex-wrap: wrap; }
+    .dhm-item { display: flex; flex-direction: column; gap: 4px; }
+    .dhm-label { font-size:.6rem; letter-spacing:3px; text-transform:uppercase; color:#e08070; }
+    .dhm-value { font-size:.88rem; color:var(--white); }
+
+    .duel-hero-wave { position:absolute; bottom:-1px; left:0; right:0; z-index:3; }
+    .duel-hero-wave svg { display:block; width:100%; }
+
+    /* ── PROTAGONISTES ─────────────────────────────────────── */
+    .protagonistes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(20px,3vw,32px);
+      margin-top: 48px;
+    }
+    .prot-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .prot-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .prot-top {
+      padding: clamp(24px,3.5vw,32px) clamp(20px,3vw,28px) clamp(18px,2.5vw,24px);
+      position: relative; overflow: hidden;
+    }
+    .prot-top::after {
+      content:''; position:absolute; bottom:-30px; right:-30px;
+      width:100px; height:100px; border-radius:50%;
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .prot-top.colonial { background: linear-gradient(135deg, #3a2a08, #6a4a10); }
+    .prot-top.resistant { background: linear-gradient(135deg, var(--ocean), #0e3a5a); }
+    .prot-role {
+      font-size:.62rem; letter-spacing:3px; text-transform:uppercase;
+      margin-bottom:10px; display:block;
+    }
+    .prot-top.colonial .prot-role { color: var(--gold); }
+    .prot-top.resistant .prot-role { color: var(--aqua); }
+    .prot-emoji { font-size:2.2rem; margin-bottom:12px; display:block; }
+    .prot-name {
+      font-family:var(--font-display); color:var(--white);
+      font-size:clamp(1.2rem,2.5vw,1.5rem); line-height:1.15;
+      margin-bottom:6px;
+    }
+    .prot-subtitle {
+      font-family:var(--font-serif); font-style:italic;
+      font-size:clamp(.78rem,1.2vw,.88rem);
+      color:rgba(255,255,255,.55);
+    }
+    .prot-body { padding:clamp(18px,3vw,24px) clamp(20px,3vw,28px) clamp(22px,3.5vw,28px); background:var(--white); }
+    .prot-trait {
+      display:flex; align-items:flex-start; gap:10px;
+      margin-bottom:12px; font-size:clamp(.78rem,1.2vw,.88rem);
+      color:var(--muted); line-height:1.6;
+    }
+    .prot-trait:last-child { margin-bottom:0; }
+    .prot-trait-label {
+      font-size:.58rem; letter-spacing:2px; text-transform:uppercase;
+      font-weight:600; flex-shrink:0; padding-top:2px;
+    }
+    .prot-top.colonial ~ .prot-body .prot-trait-label { color:#8a6010; }
+    .prot-top.resistant ~ .prot-body .prot-trait-label { color:var(--current); }
+
+    /* ── INTRO ─────────────────────────────────────────────── */
+    .intro-title {
+      font-family:var(--font-display);
+      font-size:clamp(1.75rem,3.5vw,2.8rem);
+      line-height:1.15; color:var(--deep); margin-bottom:28px;
+    }
+    .intro-title em { color:#9a2010; font-style:italic; }
+
+    /* ── NARRATIVE ─────────────────────────────────────────── */
+    .narrative-wrap { max-width:960px; margin:0 auto; }
+    .narrative-header {
+      text-align:center;
+      padding:clamp(56px,8vw,96px) 0 clamp(40px,5vw,60px);
+    }
+    .narrative {
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      box-shadow:var(--shadow-lg);
+    }
+    .act {
+      display:grid;
+      grid-template-columns:220px 1fr;
+      border-bottom:1px solid rgba(7,61,94,.12);
+    }
+    .act:last-child { border-bottom:none; }
+    .act-sidebar {
+      background:#3a1008;
+      padding:clamp(36px,5vw,60px) clamp(24px,3vw,36px);
+      display:flex; flex-direction:column;
+      position:relative; overflow:hidden;
+    }
+    .act-sidebar::after {
+      content:''; position:absolute; bottom:-50px; right:-50px;
+      width:130px; height:130px; border-radius:50%;
+      border:1px solid rgba(255,255,255,.07);
+    }
+    .act-num {
+      font-family:var(--font-display);
+      font-size:clamp(3rem,5vw,4.5rem);
+      line-height:1; color:rgba(255,255,255,.12); margin-bottom:14px;
+    }
+    .act-phase {
+      font-size:.6rem; letter-spacing:3.5px;
+      text-transform:uppercase; color:#e08070; margin-bottom:8px;
+    }
+    .act-sidebar-title {
+      font-family:var(--font-display); color:var(--white);
+      font-size:clamp(.95rem,1.6vw,1.1rem); line-height:1.3;
+    }
+    .act-emoji { font-size:2rem; margin-top:auto; padding-top:28px; }
+
+    .act-body {
+      padding:clamp(36px,5vw,60px) clamp(28px,4vw,56px);
+      background:var(--white);
+    }
+    .act-body h3 {
+      font-family:var(--font-display);
+      font-size:clamp(1.25rem,2.5vw,1.55rem);
+      color:var(--deep); line-height:1.2; margin-bottom:20px;
+    }
+    .act-body h3 em { color:#9a2010; font-style:italic; }
+    .act-body p {
+      font-size:clamp(.85rem,1.3vw,1rem);
+      color:var(--muted); line-height:1.95; margin-bottom:16px;
+    }
+    .act-body p:last-child { margin-bottom:0; }
+    .act-body strong { color:var(--deep); }
+
+    /* pull-quote rouge */
+    .pull-quote {
+      border-left:3px solid #c04030;
+      padding:14px 20px; margin:22px 0;
+      background:linear-gradient(90deg, rgba(192,64,48,.07), transparent);
+      border-radius:0 8px 8px 0;
+    }
+    .pull-quote p {
+      font-family:var(--font-serif);
+      font-style:italic;
+      font-size:clamp(.9rem,1.3vw,1.02rem);
+      color:#6a1008 !important;
+      line-height:1.7 !important;
+      margin:0 !important;
+    }
+    .pull-quote cite {
+      display:block; margin-top:8px;
+      font-size:.72rem; color:#c04030;
+      letter-spacing:1px; font-style:normal;
+    }
+
+    /* gold pull-quote variant */
+    .pull-quote.gold {
+      border-left-color:var(--gold);
+      background:linear-gradient(90deg, rgba(212,162,76,.08), transparent);
+    }
+    .pull-quote.gold p { color:#5a3a08 !important; }
+    .pull-quote.gold cite { color:var(--gold); }
+
+    /* ── VALEURS ───────────────────────────────────────────── */
+    .values-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
+      gap:clamp(14px,2.5vw,20px);
+      margin-top:40px;
+    }
+    .val-card {
+      text-align:center;
+      padding:clamp(28px,4vw,36px) clamp(16px,2vw,20px);
+      border-radius:var(--radius); background:var(--white);
+      border:1px solid var(--border); box-shadow:var(--shadow-sm);
+      transition:border-color .25s, transform .25s;
+    }
+    .val-card:hover { border-color:#c04030; transform:translateY(-3px); }
+    .val-icon { font-size:2rem; margin-bottom:14px; display:block; }
+    .val-card h4 {
+      font-family:var(--font-display);
+      font-size:clamp(.95rem,1.6vw,1.05rem);
+      color:var(--deep); margin-bottom:10px;
+    }
+    .val-card p {
+      font-size:clamp(.75rem,1.2vw,.84rem);
+      color:var(--muted); line-height:1.75;
+    }
+
+    /* ── CHRONOLOGIE COURTE ────────────────────────────────── */
+    .chrono {
+      display:flex; flex-direction:column; gap:0;
+      max-width:720px; margin:40px auto 0;
+      position:relative;
+    }
+    .chrono::before {
+      content:''; position:absolute; left:72px; top:8px; bottom:8px;
+      width:2px;
+      background:linear-gradient(to bottom, #c04030, rgba(192,64,48,.1));
+    }
+    .chrono-item {
+      display:flex; gap:16px; align-items:flex-start; margin-bottom:20px;
+    }
+    .chrono-date {
+      font-family:var(--font-display);
+      font-size:clamp(.82rem,1.4vw,.95rem);
+      color:#c04030; font-weight:700;
+      flex-shrink:0; width:60px; margin-top:14px; text-align:right;
+    }
+    .chrono-dot {
+      width:12px; height:12px; border-radius:50%;
+      background:#c04030; flex-shrink:0; margin-top:18px;
+      box-shadow:0 0 0 4px rgba(192,64,48,.2);
+      position:relative; z-index:1;
+    }
+    .chrono-card {
+      flex:1; background:var(--white); border-radius:var(--radius);
+      padding:clamp(12px,2vw,14px) clamp(14px,2.5vw,18px);
+      border:1px solid rgba(192,64,48,.15); box-shadow:var(--shadow-sm);
+      transition:all .3s;
+    }
+    .chrono-card:hover { transform:translateX(5px); border-color:rgba(192,64,48,.4); }
+    .chrono-card h5 {
+      font-family:var(--font-display);
+      font-size:clamp(.88rem,1.6vw,.98rem);
+      color:var(--deep); margin-bottom:4px;
+    }
+    .chrono-card p {
+      font-size:clamp(.75rem,1.2vw,.8rem);
+      color:var(--muted); line-height:1.75;
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width:860px) {
+      .protagonistes-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:768px) {
+      .duel-hero { padding-bottom:60px; }
+      .act { grid-template-columns:1fr; }
+      .act-sidebar {
+        flex-direction:row; flex-wrap:wrap;
+        gap:12px; align-items:center; padding:24px;
+      }
+      .act-num { font-size:2.4rem; margin-bottom:0; }
+      .act-emoji { margin-top:0; padding-top:0; margin-left:auto; }
+      .act-body { padding:28px 20px; }
+      .chrono::before { left:58px; }
+      .chrono-date { width:46px; font-size:.78rem; }
+    }
+    @media (max-width:480px) {
+      .duel-hero-meta { gap:20px; }
+      .values-grid { grid-template-columns:1fr 1fr; }
+      .duel-vs-bar { gap:10px; }
+      .chrono::before { display:none; }
+      .chrono-date { display:none; }
+      .chrono-item { gap:12px; }
+    }
+    @media (max-width:360px) {
+      .values-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<canvas id="bg-canvas"></canvas>
+
+<!-- LOADER -->
+<div id="page-loader">
+  <div class="loader-brand">Histoire</div>
+  <div class="loader-sub">Le face-à-face de Boina et Lemoigne</div>
+  <div class="loader-waves"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="../../../index.html" class="nav-logo">
+    <div class="nav-logo-mark">🌊</div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-main">Moindzaza Mboini</span>
+      <span class="nav-logo-sub">Ngazidja · Comores</span>
+    </div>
+  </a>
+
+  <div class="nav-menu">
+    <div class="nav-item">
+      <a href="../../../index.html" class="nav-link">Accueil</a>
+    </div>
+    <div class="nav-item">
+      <a href="../histoire.html" class="nav-link active">Histoire</a>
+    </div>
+    <div class="nav-item has-drop">
+      <a href="#" class="nav-link">Associations ▾</a>
+      <div class="nav-drop">
+        <a href="../../comite.html">Comité Local</a>
+        <a href="../../angelus.html">Angelus Club</a>
+        <a href="../../acm.html">ACM — Éducation</a>
+        <a href="../../twamaya.html">Twamaya No Urahafu</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="../../plage.html" class="nav-link">La Plage</a>
+    </div>
+    <div class="nav-item">
+      <a href="../../contact.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+
+  <a href="../../contact.html" class="nav-cta">Nous Rejoindre</a>
+
+  <button type="button" class="hamburger" id="hamburger"
+    aria-label="Ouvrir le menu de navigation"
+    aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../../../index.html">Accueil</a>
+  <a href="../histoire.html">Histoire</a>
+  <span class="mob-cat">Associations</span>
+  <a href="../../comite.html">Comité Local</a>
+  <a href="../../angelus.html">Angelus Club</a>
+  <a href="../../acm.html">ACM</a>
+  <a href="../../twamaya.html">Twamaya</a>
+  <a href="../../plage.html">La Plage</a>
+  <a href="../../contact.html">Contact</a>
+</div>
+
+<!-- ═══ HERO ════════════════════════════════════════════════ -->
+<header class="duel-hero">
+  <div class="duel-ring duel-ring-1"></div>
+  <div class="duel-ring duel-ring-2"></div>
+  <div class="duel-ring duel-ring-3"></div>
+
+  <div class="duel-hero-content">
+    <span class="duel-hero-kicker">Foumbouni, février 1890 — Vie politique</span>
+    <div class="duel-hero-tag">Résistance &amp; Colonisation</div>
+
+    <div class="duel-vs-bar">
+      <div class="duel-vs-pill colonial">⚔️ Le Moign Alfred · Colonisateur</div>
+      <span class="duel-vs-sep">VS</span>
+      <div class="duel-vs-pill resistant">✊ Boina Haziri · Résistant</div>
+    </div>
+
+    <h1 class="duel-hero-title">
+      Le face-à-face de<br><em>Boina et Lemoigne</em>
+    </h1>
+
+    <p class="duel-hero-lead">
+      Février 1890, Foumbouni. Deux hommes, deux visions irréconciliables du monde, une confrontation dont l'issue allait résonner bien au-delà des frontières de l'archipel.
+    </p>
+
+    <div class="duel-hero-meta">
+      <div class="dhm-item">
+        <span class="dhm-label">Lieu</span>
+        <span class="dhm-value">Foumbouni, Ngazidja</span>
+      </div>
+      <div class="dhm-item">
+        <span class="dhm-label">Date</span>
+        <span class="dhm-value">Février 1890</span>
+      </div>
+      <div class="dhm-item">
+        <span class="dhm-label">Catégorie</span>
+        <span class="dhm-value">La vie politique</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="duel-hero-wave">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,70 1080,10 1440,40 L1440,70 L0,70 Z" fill="var(--cream)"/>
+    </svg>
+  </div>
+</header>
+
+<!-- ═══ INTRO ════════════════════════════════════════════════ -->
+<section class="section" style="background:var(--cream);">
+  <div class="section-inner" style="max-width:860px;">
+
+    <span class="eyebrow reveal">Mise en contexte</span>
+
+    <h2 class="intro-title reveal" data-delay="80">
+      Et si un seul affrontement<br>
+      <em>pouvait changer le sens de la résistance&nbsp;?</em>
+    </h2>
+
+    <p class="lead reveal" data-delay="160">
+      Dans les annales de la colonisation aux Comores, peu d'événements concentrent autant de tension dramatique que la confrontation de Foumbouni en février 1890. Ce n'est pas seulement le choc de deux hommes armés — c'est la collision de deux ordres du monde.
+    </p>
+
+    <p class="reveal" data-delay="240"
+      style="color:var(--muted);font-size:clamp(.86rem,1.3vw,1rem);line-height:1.95;margin-top:16px;">
+      D'un côté, l'officier colonial Le Moign Alfred, porteur d'une mission impériale et convaincu de la légitimité de sa conquête. De l'autre, Boina Haziri — ce même ministre de Bambao qui, quatre ans plus tôt, avait refusé de signer le protectorat et s'était réfugié à Foumbouni avec ses hommes. Le dénouement de leur face-à-face allait devenir un symbole.
+    </p>
+
+  </div>
+</section>
+
+<!-- ═══ PROTAGONISTES ════════════════════════════════════════ -->
+<section class="section" style="background:var(--ivory);">
+  <div class="section-inner" style="max-width:860px;">
+
+    <span class="eyebrow reveal">Les personnages</span>
+    <h2 class="h2 reveal" data-delay="80">
+      Deux hommes, <em>deux destins antagonistes</em>
+    </h2>
+    <p class="lead reveal" data-delay="160">
+      Chacun possédait ses propres objectifs, ses défauts, ses convictions — et une détermination absolue.
+    </p>
+
+    <div class="protagonistes-grid reveal" data-delay="200">
+
+      <!-- COLONIAL -->
+      <div class="prot-card">
+        <div class="prot-top colonial">
+          <span class="prot-role">Colonisateur · Officier français</span>
+          <span class="prot-emoji">🎖️</span>
+          <div class="prot-name">Le Moign Alfred</div>
+          <div class="prot-subtitle">Représentant de l'ordre colonial, Foumbouni 1890</div>
+        </div>
+        <div class="prot-body">
+          <div class="prot-trait">
+            <span class="prot-trait-label">Objectif</span>
+            <span>Soumettre les derniers foyers de résistance à l'autorité française dans l'archipel et consolider le protectorat de 1886.</span>
+          </div>
+          <div class="prot-trait">
+            <span class="prot-trait-label">Motivation</span>
+            <span>La conviction de représenter une puissance supérieure, légitimée par le traité signé avec le sultan Saïd Ali — traité que Boina Haziri avait précisément refusé.</span>
+          </div>
+          <div class="prot-trait">
+            <span class="prot-trait-label">Défaut</span>
+            <span>La sous-estimation de l'adversaire : croire qu'un résistant acculé est un résistant vaincu. Cette erreur de calcul lui fut fatale.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RÉSISTANT -->
+      <div class="prot-card">
+        <div class="prot-top resistant">
+          <span class="prot-role">Résistant · Ministre de Bambao</span>
+          <span class="prot-emoji">✊</span>
+          <div class="prot-name">Boina Haziri</div>
+          <div class="prot-subtitle">Exilé de Moindzaza, défenseur de la souveraineté comorienne</div>
+        </div>
+        <div class="prot-body">
+          <div class="prot-trait">
+            <span class="prot-trait-label">Objectif</span>
+            <span>Défendre la liberté et la dignité de son peuple contre une colonisation qu'il avait refusée dès 1886, au prix de l'exil et de la clandestinité.</span>
+          </div>
+          <div class="prot-trait">
+            <span class="prot-trait-label">Motivation</span>
+            <span>Une conviction profonde que la souveraineté des Comores ne se négocie pas. Son refus de signer le protectorat n'était pas un acte isolé — c'était une posture de vie.</span>
+          </div>
+          <div class="prot-trait">
+            <span class="prot-trait-label">Défaut</span>
+            <span>L'isolement politique : sans alliance solide avec les autres sultans restés dans le sillage de Saïd Ali, Boina se battait pratiquement seul — avec ses hommes de Moindzaza.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NARRATIVE — 4 ACTES ══════════════════════════════════ -->
+<section class="section" style="background:var(--cream); padding-top:0;">
+  <div class="narrative-wrap">
+
+    <div class="narrative-header reveal">
+      <span class="eyebrow" style="display:inline-block;">Récit historique</span>
+      <h2 class="h2 center" style="max-width:620px;margin:0 auto;">
+        Quatre actes d'un <em>duel qui fit l'histoire</em>
+      </h2>
+    </div>
+
+    <div class="narrative reveal" data-delay="100">
+
+      <!-- ACTE I — Situation initiale -->
+      <div class="act">
+        <div class="act-sidebar">
+          <div class="act-num">I</div>
+          <div class="act-phase">Situation initiale</div>
+          <div class="act-sidebar-title">L'exil de Foumbouni</div>
+          <div class="act-emoji">🏕️</div>
+        </div>
+        <div class="act-body">
+          <h3>1886 — Quand Boina Haziri<br><em>choisit la forêt plutôt que la trahison</em></h3>
+          <p>
+            L'histoire du face-à-face commence quatre ans avant le coup de feu. En 1886, lorsque le sultan Saïd Ali et le négociant Humblot cherchèrent à faire signer le traité de protectorat aux chefs de la région, <strong>Boina Haziri</strong> refusa. Pas en silence, pas par temporisation — il refusa publiquement, quitta Iconi avec un bataillon d'hommes loyaux, dont une bonne partie originaires de <strong>Moindzaza Mboini</strong>, et s'établit à Foumbouni.
+          </p>
+          <p>
+            Foumbouni devint son campement, son refuge et son quartier général de résistance. Pendant quatre ans, Boina Haziri organisa sa défense, entretint ses réseaux et maintint une posture d'insoumission que l'administration coloniale naissante ne pouvait tolérer indéfiniment.
+          </p>
+          <div class="pull-quote gold">
+            <p>Un homme en exil n'est pas un homme vaincu. Boina Haziri en fit la démonstration pendant quatre ans de résistance silencieuse depuis Foumbouni.</p>
+          </div>
+          <p>
+            À Paris comme à Zanzibar, les puissances coloniales regardaient les Comores avec un appétit croissant. Le protectorat de 1886 n'était qu'une première étape. Il fallait maintenant le rendre effectif — ce qui supposait d'éliminer les derniers points de résistance.
+          </p>
+        </div>
+      </div>
+
+      <!-- ACTE II — Élément déclencheur -->
+      <div class="act">
+        <div class="act-sidebar">
+          <div class="act-num">II</div>
+          <div class="act-phase">Élément déclencheur</div>
+          <div class="act-sidebar-title">L'expédition Le Moign</div>
+          <div class="act-emoji">⚡</div>
+        </div>
+        <div class="act-body">
+          <h3>Février 1890 : <em>l'officier entre dans la forêt</em></h3>
+          <p>
+            En février 1890, l'officier colonial <strong>Le Moign Alfred</strong> reçut la mission de mettre fin à la résistance de Foumbouni. Pour l'administration française, l'opération devait être rapide : Boina Haziri était cerné, isolé, sans soutien officiel des autres sultans. Il suffisait, pensait-on, d'envoyer une colonne et d'en finir.
+          </p>
+          <p>
+            Ce raisonnement révèle une incompréhension profonde de ce à quoi Le Moign allait faire face. Boina Haziri n'était pas un chef en déroute — c'était un militaire aguerri, qui connaissait le terrain de Foumbouni comme sa propre main, et qui avait eu quatre ans pour préparer sa défense.
+          </p>
+          <div class="pull-quote">
+            <p>L'élément déclencheur n'est pas l'arrivée de Le Moign : c'est la certitude des Français qu'il n'y aurait pas de résistance réelle. Cette erreur d'appréciation transforma une « opération de pacification » en confrontation mortelle.</p>
+          </div>
+          <p>
+            Le champ de bataille allait être Foumbouni elle-même — ses ruelles, ses collines, ses lignes de fuite que Boina connaissait et que Le Moign, lui, découvrait en marchant vers sa mort.
+          </p>
+        </div>
+      </div>
+
+      <!-- ACTE III — Péripéties -->
+      <div class="act">
+        <div class="act-sidebar">
+          <div class="act-num">III</div>
+          <div class="act-phase">Péripéties</div>
+          <div class="act-sidebar-title">Le champ de bataille, les armes, la résistance</div>
+          <div class="act-emoji">🔫</div>
+        </div>
+        <div class="act-body">
+          <h3>L'affrontement : <em>quand le terrain devient allié</em></h3>
+          <p>
+            Sur le champ de bataille de Foumbouni, deux stratégies s'affrontèrent. <strong>Le Moign Alfred</strong> avançait avec la supériorité numérique et l'armement d'une puissance coloniale. <strong>Boina Haziri</strong>, lui, jouait sur la connaissance du terrain, la mobilité de ses hommes et la légitimité que lui conférait son refus de capituler.
+          </p>
+          <p>
+            Les hommes de Moindzaza qui avaient suivi Boina dans son exil quatre ans plus tôt formaient le noyau dur de cette résistance. Ils n'étaient pas de simples soldats — ils étaient des hommes qui avaient choisi leur camp librement, qui savaient pourquoi ils se battaient et contre quoi. Cette conviction était elle-même une arme.
+          </p>
+          <div class="pull-quote">
+            <p>Les balles ont été tirées, les positions défendues pied à pied. Ce n'était pas une guérilla désespérée — c'était une résistance organisée, portée par des hommes qui avaient eu quatre ans pour se préparer à ce moment.</p>
+          </div>
+          <p>
+            Le véritable obstacle pour Le Moign ne fut pas tant la résistance armée que l'impossibilité morale de réduire à néant un adversaire dont la légitimité — refuser de signer un traité sous contrainte — était inattaquable sur le plan de la conscience. Boina se battait pour ce qui lui appartenait. Le Moign se battait pour ce qu'il voulait prendre.
+          </p>
+        </div>
+      </div>
+
+      <!-- ACTE IV — Dénouement -->
+      <div class="act">
+        <div class="act-sidebar">
+          <div class="act-num">IV</div>
+          <div class="act-phase">Dénouement</div>
+          <div class="act-sidebar-title">La chute du colonisateur, le tournant de l'histoire</div>
+          <div class="act-emoji">🕊️</div>
+        </div>
+        <div class="act-body">
+          <h3>Le Moign tombe.<br><em>Un symbole se lève.</em></h3>
+          <p>
+            L'affrontement prit fin avec la mort de <strong>Le Moign Alfred</strong>. L'officier colonial fut tué sur le champ de bataille de Foumbouni. Pour l'administration française, ce fut un revers militaire et un signal d'alarme : la « pacification » des Comores ne serait pas une promenade.
+          </p>
+          <p>
+            Pour les résistants — pour Boina Haziri, pour ses hommes de Moindzaza, pour tous ceux qui avaient regardé avec espoir vers Foumbouni — ce fut quelque chose de plus grand qu'une victoire tactique. Ce fut la preuve que la résistance n'était pas vaine. Qu'un homme déterminé, armé de ses convictions et de la connaissance de son territoire, pouvait tenir tête à l'empire.
+          </p>
+          <div class="pull-quote">
+            <p>Ce duel a montré que la résistance et la détermination pouvaient triompher de la domination et de l'oppression. L'anticolonialiste est devenu un symbole de la lutte pour la liberté, et son sacrifice a inspiré de nombreux autres à se lever contre l'injustice.</p>
+          </div>
+          <p>
+            Boina Haziri ne sortit pas de Foumbouni en vainqueur absolu — la colonisation française se poursuivit. Mais il en sortit en figure. Son refus de signer en 1886, son exil, son réseau de Moindzaza, et ce duel de février 1890 formèrent ensemble un récit de résistance que l'histoire comorienne n'a jamais entièrement oublié.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /narrative -->
+  </div>
+</section>
+
+<!-- ═══ CHRONOLOGIE ══════════════════════════════════════════ -->
+<section class="section" style="background:var(--ivory);">
+  <div class="section-inner" style="max-width:860px;">
+
+    <span class="eyebrow center reveal">Repères chronologiques</span>
+    <h2 class="h2 center reveal" data-delay="80">
+      De 1886 à 1890 : <em>les étapes du duel</em>
+    </h2>
+
+    <div class="chrono reveal" data-delay="150">
+
+      <div class="chrono-item">
+        <div class="chrono-date">1886</div>
+        <div class="chrono-dot"></div>
+        <div class="chrono-card">
+          <h5>Le refus du protectorat</h5>
+          <p>Boina Haziri et Moindze Ouma refusent de signer les accords avec Humblot et le sultan Saïd Ali. Boina quitte Iconi pour Foumbouni avec un bataillon, dont des hommes de Moindzaza Mboini.</p>
+        </div>
+      </div>
+
+      <div class="chrono-item">
+        <div class="chrono-date">1886–89</div>
+        <div class="chrono-dot"></div>
+        <div class="chrono-card">
+          <h5>L'exil actif</h5>
+          <p>Pendant quatre ans, Boina Haziri organise sa résistance depuis Foumbouni. Il entretient ses réseaux, maintient sa troupe et refuse toute capitulation malgré la pression coloniale croissante.</p>
+        </div>
+      </div>
+
+      <div class="chrono-item">
+        <div class="chrono-date">Fév. 1890</div>
+        <div class="chrono-dot"></div>
+        <div class="chrono-card">
+          <h5>L'expédition Le Moign</h5>
+          <p>L'officier colonial Le Moign Alfred mène une colonne vers Foumbouni avec pour mission de réduire le dernier foyer de résistance. Il sous-estime la préparation et la détermination de Boina Haziri.</p>
+        </div>
+      </div>
+
+      <div class="chrono-item">
+        <div class="chrono-date">1890</div>
+        <div class="chrono-dot"></div>
+        <div class="chrono-card">
+          <h5>Le face-à-face fatal</h5>
+          <p>Sur le champ de bataille de Foumbouni, l'affrontement tourne en faveur des résistants. Le Moign Alfred est tué. La résistance de Boina Haziri entre dans la mémoire collective comorienne.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HÉRITAGE ══════════════════════════════════════════════ -->
+<section class="section" style="background:var(--cream);">
+  <div class="section-inner" style="max-width:960px;">
+
+    <span class="eyebrow center reveal">Ce que ce duel nous enseigne</span>
+    <h2 class="h2 center reveal" data-delay="80">
+      Un tournant, <em>un héritage, un symbole</em>
+    </h2>
+
+    <div class="values-grid">
+      <div class="val-card reveal" data-delay="0">
+        <span class="val-icon">✊</span>
+        <h4>La résistance organisée</h4>
+        <p>Boina Haziri n'improvisa pas. Son exil de quatre ans fut une préparation minutieuse. La résistance efficace se construit dans la durée, pas dans l'urgence.</p>
+      </div>
+      <div class="val-card reveal" data-delay="80">
+        <span class="val-icon">🗺️</span>
+        <h4>La force du territoire</h4>
+        <p>Connaître son terrain fut l'avantage décisif de Boina. Foumbouni n'était pas seulement un refuge — c'était une arme stratégique à part entière.</p>
+      </div>
+      <div class="val-card reveal" data-delay="160">
+        <span class="val-icon">🤝</span>
+        <h4>La loyauté de Moindzaza</h4>
+        <p>Les hommes de Moindzaza Mboini suivirent Boina jusqu'à Foumbouni et tinrent jusqu'au bout. Cette fidélité collective illustre la force des liens communautaires forgés dans le refus commun de 1886.</p>
+      </div>
+      <div class="val-card reveal" data-delay="240">
+        <span class="val-icon">🕊️</span>
+        <h4>Un symbole pour les générations</h4>
+        <p>La mort de Le Moign Alfred montra que l'empire colonial n'était pas invincible. Ce précédent inspira d'autres résistances à travers l'archipel et au-delà.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ CTA ═══════════════════════════════════════════════════ -->
+<section class="inner-cta reveal">
+  <div class="ic-content">
+    <h3>Contribuez à cette mémoire de résistance</h3>
+    <p>Vous détenez des témoignages, des archives familiales ou des récits liés à Boina Haziri, à Foumbouni ou aux hommes de Moindzaza qui ont participé à cette résistance&nbsp;? Partagez-les.</p>
+    <a href="../contact.html" class="btn btn-ocean">Partager un témoignage</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer class="site-footer">
+
+  <div class="footer-wave-top">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C480,60 960,0 1440,30 L1440,0 L0,0 Z" fill="var(--cream)"/>
+    </svg>
+  </div>
+
+  <div class="footer-grid">
+
+    <div>
+      <div class="nav-logo" style="margin-bottom:0">
+        <div class="nav-logo-mark">🌊</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-main">Moindzaza Mboini</span>
+          <span class="nav-logo-sub">Ngazidja · Comores</span>
+        </div>
+      </div>
+      <p class="footer-brand-desc">
+        Village côtier de Ngazidja, riche d'histoire, de culture et d'engagement communautaire.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Village</h5>
+      <a href="../../../index.html">Accueil</a>
+      <a href="../histoire.html">Histoire</a>
+      <a href="../../plage.html">La Plage</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Associations</h5>
+      <a href="../../comite.html">Comité Local</a>
+      <a href="../../angelus.html">Angelus Club</a>
+      <a href="../../acm.html">ACM</a>
+      <a href="../../twamaya.html">Twamaya</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <span>Moindzaza Mboini</span>
+      <span>Ngazidja, Comores</span>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Moindzaza Mboini · Tous droits réservés</p>
+  </div>
+
+</footer>
+
+<button type="button" id="back-top" title="Retour en haut">↑</button>
+
+<script src="../../../js/shared.js"></script>
+
+</body>
+</html>

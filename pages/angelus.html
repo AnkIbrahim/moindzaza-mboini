@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Angelus Club — Club de football de Moindzaza Mboini, Ngazidja, Comores."/>
+  <meta name="theme-color" content="#1a0505"/>
+  <title>Angelus Club — Moindzaza Mboini</title>
+  <link rel="stylesheet" href="../css/shared.css"/>
+  <link rel="stylesheet" href="../css/inner.css"/>
+  <link rel="stylesheet" href="../css/components.css"/>
+  <style>
+    :root {
+      --accent:       #c0392b;
+      --accent-light: rgba(192,57,43,.1);
+      --accent-mid:   #9a2010;
+    }
+    .page-hero { background: linear-gradient(155deg,#1a0505,#5a0f0f,#c0392b) !important; }
+    .eyebrow   { color: #e05a4a !important; }
+    .h2 em     { color: #c0392b !important; }
+    .tl-dot    { background: #c0392b !important; box-shadow: 0 0 0 5px rgba(192,57,43,.2) !important; }
+    .tl-year   { color: #c0392b !important; }
+    .nc-link, .ac-more { color: #c0392b !important; }
+  </style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<canvas id="bg-canvas"></canvas>
+<div id="page-loader">
+  <div class="loader-brand">Angelus Club</div>
+  <div class="loader-sub">Moindzaza Mboini</div>
+  <div class="loader-waves"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<nav class="navbar" id="navbar">
+  <a href="../index.html" class="nav-logo">
+    <div class="nav-logo-mark">🌊</div>
+    <div class="nav-logo-text"><span class="nav-logo-main">Moindzaza Mboini</span><span class="nav-logo-sub">Ngazidja · Comores</span></div>
+  </a>
+  <div class="nav-menu">
+    <div class="nav-item"><a href="../index.html" class="nav-link">Accueil</a></div>
+    <div class="nav-item"><a href="histoires/histoire.html" class="nav-link">Histoire</a></div>
+    <div class="nav-item has-drop">
+      <a href="#" class="nav-link active">Associations ▾</a>
+      <div class="nav-drop">
+        <a href="comite.html">Comité Local</a>
+        <a href="angelus.html">Angelus Club</a>
+        <a href="acm.html">ACM — Éducation</a>
+        <a href="twamaya.html">Twamaya No Urahafu</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="plage.html" class="nav-link">La Plage</a></div>
+    <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+  </div>
+  <a href="contact.html" class="nav-cta">Nous Rejoindre</a>
+  <button type="button" class="hamburger" id="hamburger" aria-label="Ouvrir le menu de navigation" title="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../index.html">Accueil</a><a href="histoires/histoire.html">Histoire</a>
+  <span class="mob-cat">Associations</span>
+  <a href="comite.html">Comité Local</a><a href="angelus.html">Angelus Club</a>
+  <a href="acm.html">ACM</a><a href="twamaya.html">Twamaya</a>
+  <a href="plage.html">La Plage</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- ══ PAGE HERO ═══════════════════════════════════ -->
+<header class="page-hero" role="banner">
+  <div class="page-hero-overlay" aria-hidden="true"></div>
+  <div class="ph-deco" aria-hidden="true">⚽</div>
+  <div class="page-hero-content">
+    <span class="page-hero-tag">Football · Sport · Jeunesse · Moindzaza Mboini</span>
+    <h1><em>Angelus Club</em><br/>de Moindzaza Mboini</h1>
+    <p>La fierté sportive du village. Former des champions, unir la jeunesse, représenter Moindzaza Mboini avec honneur sur tous les terrains.</p>
+  </div>
+  <div class="page-hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,50 C480,80 960,10 1440,50 L1440,80 L0,80 Z" fill="var(--ivory)"/>
+    </svg>
+  </div>
+</header>
+
+<!-- ══ PRÉSENTATION ════════════════════════════════ -->
+<section class="section" aria-labelledby="presentation-heading">
+  <div class="section-inner">
+    <div class="two-col-grid">
+      <div class="reveal-left">
+        <span class="eyebrow">Le club</span>
+        <h2 class="h2 mb-md" id="presentation-heading">
+          <em>Angelus Club</em> —<br/>bien plus qu'un club
+        </h2>
+        <p class="lead mb-md">
+          L'Angelus Club est le club de football de Moindzaza Mboini. Fondé par des passionnés du
+          ballon rond, il est devenu en quelques années une référence sportive de la région,
+          formant des joueurs talentueux et cultivant des valeurs de discipline, de respect et de
+          dépassement de soi.
+        </p>
+        <p style="color:var(--muted);font-size:clamp(.82rem,1.2vw,.9rem);line-height:1.85;margin-bottom:24px">
+          Le club accueille les jeunes à partir de 8 ans dans ses catégories de formation.
+          Chaque entraînement est une opportunité de développement personnel autant qu'athlétique,
+          en transmettant les valeurs d'une équipe soudée.
+        </p>
+        <div class="info-box">
+          <p>⚽ <strong>Couleurs du club :</strong> Rouge &amp; Blanc — couleurs de la passion et
+          de la pureté, portées fièrement à chaque match.</p>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="comite-stats-card" style="background:linear-gradient(135deg,#1a0505,#5a0f0f)">
+          <div class="csc-item"><span class="csc-num" data-count="85">0</span><span class="csc-lbl">Joueurs inscrits</span></div>
+          <div class="csc-item"><span class="csc-num" data-count="5">0</span><span class="csc-lbl">Catégories d'âge</span></div>
+          <div class="csc-item"><span class="csc-num" data-count="12">0</span><span class="csc-lbl">Trophées remportés</span></div>
+          <div class="csc-item"><span class="csc-num" data-count="20">0</span><span class="csc-lbl">Ans d'histoire</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CATÉGORIES ══════════════════════════════════ -->
+<section class="section" style="background:var(--cream)" aria-labelledby="categories-heading">
+  <div class="section-inner">
+    <span class="eyebrow center reveal">Formation</span>
+    <h2 class="h2 center mb-lg reveal" data-delay="100" id="categories-heading">
+      Nos <em>catégories</em>
+    </h2>
+    <div class="program-grid">
+      <div class="prog-card reveal" data-delay="0" style="--prog-color:#c0392b">
+        <div class="prog-icon" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-shield"/></svg>
+        </div>
+        <h4>École de Football</h4>
+        <p><strong>8 à 12 ans</strong> — Initiation au football, développement de la coordination,
+        apprentissage des règles et premières notions tactiques dans un cadre ludique.</p>
+        <div class="prog-bar" aria-hidden="true"></div>
+      </div>
+      <div class="prog-card reveal" data-delay="100" style="--prog-color:#c0392b">
+        <div class="prog-icon" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-football"/></svg>
+        </div>
+        <h4>Minimes &amp; Cadets</h4>
+        <p><strong>13 à 17 ans</strong> — Perfectionnement technique, introduction à la tactique
+        collective, participations aux tournois locaux et régionaux.</p>
+        <div class="prog-bar" aria-hidden="true"></div>
+      </div>
+      <div class="prog-card reveal" data-delay="200" style="--prog-color:#c0392b">
+        <div class="prog-icon" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-trophy"/></svg>
+        </div>
+        <h4>Équipe Senior</h4>
+        <p><strong>18 ans et plus</strong> — L'équipe première qui représente Moindzaza Mboini
+        en championnat régional de Ngazidja et dans les coupes nationales.</p>
+        <div class="prog-bar" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PALMARÈS ════════════════════════════════════ -->
+<section class="section" aria-labelledby="palmares-heading">
+  <div class="section-inner">
+    <span class="eyebrow center reveal">Gloire &amp; Fierté</span>
+    <h2 class="h2 center mb-lg reveal" data-delay="100" id="palmares-heading">
+      Palmarès <em>&amp; Trophées</em>
+    </h2>
+    <div class="palmarès-grid">
+      <div class="palm-card reveal" data-delay="0">
+        <div class="palm-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-medal"/></svg></div>
+        <h4>Champion Régional</h4>
+        <p>3 titres de champion de la région de Ngazidja (2018, 2021, 2024)</p>
+      </div>
+      <div class="palm-card reveal" data-delay="100">
+        <div class="palm-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-trophy"/></svg></div>
+        <h4>Coupe Nationale</h4>
+        <p>Finaliste de la Coupe Nationale des Comores en 2022 — une performance historique pour le club.</p>
+      </div>
+      <div class="palm-card reveal" data-delay="200">
+        <div class="palm-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-star"/></svg></div>
+        <h4>Meilleur Club Formateur</h4>
+        <p>Reconnu meilleur club formateur de jeunes joueurs de Ngazidja en 2023.</p>
+      </div>
+      <div class="palm-card reveal" data-delay="300">
+        <div class="palm-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-medal"/></svg></div>
+        <h4>Vice-Champion</h4>
+        <p>5 titres de vice-champion régional et 3 places de finaliste en coupe locale.</p>
+      </div>
+      <div class="palm-card reveal" data-delay="400">
+        <div class="palm-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-star"/></svg></div>
+        <h4>Joueur de l'Année</h4>
+        <p>2 joueurs issus de l'Angelus Club récompensés meilleur joueur du championnat régional.</p>
+      </div>
+      <div class="palm-card reveal" data-delay="500">
+        <div class="palm-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-boot"/></svg></div>
+        <h4>Meilleur Buteur</h4>
+        <p>Le titre de meilleur buteur du championnat décroché à 4 reprises par des attaquants du club.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RÉSULTATS & AGENDA ═════════════════════════ -->
+<section class="section" style="background:var(--cream)" aria-labelledby="resultats-heading">
+  <div class="section-inner">
+    <div class="two-col-grid results-grid">
+
+      <!-- Résultats récents -->
+      <div class="reveal-left">
+        <span class="eyebrow">Saison 2025-2026</span>
+        <h2 class="h2 mb-md" id="resultats-heading">Résultats <em>récents</em></h2>
+        <div class="scores-list" role="list" aria-label="Résultats des matchs récents">
+
+          <div class="score-row" role="listitem">
+            <div class="score-team-wrap">
+              <div class="score-team">Angelus Club</div>
+              <time class="score-date" datetime="2026-03-15">15 Mar 2026</time>
+            </div>
+            <div class="score-num" aria-label="Score : 3 à 1">3 — 1</div>
+            <div class="score-team-wrap">
+              <div class="score-team">FC Moroni Nord</div>
+              <span class="match-badge win">Victoire</span>
+            </div>
+          </div>
+
+          <div class="score-row" role="listitem">
+            <div class="score-team-wrap">
+              <div class="score-team">Étoile de Ngazidja</div>
+              <time class="score-date" datetime="2026-03-22">22 Mar 2026</time>
+            </div>
+            <div class="score-num" aria-label="Score : 2 à 2">2 — 2</div>
+            <div class="score-team-wrap">
+              <div class="score-team">Angelus Club</div>
+              <span class="match-badge draw">Match nul</span>
+            </div>
+          </div>
+
+          <div class="score-row" role="listitem">
+            <div class="score-team-wrap">
+              <div class="score-team">Angelus Club</div>
+              <time class="score-date" datetime="2026-04-05">05 Avr 2026</time>
+            </div>
+            <div class="score-num" aria-label="Score : 4 à 0">4 — 0</div>
+            <div class="score-team-wrap">
+              <div class="score-team">AS Badjini</div>
+              <span class="match-badge win">Victoire</span>
+            </div>
+          </div>
+
+          <div class="score-row" role="listitem">
+            <div class="score-team-wrap">
+              <div class="score-team">Racing Mitsamiouli</div>
+              <time class="score-date" datetime="2026-04-19">19 Avr 2026</time>
+            </div>
+            <div class="score-num" aria-label="Score : 1 à 2">1 — 2</div>
+            <div class="score-team-wrap">
+              <div class="score-team">Angelus Club</div>
+              <span class="match-badge win">Victoire</span>
+            </div>
+          </div>
+
+          <div class="score-row" role="listitem">
+            <div class="score-team-wrap">
+              <div class="score-team">Angelus Club</div>
+              <time class="score-date" datetime="2026-05-03">03 Mai 2026</time>
+            </div>
+            <div class="score-num" aria-label="Score : 0 à 1">0 — 1</div>
+            <div class="score-team-wrap">
+              <div class="score-team">Volcan FC</div>
+              <span class="match-badge loss">Défaite</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Agenda -->
+      <div class="reveal-right">
+        <span class="eyebrow">Prochains matchs</span>
+        <h2 class="h2 mb-md">Agenda <em>sportif</em></h2>
+        <div class="upcoming-list" role="list" aria-label="Prochains matchs">
+
+          <div class="upcoming-item" role="listitem">
+            <div class="ui-date" aria-hidden="true">
+              <span class="uid-day">17</span>
+              <span class="uid-month">Mai</span>
+            </div>
+            <div class="ui-info">
+              <h4>Angelus Club vs Étoile Bleue</h4>
+              <p>Championnat Régional — Journée 18</p>
+              <span class="ui-venue">🏟️ Terrain de Moindzaza Mboini · 15h00</span>
+            </div>
+            <span class="ui-badge home">Domicile</span>
+          </div>
+
+          <div class="upcoming-item" role="listitem">
+            <div class="ui-date" aria-hidden="true">
+              <span class="uid-day">31</span>
+              <span class="uid-month">Mai</span>
+            </div>
+            <div class="ui-info">
+              <h4>FC Itsandra vs Angelus Club</h4>
+              <p>Championnat Régional — Journée 19</p>
+              <span class="ui-venue">🚌 Déplacement · 14h30</span>
+            </div>
+            <span class="ui-badge away">Extérieur</span>
+          </div>
+
+          <div class="upcoming-item" role="listitem">
+            <div class="ui-date" aria-hidden="true">
+              <span class="uid-day">14</span>
+              <span class="uid-month">Jun</span>
+            </div>
+            <div class="ui-info">
+              <h4>FINALE — Championnat Régional</h4>
+              <p>Si qualification confirmée</p>
+              <span class="ui-venue">🏆 Stade de Moroni · À confirmer</span>
+            </div>
+            <span class="ui-badge final">Finale</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ═════════════════════════════════════════ -->
+<section class="inner-cta reveal" aria-labelledby="cta-heading">
+  <div class="ic-content">
+    <h3 id="cta-heading">Rejoins l'Angelus Club !</h3>
+    <p>Tu as du talent ? Tu aimes le football ? Viens t'entraîner avec nous. Toutes les catégories sont ouvertes aux inscriptions.</p>
+    <a href="contact.html" class="btn btn-ocean">S'inscrire au club</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-wave-top" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C480,60 960,0 1440,30 L1440,0 L0,0 Z" fill="var(--ivory)"/>
+    </svg>
+  </div>
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="nav-logo" style="margin-bottom:0" aria-label="Moindzaza Mboini — Accueil">
+        <div class="nav-logo-mark" aria-hidden="true">🌊</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-main">Moindzaza Mboini</span>
+          <span class="nav-logo-sub">Ngazidja · Comores</span>
+        </div>
+      </a>
+      <p class="footer-brand-desc">Village côtier de Ngazidja, riche d'histoire et de culture.</p>
+    </div>
+    <nav class="footer-col" aria-label="Liens village">
+      <h5>Village</h5>
+      <a href="../index.html">Accueil</a>
+      <a href="histoires/histoire.html">Histoire</a>
+      <a href="plage.html">La Plage</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <nav class="footer-col" aria-label="Liens associations">
+      <h5>Associations</h5>
+      <a href="comite.html">Comité Local</a>
+      <a href="angelus.html">Angelus Club</a>
+      <a href="acm.html">ACM</a>
+      <a href="twamaya.html">Twamaya</a>
+    </nav>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <span>Moindzaza Mboini</span>
+      <span>Ngazidja, Comores</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Moindzaza Mboini · Tous droits réservés</p>
+  </div>
+</footer>
+
+<button type="button" id="back-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/shared.js"></script>
+<script src="../js/inner.js"></script>
+</body>
+</html>

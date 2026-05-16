@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>L'influence politique | Moindzaza Mboini</title>
+  <meta name="description" content="Le pouvoir politique et institutionnel de Moindzaza Mboini à travers l'histoire."/>
+
+  <link rel="stylesheet" href="../../../css/shared.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+  <link rel="stylesheet" href="../../../css/components.css">
+
+  <style>
+    /* ── PAGE-SPECIFIC ONLY ─────────────────────────────────── */
+
+    /* Hero full-viewport */
+    .pol-hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--abyss) 0%, var(--ocean) 58%, #0e5d78 100%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 0 80px;
+      position: relative; overflow: hidden;
+    }
+    .pol-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+      background-size: 200px; pointer-events: none;
+    }
+    .pol-ring {
+      position: absolute; border-radius: 50%; pointer-events: none;
+      border: 1px solid rgba(19,168,196,.1);
+    }
+    .pol-ring-1 { width:700px; height:700px; bottom:-120px; right:-180px; }
+    .pol-ring-2 { width:1000px; height:1000px; bottom:-260px; right:-320px; border-color:rgba(19,168,196,.05); }
+
+    .pol-hero-content {
+      max-width: 860px; margin: auto;
+      padding: 0 var(--gutter);
+      position: relative; z-index: 2;
+    }
+    .pol-hero-kicker {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: rgba(184,234,242,.55);
+      font-size: clamp(.85rem, 1.3vw, 1rem);
+      display: block; margin-bottom: 10px;
+    }
+    .pol-hero-tag {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: var(--aqua); font-size: .65rem;
+      letter-spacing: 4px; text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .pol-hero-tag::before {
+      content: ''; width: 28px; height: 1px; background: var(--aqua);
+    }
+    .pol-hero-title {
+      font-family: var(--font-display); font-weight: 700;
+      color: var(--white);
+      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+      line-height: 1.08; margin-bottom: 26px;
+    }
+    .pol-hero-title em { color: var(--aqua); font-style: normal; }
+    .pol-hero-lead {
+      font-family: var(--font-serif);
+      color: rgba(184,234,242,.78);
+      font-size: clamp(.9rem, 1.4vw, 1.08rem);
+      line-height: 1.85; max-width: 600px; margin-bottom: 48px;
+    }
+    .pol-hero-meta { display: flex; gap: clamp(24px,5vw,48px); flex-wrap: wrap; }
+    .phm-item { display: flex; flex-direction: column; gap: 4px; }
+    .phm-label {
+      font-size: .6rem; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--aqua);
+    }
+    .phm-value { font-size: .88rem; color: var(--white); }
+
+    .pol-hero-wave { position: absolute; bottom: -1px; left: 0; right: 0; z-index: 3; }
+    .pol-hero-wave svg { display: block; width: 100%; }
+
+    /* ── INTRO ─────────────────────────────────────────────── */
+    .intro-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.8rem);
+      line-height: 1.15; color: var(--deep); margin-bottom: 28px;
+    }
+    .intro-title em { color: var(--current); font-style: italic; }
+
+    /* ── NARRATIVE ─────────────────────────────────────────── */
+    .narrative-wrap { max-width: 960px; margin: 0 auto; }
+    .narrative-header {
+      text-align: center;
+      padding: clamp(56px,8vw,96px) 0 clamp(40px,5vw,60px);
+    }
+
+    .narrative {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .act {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      border-bottom: 1px solid rgba(7,61,94,.12);
+    }
+    .act:last-child { border-bottom: none; }
+
+    .act-sidebar {
+      background: var(--ocean);
+      padding: clamp(36px,5vw,60px) clamp(24px,3vw,36px);
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+    }
+    .act-sidebar::after {
+      content: '';
+      position: absolute; bottom: -50px; right: -50px;
+      width: 130px; height: 130px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.07);
+    }
+    .act-num {
+      font-family: var(--font-display);
+      font-size: clamp(3rem,5vw,4.5rem);
+      line-height: 1;
+      color: rgba(255,255,255,.12);
+      margin-bottom: 14px;
+    }
+    .act-phase {
+      font-size: .6rem; letter-spacing: 3.5px;
+      text-transform: uppercase; color: var(--aqua); margin-bottom: 8px;
+    }
+    .act-sidebar-title {
+      font-family: var(--font-display); color: var(--white);
+      font-size: clamp(.95rem,1.6vw,1.1rem); line-height: 1.3;
+    }
+    .act-emoji { font-size: 2rem; margin-top: auto; padding-top: 28px; }
+
+    .act-body {
+      padding: clamp(36px,5vw,60px) clamp(28px,4vw,56px);
+      background: var(--white);
+    }
+    .act-body h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem,2.5vw,1.55rem);
+      color: var(--deep); line-height: 1.2; margin-bottom: 20px;
+    }
+    .act-body h3 em { color: var(--current); font-style: italic; }
+    .act-body p {
+      font-size: clamp(.85rem,1.3vw,1rem);
+      color: var(--muted); line-height: 1.95; margin-bottom: 16px;
+    }
+    .act-body p:last-child { margin-bottom: 0; }
+    .act-body strong { color: var(--deep); }
+
+    .pull-quote {
+      border-left: 3px solid var(--gold);
+      padding: 14px 20px; margin: 22px 0;
+      background: linear-gradient(90deg, rgba(212,162,76,.07), transparent);
+      border-radius: 0 8px 8px 0;
+    }
+    .pull-quote p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(.9rem,1.3vw,1.02rem);
+      color: var(--ocean) !important;
+      line-height: 1.7 !important;
+      margin: 0 !important;
+    }
+    .pull-quote cite {
+      display: block; margin-top: 8px;
+      font-size: .72rem; color: var(--gold);
+      letter-spacing: 1px; font-style: normal;
+    }
+
+    /* ── FIGURES ───────────────────────────────────────────── */
+    .figures-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
+      gap: clamp(16px,2.5vw,24px);
+      margin-top: 44px;
+    }
+    .figure-card {
+      border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .figure-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .fig-top {
+      background: linear-gradient(135deg, var(--ocean), var(--current));
+      padding: clamp(20px,3vw,28px) clamp(18px,2.5vw,24px) clamp(16px,2vw,20px);
+    }
+    .fig-emoji { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+    .fig-name {
+      font-family: var(--font-display); color: var(--white);
+      font-size: clamp(1rem,2vw,1.15rem); line-height: 1.2;
+    }
+    .fig-role {
+      font-size: .62rem; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--aqua);
+      margin-top: 5px; display: block;
+    }
+    .fig-body {
+      padding: clamp(16px,2.5vw,20px) clamp(18px,2.5vw,24px) clamp(20px,3vw,24px);
+      background: var(--white);
+    }
+    .fig-body p {
+      font-size: clamp(.78rem,1.2vw,.88rem);
+      color: var(--muted); line-height: 1.75;
+    }
+
+    /* ── VALUES ────────────────────────────────────────────── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+      gap: clamp(14px,2.5vw,20px);
+      margin-top: 40px;
+    }
+    .val-card {
+      text-align: center;
+      padding: clamp(28px,4vw,36px) clamp(16px,2vw,20px);
+      border-radius: var(--radius); background: var(--white);
+      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+      transition: border-color .25s, transform .25s;
+    }
+    .val-card:hover { border-color: var(--lagoon); transform: translateY(-3px); }
+    .val-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+    .val-card h4 {
+      font-family: var(--font-display);
+      font-size: clamp(.95rem,1.6vw,1.05rem);
+      color: var(--deep); margin-bottom: 10px;
+    }
+    .val-card p {
+      font-size: clamp(.75rem,1.2vw,.84rem);
+      color: var(--muted); line-height: 1.75;
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .pol-hero { padding-bottom: 60px; }
+      .act { grid-template-columns: 1fr; }
+      .act-sidebar {
+        flex-direction: row; flex-wrap: wrap;
+        gap: 12px; align-items: center; padding: 24px;
+      }
+      .act-num { font-size: 2.4rem; margin-bottom: 0; }
+      .act-emoji { margin-top: 0; padding-top: 0; margin-left: auto; }
+      .act-body { padding: 28px 20px; }
+    }
+    @media (max-width: 480px) {
+      .pol-hero-meta { gap: 20px; }
+      .figures-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 360px) {
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<canvas id="bg-canvas"></canvas>
+
+<!-- LOADER -->
+<div id="page-loader">
+  <div class="loader-brand">Histoire</div>
+  <div class="loader-sub">L'influence politique</div>
+  <div class="loader-waves"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+Ngomé za moindzaza
+
+<!-- ═══ HERO ════════════════════════════════════════════════ -->
+<header class="pol-hero">
+  <div class="pol-ring pol-ring-1"></div>
+  <div class="pol-ring pol-ring-2"></div>
+
+  <div class="pol-hero-content">
+    <span class="pol-hero-kicker">Chronique politique — 1886 à nos jours</span>
+    <div class="pol-hero-tag">Pouvoir &amp; Institutions</div>
+
+    <h1 class="pol-hero-title">
+      L'influence politique<br>de <em>Moindzaza Mboini</em>
+    </h1>
+
+    <p class="pol-hero-lead">
+      De village côtier à force institutionnelle respectée : l'histoire d'une communauté qui a osé résister, gouverner et façonner le destin de tout un archipel.
+    </p>
+
+    <div class="pol-hero-meta">
+      <div class="phm-item">
+        <span class="phm-label">Catégorie</span>
+        <span class="phm-value">Vie politique</span>
+      </div>
+      <div class="phm-item">
+        <span class="phm-label">Source principale</span>
+        <span class="phm-value">Saïd Bakar Mwigni Mku, 1898</span>
+      </div>
+      <div class="phm-item">
+        <span class="phm-label">Période couverte</span>
+        <span class="phm-value">XIX<sup>e</sup> s. – aujourd'hui</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pol-hero-wave">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,70 1080,10 1440,40 L1440,70 L0,70 Z" fill="var(--cream)"/>
+    </svg>
+  </div>
+</header>
+
+<!-- ═══ INTRO ════════════════════════════════════════════════ -->
+<section class="section" style="background:var(--cream);">
+  <div class="section-inner" style="max-width:860px;">
+
+    <span class="eyebrow reveal">Mise en contexte</span>
+
+    <h2 class="intro-title reveal" data-delay="80">
+      Et si un village de pêcheurs pouvait<br>
+      <em>changer le cours de l'Histoire&nbsp;?</em>
+    </h2>
+
+    <p class="lead reveal" data-delay="160">
+      Moindzaza Mboini n'est pas seulement un village côtier de Ngazidja — c'est un lieu où le destin politique des Comores s'est joué, à plusieurs reprises, à huis clos entre ses habitants.
+    </p>
+
+    <p class="reveal" data-delay="240"
+      style="color:var(--muted);font-size:clamp(.86rem,1.3vw,1rem);line-height:1.95;margin-top:16px;">
+      Pour comprendre cette influence, il faut revenir au tournant du XIX<sup>e</sup> siècle, époque de bouleversements majeurs : la France étend son protectorat, les sultans négocient ou résistent, et quelques hommes de Moindzaza refusent de se soumettre. Ce récit est celui de leur courage, de leurs alliances et de l'héritage qu'ils ont transmis.
+    </p>
+
+  </div>
+</section>
+
+<!-- ═══ NARRATIVE — 4 ACTES ══════════════════════════════════ -->
+<section class="section" style="background:var(--ivory); padding-top:0;">
+  <div class="narrative-wrap">
+
+    <div class="narrative-header reveal">
+      <span class="eyebrow" style="display:inline-block;">Récit historique</span>
+      <h2 class="h2 center" style="max-width:580px;margin:0 auto;">
+        Quatre actes d'une <em>histoire politique</em> extraordinaire
+      </h2>
+    </div>
+
+    <div class="narrative reveal" data-delay="100">
+
+      <!-- ACTE I — Situation initiale -->
+      <div class="act">
+        <div class="act-sidebar">
+          <div class="act-num">I</div>
+          <div class="act-phase">Situation initiale</div>
+          <div class="act-sidebar-title">Une ville au cœur du pouvoir</div>
+          <div class="act-emoji">🏛️</div>
+        </div>
+        <div class="act-body">
+          <h3>Une administration locale <em>d'exception</em></h3>
+          <p>
+            Longtemps avant que les grandes puissances ne s'intéressent à l'archipel, Moindzaza Mboini avait déjà forgé son propre modèle de gouvernance. Selon la chronique de Saïd Bakar Mwigni Mku rédigée en 1898, la ville disposait de conseils civil et militaire actifs, capables de mobiliser la population, de réguler les échanges commerciaux et de représenter les intérêts des habitants auprès des sultans.
+          </p>
+          <p>
+            Des figures comme <strong>Foumou Wa Msa</strong>, ministre de Bambao et l'un des signataires de la convention de protectorat France-Comores, illustraient la stature de la ville. Moindzaza formait les hommes de pouvoir de toute la région — une véritable pépinière d'élites politiques et militaires rayonnant bien au-delà des frontières du village.
+          </p>
+          <div class="pull-quote">
+            <p>« Moindzaza faisait les hommes puissants dans la région. »</p>
+            <cite>— Saïd Bakar Mwigni Mku, Chronique de 1898</cite>
+          </div>
+          <p>
+            Les investissements dans les terres agricoles — notamment l'exploitation de <em>handawa ndawa</em> et de <em>kafouni</em> — ainsi que le soutien aux paysans locaux avaient transformé le village en pôle économique envié, attirant des habitants des villes limitrophes séduits par la prospérité et l'ordre qui y régnaient.
+          </p>
+        </div>
+      </div>
+
+      <!-- ACTE II — Élément déclencheur -->
+      <div class="act">
+        <div class="act-sidebar">
+          <div class="act-num">II</div>
+          <div class="act-phase">Élément déclencheur</div>
+          <div class="act-sidebar-title">Le protectorat et la trahison du sultan</div>
+          <div class="act-emoji">⚡</div>
+        </div>
+        <div class="act-body">
+          <h3>1886 : le jour où <em>deux hommes refusèrent</em></h3>
+          <p>
+            La paix de la région fut rompue lorsque le sultan Saïd Ali — pressé par les intérêts coloniaux français et les ambitions du négociant Humblot — chercha à imposer des accords commerciaux et un traité de protectorat à l'ensemble des chefs de la région.
+          </p>
+          <p>
+            C'est ici que l'histoire bascule. Les deux ministres de Bambao issus de Moindzaza, <strong>Moindze Ouma</strong> et <strong>Boina Haziri</strong>, refusèrent catégoriquement de signer. Pour eux, céder à Saïd Ali signifiait trahir les intérêts fondamentaux du peuple comorien et ouvrir la porte à une domination étrangère irréversible.
+          </p>
+          <div class="pull-quote">
+            <p>Les deux ministres refusèrent de s'allier au sultan Saïd Ali pour signer les accords commerciaux avec Humblot ainsi que l'accord de protectorat.</p>
+            <cite>— Chronique de Saïd Bakar Mwigni Mku, 1898</cite>
+          </div>
+          <p>
+            Leur résistance n'était pas un caprice politique : elle traduisait une conviction profonde, partagée par tout un village, que le destin des Comores devait être maîtrisé de l'intérieur — et non bradé à des puissances extérieures.
+          </p>
+        </div>
+      </div>
+
+      <!-- ACTE III — Péripéties -->
+      <div class="act">
+        <div class="act-sidebar">
+          <div class="act-num">III</div>
+          <div class="act-phase">Péripéties</div>
+          <div class="act-sidebar-title">L'exil, les alliances et la résistance</div>
+          <div class="act-emoji">🌊</div>
+        </div>
+        <div class="act-body">
+          <h3>La fuite de Boina Haziri :<br><em>résistance en mouvement</em></h3>
+          <p>
+            La pression du sultan se fit bientôt insupportable. En 1886, <strong>Boina Haziri</strong> quitta Iconi et se réfugia à Foumbouni, emportant avec lui un bataillon de plusieurs personnes — dont une bonne partie étaient originaires de Moindzaza. Cet exil n'était pas une défaite : c'était une retraite stratégique.
+          </p>
+          <p>
+            Durant cette période, Moindzaza démontra toute la puissance de ses réseaux. Les liens matrimoniaux tissés patiemment avec les grandes familles de Mitsoudjé, Moroni et Foumbouni devinrent des canaux diplomatiques vitaux. La figure de <strong>Moindzeuma Adili</strong>, lui aussi ministre de Bambao et gouverneur des Grandes Comores en son temps, illustrait à merveille cette capacité à transformer des alliances personnelles en influence politique durable.
+          </p>
+          <p>
+            La situation géographique du village — posté sur le bord de mer, à la croisée des grands axes de navigation — lui conférait un rôle de plaque tournante des informations et des échanges. À une époque où tout se négociait par bateau, contrôler un tel point de passage équivalait à contrôler le pouls de la région.
+          </p>
+        </div>
+      </div>
+
+      <!-- ACTE IV — Dénouement -->
+      <div class="act">
+        <div class="act-sidebar">
+          <div class="act-num">IV</div>
+          <div class="act-phase">Dénouement</div>
+          <div class="act-sidebar-title">L'héritage transmis aux générations</div>
+          <div class="act-emoji">🌱</div>
+        </div>
+        <div class="act-body">
+          <h3>De la résistance à <em>l'engagement citoyen</em></h3>
+          <p>
+            L'histoire politique de Moindzaza Mboini ne s'est pas arrêtée au XIX<sup>e</sup> siècle. Au fil des décennies, les représentants du village ont continué de porter la voix de leur communauté dans les instances nationales, perpétuant une tradition d'engagement et de service.
+          </p>
+          <p>
+            Aujourd'hui, cette tradition se transmet à travers les associations locales, les initiatives culturelles et les projets de développement portés par la jeunesse. Les anciens transmettent aux nouvelles générations les mêmes valeurs : responsabilité, refus de la résignation, et sens aigu de l'intérêt commun.
+          </p>
+          <p>
+            Le véritable dénouement de ce récit n'est pas encore écrit. Il se joue chaque jour dans les réunions communautaires, les débats publics et les projets que la jeunesse de Moindzaza porte avec la même ardeur que Boina Haziri et Moindze Ouma en leur temps.
+          </p>
+          <div class="pull-quote">
+            <p>La résistance de 1886 n'est pas un souvenir — c'est un modèle pour ceux qui construisent Moindzaza de demain.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /narrative -->
+  </div>
+</section>
+
+<!-- ═══ FIGURES CLÉS ══════════════════════════════════════════ -->
+<section class="section" style="background:var(--cream);">
+  <div class="section-inner" style="max-width:960px;">
+
+    <span class="eyebrow reveal">Personnages</span>
+    <h2 class="h2 reveal" data-delay="80">
+      Les figures qui ont <em>façonné</em> l'histoire
+    </h2>
+    <p class="lead reveal" data-delay="160">
+      Derrière chaque moment charnière se trouvent des hommes aux motivations claires, aux défauts humains et à la détermination rare.
+    </p>
+
+    <div class="figures-grid">
+
+      <div class="figure-card card reveal" data-delay="0">
+        <div class="fig-top">
+          <span class="fig-emoji">⚖️</span>
+          <div class="fig-name">Foumou Wa Msa</div>
+          <span class="fig-role">Ministre de Bambao · Signataire</span>
+        </div>
+        <div class="fig-body">
+          <p>L'un des premiers représentants de Moindzaza à atteindre le rang de ministre de Bambao. Sa signature sur la convention de protectorat France-Comores reste l'une des traces les plus tangibles de l'influence politique précoce du village.</p>
+        </div>
+      </div>
+
+      <div class="figure-card card reveal" data-delay="100">
+        <div class="fig-top">
+          <span class="fig-emoji">✊</span>
+          <div class="fig-name">Boina Haziri</div>
+          <span class="fig-role">Ministre de Bambao · Résistant</span>
+        </div>
+        <div class="fig-body">
+          <p>Figure de la résistance face aux ambitions coloniales. En refusant de signer le protectorat et en s'exilant à Foumbouni avec un bataillon de fidèles, il incarne le courage politique qui définit l'âme de Moindzaza.</p>
+        </div>
+      </div>
+
+      <div class="figure-card card reveal" data-delay="200">
+        <div class="fig-top">
+          <span class="fig-emoji">🤝</span>
+          <div class="fig-name">Moindze Ouma</div>
+          <span class="fig-role">Ministre de Bambao · Diplomate</span>
+        </div>
+        <div class="fig-body">
+          <p>Aux côtés de Boina Haziri, il refusa de cautionner les accords avec Humblot et Saïd Ali. Son refus portait une vision : celle d'un archipel qui ne se bradait pas, mais se gouvernait par ses propres forces.</p>
+        </div>
+      </div>
+
+      <div class="figure-card card reveal" data-delay="300">
+        <div class="fig-top">
+          <span class="fig-emoji">🌍</span>
+          <div class="fig-name">Moindzeuma Adili</div>
+          <span class="fig-role">Ministre · Gouverneur des Grandes Comores</span>
+        </div>
+        <div class="fig-body">
+          <p>Gouverneur des Grandes Comores en son temps, il incarne l'ascension politique maximale d'un enfant de Moindzaza. Ses alliances stratégiques avec les grandes familles de Moroni et Foumbouni ont consolidé l'influence régionale du village.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VALEURS ══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner" style="max-width:960px;">
+
+    <span class="eyebrow center reveal">Héritage vivant</span>
+    <h2 class="h2 center reveal" data-delay="80">
+      Les valeurs qui <em>traversent les générations</em>
+    </h2>
+
+    <div class="values-grid">
+      <div class="val-card reveal" data-delay="0">
+        <span class="val-icon">🤝</span>
+        <h4>Union communautaire</h4>
+        <p>Les décisions importantes se prennent par concertation. La force de Moindzaza a toujours été son unité face aux défis extérieurs.</p>
+      </div>
+      <div class="val-card reveal" data-delay="100">
+        <span class="val-icon">📢</span>
+        <h4>Voix citoyenne</h4>
+        <p>Des réunions communautaires aux associations actuelles, la participation des habitants à la gouvernance reste au cœur de l'identité du village.</p>
+      </div>
+      <div class="val-card reveal" data-delay="200">
+        <span class="val-icon">🌍</span>
+        <h4>Ouverture régionale</h4>
+        <p>Les alliances matrimoniales et commerciales d'hier sont les partenariats institutionnels d'aujourd'hui. Moindzaza pense toujours au-delà de ses frontières.</p>
+      </div>
+      <div class="val-card reveal" data-delay="300">
+        <span class="val-icon">📚</span>
+        <h4>Transmission des valeurs</h4>
+        <p>Les anciens transmettent aux jeunes le sens du service, la mémoire des combats gagnés et la responsabilité envers les générations futures.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ CTA ═══════════════════════════════════════════════════ -->
+<section class="inner-cta reveal">
+  <div class="ic-content">
+    <h3>Contribuez à préserver notre mémoire politique</h3>
+    <p>Vous détenez un témoignage, une archive ou un souvenir lié à l'histoire de Moindzaza Mboini ? Partagez-le — il appartient à tous.</p>
+    <a href="../contact.html" class="btn btn-ocean">Partager un témoignage</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer class="site-footer">
+
+  <div class="footer-wave-top">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C480,60 960,0 1440,30 L1440,0 L0,0 Z" fill="var(--ivory)"/>
+    </svg>
+  </div>
+
+  <div class="footer-grid">
+
+    <div>
+      <div class="nav-logo" style="margin-bottom:0">
+        <div class="nav-logo-mark">🌊</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-main">Moindzaza Mboini</span>
+          <span class="nav-logo-sub">Ngazidja · Comores</span>
+        </div>
+      </div>
+      <p class="footer-brand-desc">
+        Village côtier de Ngazidja, riche d'histoire, de culture et d'engagement communautaire.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Village</h5>
+      <a href="../../../index.html">Accueil</a>
+      <a href="../histoire.html">Histoire</a>
+      <a href="../../plage.html">La Plage</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Associations</h5>
+      <a href="../../comite.html">Comité Local</a>
+      <a href="../../angelus.html">Angelus Club</a>
+      <a href="../../acm.html">ACM</a>
+      <a href="../../twamaya.html">Twamaya</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <span>Moindzaza Mboini</span>
+      <span>Ngazidja, Comores</span>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Moindzaza Mboini · Tous droits réservés</p>
+  </div>
+
+</footer>
+
+<button type="button" id="back-top" title="Retour en haut">↑</button>
+
+<script src="../../../js/shared.js"></script>
+
+</body>
+</html>

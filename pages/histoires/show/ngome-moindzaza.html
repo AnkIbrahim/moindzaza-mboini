@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Ngomé za Moindzaza — Mbachilé | Moindzaza Mboini</title>
+  <meta name="description" content="L'histoire longue et complexe de Mbachilé, localité côtière de Ngazidja, entre mémoire shirazienne, razzias malgaches et clans fondateurs."/>
+
+  <link rel="stylesheet" href="../../../css/shared.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+  <link rel="stylesheet" href="../../../css/components.css">
+
+  <style>
+    /* ── PAGE-SPECIFIC ONLY ─────────────────────────────────── */
+
+    /* Hero */
+    .ngm-hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--abyss) 0%, #1a2e1a 45%, #2a4a20 100%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 0 80px;
+      position: relative; overflow: hidden;
+    }
+    .ngm-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+      background-size: 200px; pointer-events: none;
+    }
+    .ngm-ring {
+      position: absolute; border-radius: 50%; pointer-events: none;
+    }
+    .ngm-ring-1 {
+      width: 700px; height: 700px; bottom: -120px; right: -180px;
+      border: 1px solid rgba(58,143,92,.15);
+    }
+    .ngm-ring-2 {
+      width: 1000px; height: 1000px; bottom: -260px; right: -320px;
+      border: 1px solid rgba(58,143,92,.07);
+    }
+    .ngm-ring-3 {
+      width: 380px; height: 380px; top: 100px; left: -120px;
+      border: 1px solid rgba(212,162,76,.08);
+    }
+
+    .ngm-hero-content {
+      max-width: 860px; margin: auto;
+      padding: 0 var(--gutter);
+      position: relative; z-index: 2;
+    }
+    .ngm-hero-kicker {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: rgba(184,234,242,.5);
+      font-size: clamp(.85rem,1.3vw,1rem);
+      display: block; margin-bottom: 10px;
+    }
+    .ngm-hero-tag {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: var(--palm, #3a8f5c); font-size: .65rem;
+      letter-spacing: 4px; text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .ngm-hero-tag::before {
+      content: ''; width: 28px; height: 1px;
+      background: var(--palm, #3a8f5c);
+    }
+    .ngm-hero-title {
+      font-family: var(--font-display); font-weight: 700;
+      color: var(--white);
+      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+      line-height: 1.08; margin-bottom: 26px;
+    }
+    .ngm-hero-title em { color: var(--gold); font-style: normal; }
+    .ngm-hero-lead {
+      font-family: var(--font-serif);
+      color: rgba(184,234,242,.75);
+      font-size: clamp(.9rem,1.4vw,1.08rem);
+      line-height: 1.85; max-width: 620px; margin-bottom: 48px;
+    }
+    .ngm-hero-meta { display: flex; gap: clamp(24px,5vw,48px); flex-wrap: wrap; }
+    .ngm-phm { display: flex; flex-direction: column; gap: 4px; }
+    .ngm-phm-label {
+      font-size: .6rem; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .ngm-phm-value { font-size: .88rem; color: var(--white); }
+
+    .ngm-hero-wave { position: absolute; bottom: -1px; left: 0; right: 0; z-index: 3; }
+    .ngm-hero-wave svg { display: block; width: 100%; }
+
+    /* ── INTRO ─────────────────────────────────────────────── */
+    .intro-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem,3.5vw,2.8rem);
+      line-height: 1.15; color: var(--deep); margin-bottom: 28px;
+    }
+    .intro-title em { color: var(--palm, #3a8f5c); font-style: italic; }
+
+    /* ── NARRATIVE ─────────────────────────────────────────── */
+    .narrative-wrap { max-width: 960px; margin: 0 auto; }
+    .narrative-header {
+      text-align: center;
+      padding: clamp(56px,8vw,96px) 0 clamp(40px,5vw,60px);
+    }
+    .narrative {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .act {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      border-bottom: 1px solid rgba(7,61,94,.12);
+    }
+    .act:last-child { border-bottom: none; }
+
+    .act-sidebar {
+      background: #1c3520;
+      padding: clamp(36px,5vw,60px) clamp(24px,3vw,36px);
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+    }
+    .act-sidebar::after {
+      content: '';
+      position: absolute; bottom: -50px; right: -50px;
+      width: 130px; height: 130px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.07);
+    }
+    .act-num {
+      font-family: var(--font-display);
+      font-size: clamp(3rem,5vw,4.5rem);
+      line-height: 1;
+      color: rgba(255,255,255,.12);
+      margin-bottom: 14px;
+    }
+    .act-phase {
+      font-size: .6rem; letter-spacing: 3.5px;
+      text-transform: uppercase; color: #7ec896; margin-bottom: 8px;
+    }
+    .act-sidebar-title {
+      font-family: var(--font-display); color: var(--white);
+      font-size: clamp(.95rem,1.6vw,1.1rem); line-height: 1.3;
+    }
+    .act-emoji { font-size: 2rem; margin-top: auto; padding-top: 28px; }
+
+    .act-body {
+      padding: clamp(36px,5vw,60px) clamp(28px,4vw,56px);
+      background: var(--white);
+    }
+    .act-body h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem,2.5vw,1.55rem);
+      color: var(--deep); line-height: 1.2; margin-bottom: 20px;
+    }
+    .act-body h3 em { color: var(--palm, #3a8f5c); font-style: italic; }
+    .act-body p {
+      font-size: clamp(.85rem,1.3vw,1rem);
+      color: var(--muted); line-height: 1.95; margin-bottom: 16px;
+    }
+    .act-body p:last-child { margin-bottom: 0; }
+    .act-body strong { color: var(--deep); }
+
+    /* pull-quote — gold accent for this page */
+    .pull-quote {
+      border-left: 3px solid var(--gold);
+      padding: 14px 20px; margin: 22px 0;
+      background: linear-gradient(90deg, rgba(212,162,76,.08), transparent);
+      border-radius: 0 8px 8px 0;
+    }
+    .pull-quote p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(.9rem,1.3vw,1.02rem);
+      color: #3a5a2a !important;
+      line-height: 1.7 !important;
+      margin: 0 !important;
+    }
+    .pull-quote cite {
+      display: block; margin-top: 8px;
+      font-size: .72rem; color: var(--gold);
+      letter-spacing: 1px; font-style: normal;
+    }
+
+    /* source inline tag */
+    .src-tag {
+      display: inline-block;
+      font-size: .68rem; font-style: italic;
+      color: var(--muted); opacity: .8;
+    }
+
+    /* ── CLANS GRID ────────────────────────────────────────── */
+    .clans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+      gap: clamp(14px,2.5vw,20px);
+      margin-top: 40px;
+    }
+    .clan-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .clan-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .clan-top {
+      background: linear-gradient(135deg, #1c3520, #2e5c38);
+      padding: 20px 20px 14px;
+    }
+    .clan-icon { font-size: 1.6rem; margin-bottom: 8px; display: block; }
+    .clan-name {
+      font-family: var(--font-display); color: var(--white);
+      font-size: clamp(.95rem,1.8vw,1.05rem); line-height: 1.2;
+    }
+    .clan-badge {
+      font-size: .58rem; letter-spacing: 2px;
+      text-transform: uppercase; color: #7ec896;
+      display: block; margin-top: 4px;
+    }
+    .clan-body {
+      padding: 14px 18px 18px;
+    }
+    .clan-body p {
+      font-size: clamp(.75rem,1.2vw,.84rem);
+      color: var(--muted); line-height: 1.75;
+    }
+
+    /* ── LIEU CARDS (Shomoni, Msirimbali…) ───────────────── */
+    .lieux-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+      gap: clamp(16px,2.5vw,24px);
+      margin-top: 44px;
+    }
+    .lieu-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .lieu-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .lieu-top {
+      background: linear-gradient(135deg, var(--ocean), #1c3520);
+      padding: clamp(20px,3vw,28px) clamp(18px,2.5vw,24px) clamp(16px,2vw,20px);
+    }
+    .lieu-emoji { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+    .lieu-name {
+      font-family: var(--font-display); color: var(--white);
+      font-size: clamp(1rem,2vw,1.15rem); line-height: 1.2;
+    }
+    .lieu-sub {
+      font-size: .62rem; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--aqua);
+      margin-top: 5px; display: block;
+    }
+    .lieu-body {
+      padding: clamp(16px,2.5vw,20px) clamp(18px,2.5vw,24px) clamp(20px,3vw,24px);
+      background: var(--white);
+    }
+    .lieu-body p {
+      font-size: clamp(.78rem,1.2vw,.88rem);
+      color: var(--muted); line-height: 1.75;
+    }
+
+    /* ── VALUES / HÉRITAGE ─────────────────────────────────── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+      gap: clamp(14px,2.5vw,20px);
+      margin-top: 40px;
+    }
+    .val-card {
+      text-align: center;
+      padding: clamp(28px,4vw,36px) clamp(16px,2vw,20px);
+      border-radius: var(--radius); background: var(--white);
+      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+      transition: border-color .25s, transform .25s;
+    }
+    .val-card:hover { border-color: #3a8f5c; transform: translateY(-3px); }
+    .val-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+    .val-card h4 {
+      font-family: var(--font-display);
+      font-size: clamp(.95rem,1.6vw,1.05rem);
+      color: var(--deep); margin-bottom: 10px;
+    }
+    .val-card p {
+      font-size: clamp(.75rem,1.2vw,.84rem);
+      color: var(--muted); line-height: 1.75;
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .ngm-hero { padding-bottom: 60px; }
+      .act { grid-template-columns: 1fr; }
+      .act-sidebar {
+        flex-direction: row; flex-wrap: wrap;
+        gap: 12px; align-items: center; padding: 24px;
+      }
+      .act-num { font-size: 2.4rem; margin-bottom: 0; }
+      .act-emoji { margin-top: 0; padding-top: 0; margin-left: auto; }
+      .act-body { padding: 28px 20px; }
+    }
+    @media (max-width: 480px) {
+      .ngm-hero-meta { gap: 20px; }
+      .clans-grid { grid-template-columns: 1fr; }
+      .lieux-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 360px) {
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<canvas id="bg-canvas"></canvas>
+
+<!-- LOADER -->
+<div id="page-loader">
+  <div class="loader-brand">Histoire</div>
+  <div class="loader-sub">Mbachilé, une longue histoire</div>
+  <div class="loader-waves"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="../../../index.html" class="nav-logo">
+    <div class="nav-logo-mark">🌊</div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-main">Moindzaza Mboini</span>
+      <span class="nav-logo-sub">Ngazidja · Comores</span>
+    </div>
+  </a>
+
+  <div class="nav-menu">
+    <div class="nav-item">
+      <a href="../../../index.html" class="nav-link">Accueil</a>
+    </div>
+    <div class="nav-item">
+      <a href="../histoire.html" class="nav-link active">Histoire</a>
+    </div>
+    <div class="nav-item has-drop">
+      <a href="#" class="nav-link">Associations ▾</a>
+      <div class="nav-drop">
+        <a href="../../comite.html">Comité Local</a>
+        <a href="../../angelus.html">Angelus Club</a>
+        <a href="../../acm.html">ACM — Éducation</a>
+        <a href="../../twamaya.html">Twamaya No Urahafu</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="../../plage.html" class="nav-link">La Plage</a>
+    </div>
+    <div class="nav-item">
+      <a href="../../contact.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+
+  <a href="../../contact.html" class="nav-cta">Nous Rejoindre</a>
+
+  <button type="button" class="hamburger" id="hamburger"
+    aria-label="Ouvrir le menu de navigation"
+    aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../../../index.html">Accueil</a>
+  <a href="../histoire.html">Histoire</a>
+  <span class="mob-cat">Associations</span>
+  <a href="../../comite.html">Comité Local</a>
+  <a href="../../angelus.html">Angelus Club</a>
+  <a href="../../acm.html">ACM</a>
+  <a href="../../twamaya.html">Twamaya</a>
+  <a href="../../plage.html">La Plage</a>
+  <a href="../../contact.html">Contact</a>
+</div>
+
+<!-- ═══ HERO ════════════════════════════════════════════════ -->
+<header class="ngm-hero">
+  <div class="ngm-ring ngm-ring-1"></div>
+  <div class="ngm-ring ngm-ring-2"></div>
+  <div class="ngm-ring ngm-ring-3"></div>
+
+  <div class="ngm-hero-content">
+    <span class="ngm-hero-kicker">Ngomé za Moindzaza — Tradition orale &amp; archives</span>
+    <div class="ngm-hero-tag">Mémoire &amp; Clans</div>
+
+    <h1 class="ngm-hero-title">
+      Mbachilé,<br>une longue <em>histoire</em>
+    </h1>
+
+    <p class="ngm-hero-lead">
+      Connue tout en étant méconnue, Mbachilé porte en elle des siècles de mémoire : une princesse shirazienne débarquée sur ses rives, des razzias malgaches qui ont reconfiguré ses terres, et des clans dont les racines plongent jusqu'au VIII<sup>e</sup> siècle.
+    </p>
+
+    <div class="ngm-hero-meta">
+      <div class="ngm-phm">
+        <span class="ngm-phm-label">Catégorie</span>
+        <span class="ngm-phm-value">Ngomé za Moindzaza</span>
+      </div>
+      <div class="ngm-phm">
+        <span class="ngm-phm-label">Source principale</span>
+        <span class="ngm-phm-value">Nassur Daday &amp; CNDRS</span>
+      </div>
+      <div class="ngm-phm">
+        <span class="ngm-phm-label">Période couverte</span>
+        <span class="ngm-phm-value">VIII<sup>e</sup> s. – aujourd'hui</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ngm-hero-wave">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,70 1080,10 1440,40 L1440,70 L0,70 Z" fill="var(--cream)"/>
+    </svg>
+  </div>
+</header>
+
+<!-- ═══ INTRO ════════════════════════════════════════════════ -->
+<section class="section" style="background:var(--cream);">
+  <div class="section-inner" style="max-width:860px;">
+
+    <span class="eyebrow reveal">Mise en contexte</span>
+
+    <h2 class="intro-title reveal" data-delay="80">
+      Et si les terres les plus discrètes<br>
+      <em>renfermaient les secrets les plus anciens&nbsp;?</em>
+    </h2>
+
+    <p class="lead reveal" data-delay="160">
+      Mbachilé est l'une des quatre localités côtières de la région du Bambao, entre Moroni au nord, Ikoni et Mwandzaza au sud. Sa position, à la frontière de plusieurs espaces historiques, en fait un carrefour de mémoires rarement démêlées.
+    </p>
+
+    <p class="reveal" data-delay="240"
+      style="color:var(--muted);font-size:clamp(.86rem,1.3vw,1rem);line-height:1.95;margin-top:16px;">
+      Au nord, le quartier de Ndrenini à Ikoni — où officia un certain <strong>Mbalia wa Hamadi</strong>, dit Mbalia Mna Budugali. Au sud, le lieu-dit <strong>Shomoni</strong>, que les anciens appellent le vieux Mbachilé, blotti sous la colline de Nguni, face à la mer. Entre ces deux pôles, une localité dont le passé résiste encore à toute reconstruction linéaire.
+    </p>
+
+  </div>
+</section>
+
+<!-- ═══ NARRATIVE — 4 ACTES ══════════════════════════════════ -->
+<section class="section" style="background:var(--ivory); padding-top:0;">
+  <div class="narrative-wrap">
+
+    <div class="narrative-header reveal">
+      <span class="eyebrow" style="display:inline-block;">Récit historique</span>
+      <h2 class="h2 center" style="max-width:620px;margin:0 auto;">
+        Quatre actes d'une mémoire<br><em>longue à démêler</em>
+      </h2>
+    </div>
+
+    <div class="narrative reveal" data-delay="100">
+
+      <!-- ACTE I — Situation initiale -->
+      <div class="act">
+        <div class="act-sidebar">
+          <div class="act-num">I</div>
+          <div class="act-phase">Situation initiale</div>
+          <div class="act-sidebar-title">Shomoni, berceau oublié</div>
+          <div class="act-emoji">🏺</div>
+        </div>
+        <div class="act-body">
+          <h3>Un village né au bord de la mer,<br><em>au VIII<sup>e</sup> siècle</em></h3>
+          <p>
+            Avant que Mbachilé ne soit ce qu'elle est aujourd'hui, il y avait Shomoni. Ce lieu-dit, situé au pied de la colline de Nguni, à proximité de la fameuse plage, est le berceau archéologique du village. Les fouilles conduites pour le CNDRS — par Vérin, Chanudet, Chittick, et un groupe suédois — y ont révélé des traces d'habitations datant du VIII<sup>e</sup> siècle.
+          </p>
+          <div class="pull-quote">
+            <p>C'est en ce lieu que la mémoire commence : des fondations sous le sable, des tessons de céramique, les vestiges silencieux d'une communauté établie bien avant les sultanats.</p>
+            <cite>— D'après CNDRS &amp; Moussa Said Ahmed, <em>Les clans ou Hinyas fondateurs de cités aux Comores</em></cite>
+          </div>
+          <p>
+            C'est aussi sur cette plage de Shomoni, selon la tradition rapportée par Damir Ben Ali, que débarqua une <strong>princesse dite shirazienne</strong> — ancêtre de la dynastie royale Matswa Pirusa, qui régna ensuite sur le Bambao, le Mitsamiouli, le Hambou, le Mboiknou et le Mbude. Un atterrissage fondateur, discret, qui allait irriguer des siècles de généalogies.
+          </p>
+        </div>
+      </div>
+
+      <!-- ACTE II — Élément déclencheur -->
+      <div class="act">
+        <div class="act-sidebar">
+          <div class="act-num">II</div>
+          <div class="act-phase">Élément déclencheur</div>
+          <div class="act-sidebar-title">Les razzias malgaches bouleversent tout</div>
+          <div class="act-emoji">⚔️</div>
+        </div>
+        <div class="act-body">
+          <h3>XVIII<sup>e</sup> siècle : quand <em>les pillards arrivent par la mer</em></h3>
+          <p>
+            Le quotidien de Shomoni fut fracassé au XVIII<sup>e</sup> siècle. Comme sa voisine Ikoni, capitale du sultanat de Bambao, Mbachilé subit de plein fouet les razzias malgaches. Les <em>Mémoires de l'Académie malgache</em> mentionnent explicitement « Mbachile (province de Bambao) » parmi les localités frappées : les pillards s'emparèrent de captifs et de butin avant de se diriger vers Ikoni.
+          </p>
+          <div class="pull-quote">
+            <p>« Mbachile (province de Bambao). Ils s'emparèrent de captifs et de butin puis se dirigèrent vers la ville d'Iconi dépourvue de toute fortification. »</p>
+            <cite>— <em>Mémoires de l'Académie malgache</em>, volumes 22 à 25, p. 16</cite>
+          </div>
+          <p>
+            C'est vraisemblablement à la suite de ces razzias — et de la mort d'un grand nombre d'habitants d'Ikoni — que les survivants de Shomoni décidèrent de déplacer leur village vers l'intérieur des terres, à l'emplacement où Mbachilé se trouve encore aujourd'hui. Un déménagement de survie, aussi discret dans les archives qu'il fut radical dans les faits.
+          </p>
+        </div>
+      </div>
+
+      <!-- ACTE III — Péripéties -->
+      <div class="act">
+        <div class="act-sidebar">
+          <div class="act-num">III</div>
+          <div class="act-phase">Péripéties</div>
+          <div class="act-sidebar-title">Plantations, esclaves et terres disputées</div>
+          <div class="act-emoji">🌿</div>
+        </div>
+        <div class="act-body">
+          <h3>Le sultan, ses esclaves<br>et <em>les terres de Mbachilé</em></h3>
+          <p>
+            Au XIX<sup>e</sup> siècle, une nouvelle pression s'abat sur Mbachilé — non plus venue de la mer, mais du pouvoir intérieur. Le <em>Journal des Africanistes</em> rapporte, en note de bas de page, que le roi Mwenye Mkuu fit venir des esclaves africains vers 1860 pour la guerre, tandis qu'il plaçait des esclaves de Ngazidja dans des plantations qu'il avait <strong>achetées</strong> à Selea et à Mbashile, au-dessus d'Ikoni.
+          </p>
+          <div class="pull-quote">
+            <p>« Said Bakari rapporte que le roi Mwenye Mkuu avait fait venir des esclaves africains vers 1860 pour faire la guerre, tandis qu'il plaçait des esclaves de Ngazidja dans les plantations qu'il avait achetées à Selea et à Mbashile au-dessus de la ville d'Ikoni. »</p>
+            <cite>— <em>Journal des Africanistes</em>, p. 362</cite>
+          </div>
+          <p>
+            Le mot « achetées » ouvre une question que les archives ne tranchent pas : ces terres appartenaient-elles à des familles locales de Mbachilé ? Furent-elles vendues sous contrainte, ou librement ? Ce silence des sources est lui-même une pièce du puzzle. Une chose est sûre : Mbachilé n'était pas terra nullius — elle avait des propriétaires, des habitants, une mémoire foncière que le pouvoir sultanien dut reconnaître en passant par l'achat.
+          </p>
+          <p>
+            À la même période, la tradition orale garde vivant un autre nom : <strong>Msirimbali</strong>, terme utilisé par les habitants pour désigner Mbachilé et ses alentours, y compris l'actuelle Serehini. Ce nom, lié selon la mémoire collective à l'emplacement d'une ancienne mosquée, n'a pas encore trouvé de confirmation dans les archives écrites — mais sa persistance dans les bouches du village en fait une réalité à part entière.
+          </p>
+        </div>
+      </div>
+
+      <!-- ACTE IV — Dénouement -->
+      <div class="act">
+        <div class="act-sidebar">
+          <div class="act-num">IV</div>
+          <div class="act-phase">Dénouement</div>
+          <div class="act-sidebar-title">Les clans, gardiens d'une mémoire vivante</div>
+          <div class="act-emoji">🌳</div>
+        </div>
+        <div class="act-body">
+          <h3>Une communauté de clans :<br><em>démêler le vrai du probable</em></h3>
+          <p>
+            Le dénouement de l'histoire de Mbachilé n'est pas un événement — c'est une texture. La localité s'est construite en couches successives, par sédimentation de familles, de clans et de sous-clans aux origines diverses, portant chacun une version partielle de la vérité.
+          </p>
+          <p>
+            À l'image du reste de Ngazidja, ce sont des <strong>lignées matrilinéaires</strong> qui structurent la société. Chaque hinya (clan) transmet sa mémoire par les femmes, et les traditions orales varient d'une branche à l'autre — ce qui rend la reconstitution historique à la fois riche et périlleuse. Comme le note Nassur Daday, « démêler le vrai du faux » reste une réelle problématique.
+          </p>
+          <div class="pull-quote">
+            <p>La véritable résolution de l'histoire de Mbachilé ne viendra pas d'un seul document — elle naîtra de la mise en dialogue patiente de toutes ces mémoires.</p>
+          </div>
+          <p>
+            Ce dénouement est donc ouvert. Il appelle des témoignages, des archives familiales, des fouilles supplémentaires. Mbachilé attend encore ses historiens.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /narrative -->
+  </div>
+</section>
+
+<!-- ═══ LIEUX CLÉS ════════════════════════════════════════════ -->
+<section class="section" style="background:var(--cream);">
+  <div class="section-inner" style="max-width:960px;">
+
+    <span class="eyebrow reveal">Géographie historique</span>
+    <h2 class="h2 reveal" data-delay="80">
+      Les lieux qui ont <em>forgé Mbachilé</em>
+    </h2>
+    <p class="lead reveal" data-delay="160">
+      Chaque espace géographique est ici une couche de mémoire superposée.
+    </p>
+
+    <div class="lieux-grid">
+
+      <div class="lieu-card reveal" data-delay="0">
+        <div class="lieu-top">
+          <span class="lieu-emoji">🏖️</span>
+          <div class="lieu-name">Shomoni</div>
+          <span class="lieu-sub">Le vieux Mbachilé · VIII<sup>e</sup> siècle</span>
+        </div>
+        <div class="lieu-body">
+          <p>Berceau archéologique du village, situé au pied de la colline de Nguni, face à la plage. Les fouilles y ont révélé des traces d'occupation dès le VIII<sup>e</sup> siècle. C'est ici que débarqua la princesse shirazienne, ancêtre de la dynastie Matswa Pirusa.</p>
+        </div>
+      </div>
+
+      <div class="lieu-card reveal" data-delay="100">
+        <div class="lieu-top">
+          <span class="lieu-emoji">⛰️</span>
+          <div class="lieu-name">Le Nguni</div>
+          <span class="lieu-sub">Colline de Mbachilé &amp; Mwandzaza</span>
+        </div>
+        <div class="lieu-body">
+          <p>La colline emblématique qui domine le site de Shomoni. Repère géographique majeur, elle marque la frontière naturelle entre l'ancien et le nouveau village, et symbolise la continuité entre les générations.</p>
+        </div>
+      </div>
+
+      <div class="lieu-card reveal" data-delay="200">
+        <div class="lieu-top">
+          <span class="lieu-emoji">🕌</span>
+          <div class="lieu-name">Msirimbali</div>
+          <span class="lieu-sub">Nom traditionnel · Mbachilé &amp; Serehini</span>
+        </div>
+        <div class="lieu-body">
+          <p>Terme oral désignant Mbachilé et ses alentours, y compris Serehini. Lié à l'emplacement d'une ancienne mosquée selon la tradition du village. Sans confirmation écrite pour l'instant, mais vivace dans la mémoire collective des habitants.</p>
+        </div>
+      </div>
+
+      <div class="lieu-card reveal" data-delay="300">
+        <div class="lieu-top">
+          <span class="lieu-emoji">🌿</span>
+          <div class="lieu-name">Selea &amp; Mbashile</div>
+          <span class="lieu-sub">Plantations du sultan · XIX<sup>e</sup> siècle</span>
+        </div>
+        <div class="lieu-body">
+          <p>Terres achetées par le roi Mwenye Mkuu vers 1860 pour y établir des plantations exploitées par des esclaves de Ngazidja. La mention d'un « achat » suggère l'existence de propriétaires locaux antérieurs au pouvoir sultanien.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLANS & HINYAS ════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner" style="max-width:960px;">
+
+    <span class="eyebrow reveal">Clans &amp; Hinyas</span>
+    <h2 class="h2 reveal" data-delay="80">
+      Les lignées qui <em>composent Mbachilé</em>
+    </h2>
+    <p class="lead reveal" data-delay="160">
+      Chaque clan porte une mémoire propre, des origines distinctes, et des liens de parenté qui restent, pour certains, encore à établir.
+    </p>
+
+    <div class="clans-grid">
+
+      <div class="clan-card reveal" data-delay="0">
+        <div class="clan-top">
+          <span class="clan-icon">🌿</span>
+          <div class="clan-name">Hinya Shando</div>
+          <span class="clan-badge">Clan fondateur · le plus ancien</span>
+        </div>
+        <div class="clan-body">
+          <p>Considéré par la tradition comme l'un des clans les plus anciennement implantés à Mbachilé. Sa profondeur historique en fait un repère dans la généalogie locale.</p>
+        </div>
+      </div>
+
+      <div class="clan-card reveal" data-delay="60">
+        <div class="clan-top">
+          <span class="clan-icon">🌾</span>
+          <div class="clan-name">Hinya Mvouna</div>
+          <span class="clan-badge">Clan fondateur · ancienneté disputée</span>
+        </div>
+        <div class="clan-body">
+          <p>Autre clan revendiquant une présence très ancienne à Mbachilé. Partage des liens de parenté avec le Daho Wa Mdrunda, complexifiant la lecture des alliances interclaniques.</p>
+        </div>
+      </div>
+
+      <div class="clan-card reveal" data-delay="120">
+        <div class="clan-top">
+          <span class="clan-icon">🏔️</span>
+          <div class="clan-name">Daho Wa Mdrunda</div>
+          <span class="clan-badge">Branche du Daho Wa Mnazi d'Itsandra</span>
+        </div>
+        <div class="clan-body">
+          <p>Branche descendante du Daho Wa Mnazi d'Itsandra Mdjini, dont les origines remontent à Nioumamilima (Mbadjini) et Kwambani (Washili). Lié à l'Hinya Mvouna selon Moussa Said Ahmed.</p>
+        </div>
+      </div>
+
+      <div class="clan-card reveal" data-delay="180">
+        <div class="clan-top">
+          <span class="clan-icon">🌊</span>
+          <div class="clan-name">Hinya Mlomri</div>
+          <span class="clan-badge">4 branches · issu de l'Hinya Abbar</span>
+        </div>
+        <div class="clan-body">
+          <p>Issu de quatre branches de l'Hinya Abbar, dont une majorité se revendique descendante de Mlomri. Une branche reste en dehors de ce clan. Illustre la complexité des subdivisions internes au sein d'une même lignée.</p>
+        </div>
+      </div>
+
+      <div class="clan-card reveal" data-delay="240">
+        <div class="clan-top">
+          <span class="clan-icon">🤲</span>
+          <div class="clan-name">Hinya Moindzé ya Mboini</div>
+          <span class="clan-badge">Lignée matrilinéaire locale</span>
+        </div>
+        <div class="clan-body">
+          <p>L'une des lignées portant le nom même de Mboini dans sa dénomination, ancrant son identité profondément dans le territoire de la localité et ses traditions orales.</p>
+        </div>
+      </div>
+
+      <div class="clan-card reveal" data-delay="300">
+        <div class="clan-top">
+          <span class="clan-icon">📿</span>
+          <div class="clan-name">Hinya Sharifu &amp; Hinya Mwaha</div>
+          <span class="clan-badge">Liens par les femmes · distincts d'Ikoni</span>
+        </div>
+        <div class="clan-body">
+          <p>L'Hinya Sharifu est lié par les femmes à l'Hinya Mwaha de Mbachilé. Ce dernier ne partage aucun lien de parenté avec l'Hinya Mwaha d'Ikoni — une distinction que la tradition orale tient à préserver.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HÉRITAGE ══════════════════════════════════════════════ -->
+<section class="section" style="background:var(--cream);">
+  <div class="section-inner" style="max-width:960px;">
+
+    <span class="eyebrow center reveal">Ce que Mbachilé nous enseigne</span>
+    <h2 class="h2 center reveal" data-delay="80">
+      Une mémoire à <em>plusieurs voix</em>
+    </h2>
+
+    <div class="values-grid">
+      <div class="val-card reveal" data-delay="0">
+        <span class="val-icon">📜</span>
+        <h4>Mémoire orale</h4>
+        <p>Les traditions transmises de génération en génération sont des sources à part entière, même sans confirmation écrite. Msirimbali en est l'exemple vivant.</p>
+      </div>
+      <div class="val-card reveal" data-delay="80">
+        <span class="val-icon">🔍</span>
+        <h4>Archéologie active</h4>
+        <p>Les fouilles de Shomoni ont ouvert une fenêtre sur le VIII<sup>e</sup> siècle. D'autres investigations restent à mener pour combler les siècles encore silencieux.</p>
+      </div>
+      <div class="val-card reveal" data-delay="160">
+        <span class="val-icon">🌺</span>
+        <h4>Matrilinéarité</h4>
+        <p>Comme dans tout Ngazidja, les clans se transmettent par les femmes. Cette structure oriente la lecture des généalogies et des alliances interclaniques.</p>
+      </div>
+      <div class="val-card reveal" data-delay="240">
+        <span class="val-icon">🤝</span>
+        <h4>Pluralité des origines</h4>
+        <p>Mbachilé est une mosaïque. Shiraziens, clans locaux anciens, travailleurs forcés de l'ère sultanienne : chaque couche a déposé ses traces dans l'identité du village.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ CTA ═══════════════════════════════════════════════════ -->
+<section class="inner-cta reveal">
+  <div class="ic-content">
+    <h3>Vous connaissez l'histoire de votre clan&nbsp;?</h3>
+    <p>Partagez vos traditions orales, archives familiales ou témoignages sur Mbachilé et ses hinyas. Chaque voix compte pour démêler cette longue histoire.</p>
+    <a href="../contact.html" class="btn btn-ocean">Partager un témoignage</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer class="site-footer">
+
+  <div class="footer-wave-top">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C480,60 960,0 1440,30 L1440,0 L0,0 Z" fill="var(--cream)"/>
+    </svg>
+  </div>
+
+  <div class="footer-grid">
+
+    <div>
+      <div class="nav-logo" style="margin-bottom:0">
+        <div class="nav-logo-mark">🌊</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-main">Moindzaza Mboini</span>
+          <span class="nav-logo-sub">Ngazidja · Comores</span>
+        </div>
+      </div>
+      <p class="footer-brand-desc">
+        Village côtier de Ngazidja, riche d'histoire, de culture et d'engagement communautaire.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Village</h5>
+      <a href="../../../index.html">Accueil</a>
+      <a href="../histoire.html">Histoire</a>
+      <a href="../../plage.html">La Plage</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Associations</h5>
+      <a href="../../comite.html">Comité Local</a>
+      <a href="../../angelus.html">Angelus Club</a>
+      <a href="../../acm.html">ACM</a>
+      <a href="../../twamaya.html">Twamaya</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <span>Moindzaza Mboini</span>
+      <span>Ngazidja, Comores</span>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Moindzaza Mboini · Tous droits réservés</p>
+  </div>
+
+</footer>
+
+<button type="button" id="back-top" title="Retour en haut">↑</button>
+
+<script src="../../../js/shared.js"></script>
+
+</body>
+</html>

@@ -4,9 +4,10 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <meta name="description" content="Moindzaza Mboini — Village côtier de Ngazidja, Comores. Histoire, associations, plage."/>
+  <meta name="theme-color" content="#020f1a"/>
   <title>Moindzaza Mboini — Village de Plage · Ngazidja</title>
-  <link rel="stylesheet" href="shared.css"/>
-  <link rel="stylesheet" href="home.css"/>
+  <link rel="stylesheet" href="css/shared.css"/>
+  <link rel="stylesheet" href="css/home.css"/>
 </head>
 <body>
 <div id="progress-bar"></div>
@@ -18,267 +19,392 @@
   <div class="loader-waves"><span></span><span></span><span></span><span></span><span></span></div>
 </div>
 
-<nav class="navbar" id="navbar">
-  <a href="index.html" class="nav-logo">
-    <div class="nav-logo-mark">🌊</div>
+<!-- ══ NAVIGATION ══════════════════════════════════ -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+  <a href="index.html" class="nav-logo" aria-label="Moindzaza Mboini — Accueil">
+    <div class="nav-logo-mark" aria-hidden="true">🌊</div>
     <div class="nav-logo-text">
       <span class="nav-logo-main">Moindzaza Mboini</span>
       <span class="nav-logo-sub">Ngazidja · Comores</span>
     </div>
   </a>
-  <div class="nav-menu">
-    <div class="nav-item"><a href="index.html" class="nav-link">Accueil</a></div>
-    <div class="nav-item"><a href="histoire.html" class="nav-link">Histoire</a></div>
-    <div class="nav-item has-drop">
-      <a href="#" class="nav-link">Associations ▾</a>
-      <div class="nav-drop">
-        <a href="comite.html">Comité Local</a>
-        <a href="angelus.html">Angelus Club</a>
-        <a href="acm.html">ACM — Éducation</a>
-        <a href="twamaya.html">Twamaya No Urahafu</a>
+
+  <div class="nav-menu" role="menubar">
+    <div class="nav-item" role="none">
+      <a href="index.html" class="nav-link active" role="menuitem">Accueil</a>
+    </div>
+    <div class="nav-item" role="none">
+      <a href="pages/histoires/histoire.html" class="nav-link" role="menuitem">Histoire</a>
+    </div>
+    <div class="nav-item has-drop" role="none">
+      <a href="#" class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+        Associations ▾
+      </a>
+      <div class="nav-drop" role="menu" aria-label="Associations">
+        <a href="pages/comite.html" role="menuitem">Comité Local</a>
+        <a href="pages/angelus.html" role="menuitem">Angelus Club</a>
+        <a href="pages/acm.html" role="menuitem">ACM — Éducation</a>
+        <a href="pages/twamaya.html" role="menuitem">Twamaya No Urahafu</a>
       </div>
     </div>
-    <div class="nav-item"><a href="plage.html" class="nav-link">La Plage</a></div>
-    <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    <div class="nav-item" role="none">
+      <a href="pages/plage.html" class="nav-link" role="menuitem">La Plage</a>
+    </div>
+    <div class="nav-item" role="none">
+      <a href="pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+    </div>
   </div>
-  <a href="contact.html" class="nav-cta">Nous Rejoindre</a>
-  <button type="button" class="hamburger" id="hamburger" aria-label="Ouvrir le menu de navigation" title="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+
+  <a href="pages/contact.html" class="nav-cta">Nous Rejoindre</a>
+  <button
+    type="button"
+    class="hamburger"
+    id="hamburger"
+    aria-label="Ouvrir le menu"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+  >
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<div class="mobile-menu" id="mobile-menu">
+<!-- ══ MOBILE MENU ════════════════════════════════ -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menu de navigation" aria-modal="true">
   <span class="mob-cat">Navigation</span>
   <a href="index.html">Accueil</a>
-  <a href="histoire.html">Histoire</a>
+  <a href="pages/histoires/histoire.html">Histoire</a>
   <span class="mob-cat">Associations</span>
-  <a href="comite.html">Comité Local</a>
-  <a href="angelus.html">Angelus Club</a>
-  <a href="acm.html">ACM — Éducation</a>
-  <a href="twamaya.html">Twamaya No Urahafu</a>
+  <a href="pages/comite.html">Comité Local</a>
+  <a href="pages/angelus.html">Angelus Club</a>
+  <a href="pages/acm.html">ACM — Éducation</a>
+  <a href="pages/twamaya.html">Twamaya No Urahafu</a>
   <span class="mob-cat">Découvrir</span>
-  <a href="plage.html">La Plage</a>
-  <a href="contact.html">Contact</a>
+  <a href="pages/plage.html">La Plage</a>
+  <a href="pages/contact.html">Contact</a>
+  <div style="margin-top:28px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08);">
+    <a href="pages/contact.html" class="btn btn-ocean" style="width:100%;justify-content:center;">Nous Rejoindre</a>
+  </div>
 </div>
 
-<!-- HERO -->
-<section class="hero-home" id="accueil">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-particles" id="hero-particles"></div>
-  <div class="hero-layers">
-    <div class="hl hl1"></div><div class="hl hl2"></div><div class="hl hl3"></div>
+<!-- ══ HERO ═══════════════════════════════════════ -->
+<section class="hero-home" id="accueil" aria-label="Bannière d'accueil">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-particles" id="hero-particles" aria-hidden="true"></div>
+  <div class="hero-layers" aria-hidden="true">
+    <div class="hl hl1"></div>
+    <div class="hl hl2"></div>
+    <div class="hl hl3"></div>
   </div>
   <div class="hero-content">
     <span class="hero-tag">République des Comores · Ngazidja</span>
-    <h1 class="hero-h1">Bienvenue à<br/><em>Moindzaza</em><br/>Mboini</h1>
-    <p class="hero-lead">Un village côtier d'exception — bercé par l'Océan Indien,<br/>riche d'histoire, de culture et de solidarité.</p>
+    <h1 class="hero-h1">
+      Bienvenue à<br/>
+      <em>Moindzaza</em><br/>
+      Mboini
+    </h1>
+    <p class="hero-lead">
+      Un village côtier d'exception — bercé par l'Océan Indien,<br class="hero-br"/>
+      riche d'histoire, de culture et de solidarité.
+    </p>
     <div class="hero-btns">
       <a href="histoire.html" class="btn btn-ocean">Découvrir l'histoire</a>
       <a href="plage.html" class="btn btn-outline-light">Notre plage 🏖️</a>
     </div>
-    <div class="hero-scroll"><div class="hs-line"></div><span>Explorer</span></div>
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hs-line"></div>
+      <span>Explorer</span>
+    </div>
   </div>
-  <div class="hero-wave-bottom">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+  <div class="hero-wave-bottom" aria-hidden="true">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,60 C480,100 960,10 1440,60 L1440,100 L0,100 Z" fill="var(--ivory)"/>
     </svg>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats-section">
+<!-- ══ STATS ═══════════════════════════════════════ -->
+<section class="stats-section" aria-label="Chiffres clés">
   <div class="stats-inner">
-    <div class="stat-pill reveal" data-delay="0"><span class="sp-num">1890</span><span class="sp-lbl">Fondé en</span></div>
-    <div class="stat-pill reveal" data-delay="100"><span class="sp-num" data-count="1500">0</span><span class="sp-lbl">Habitants</span></div>
-    <div class="stat-pill reveal" data-delay="200"><span class="sp-num" data-count="4">0</span><span class="sp-lbl">Associations actives</span></div>
-    <div class="stat-pill reveal" data-delay="300"><span class="sp-num" data-count="3">0</span><span class="sp-lbl">km de côtes</span></div>
-    <div class="stat-pill reveal" data-delay="400"><span class="sp-num" data-count="100" data-suffix="%">0%</span><span class="sp-lbl">Engagement citoyen</span></div>
+    <div class="stat-pill reveal" data-delay="0">
+      <span class="sp-num">1890</span>
+      <span class="sp-lbl">Fondé en</span>
+    </div>
+    <div class="stat-pill reveal" data-delay="100">
+      <span class="sp-num" data-count="1500">0</span>
+      <span class="sp-lbl">Habitants</span>
+    </div>
+    <div class="stat-pill reveal" data-delay="200">
+      <span class="sp-num" data-count="4">0</span>
+      <span class="sp-lbl">Associations actives</span>
+    </div>
+    <div class="stat-pill reveal" data-delay="300">
+      <span class="sp-num" data-count="3">0</span>
+      <span class="sp-lbl">km de côtes</span>
+    </div>
+    <div class="stat-pill reveal" data-delay="400">
+      <span class="sp-num" data-count="100" data-suffix="%">0%</span>
+      <span class="sp-lbl">Engagement citoyen</span>
+    </div>
   </div>
 </section>
 
-<!-- INTRO -->
-<section class="section intro-section">
+<!-- ══ INTRO ═══════════════════════════════════════ -->
+<section class="section intro-section" aria-labelledby="intro-heading">
   <div class="section-inner">
     <div class="intro-grid">
       <div class="intro-visual reveal-left">
-        <div class="intro-ocean-card">
-          <div class="ioc-wave w1"></div><div class="ioc-wave w2"></div><div class="ioc-wave w3"></div>
-          <div class="ioc-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-island"/></svg></div>
+        <div class="intro-ocean-card" role="img" aria-label="Illustration de l'île de Ngazidja">
+          <div class="ioc-wave w1" aria-hidden="true"></div>
+          <div class="ioc-wave w2" aria-hidden="true"></div>
+          <div class="ioc-wave w3" aria-hidden="true"></div>
+          <div class="ioc-icon" aria-hidden="true">
+            <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-island"/></svg>
+          </div>
           <div class="ioc-badge">Fondé en 1890</div>
         </div>
       </div>
       <div class="intro-text reveal-right">
         <span class="eyebrow">Notre village</span>
-        <h2 class="h2 mb-md">Un village <em>ancré</em><br/>dans l'Océan Indien</h2>
-        <p class="lead mb-md">Moindzaza Mboini est un village côtier de l'île de Ngazidja, aux Comores. Niché au bord de l'Océan Indien, il est réputé pour sa plage magnifique, sa communauté soudée et sa richesse culturelle.</p>
-        <p class="lead mb-lg">Quatre associations dynamiques y œuvrent au quotidien — chacune portant une vision différente du développement de notre village.</p>
+        <h2 class="h2 mb-md" id="intro-heading">
+          Un village <em>ancré</em><br/>dans l'Océan Indien
+        </h2>
+        <p class="lead mb-md">
+          Moindzaza Mboini est un village côtier de l'île de Ngazidja, aux Comores. Niché au bord
+          de l'Océan Indien, il est réputé pour sa plage magnifique, sa communauté soudée et sa
+          richesse culturelle.
+        </p>
+        <p class="lead mb-lg">
+          Quatre associations dynamiques y œuvrent au quotidien — chacune portant une vision
+          différente du développement de notre village.
+        </p>
         <a href="histoire.html" class="btn btn-outline-dark">Lire notre histoire →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ASSOCIATIONS -->
-<section class="section assoc-section">
+<!-- ══ ASSOCIATIONS ════════════════════════════════ -->
+<section class="section assoc-section" aria-labelledby="assoc-heading">
   <div class="section-inner">
     <span class="eyebrow center reveal">Vie communautaire</span>
-    <h2 class="h2 center mb-lg reveal" data-delay="100">Nos <em>Associations</em></h2>
+    <h2 class="h2 center mb-lg reveal" data-delay="100" id="assoc-heading">
+      Nos <em>Associations</em>
+    </h2>
     <div class="assoc-grid">
+
       <a href="comite.html" class="assoc-card tilt-card reveal" data-delay="0">
-        <div class="ac-icon-wrap" style="background:linear-gradient(135deg,#0b6b8a,#041c2e)" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-community"/></svg></div>
+        <div class="ac-icon-wrap" style="background:linear-gradient(135deg,#0b6b8a,#041c2e)" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-community"/></svg>
+        </div>
         <div class="ac-body">
           <h3>Comité Local</h3>
           <span class="ac-tag">Gouvernance · Développement</span>
           <p>Structure représentative du village qui coordonne les actions citoyennes et unit la communauté autour de projets collectifs.</p>
-          <span class="ac-more">Découvrir →</span>
+          <span class="ac-more" aria-hidden="true">Découvrir →</span>
         </div>
-        <div class="ac-glow" style="background:rgba(11,107,138,.1)"></div>
+        <div class="ac-glow" style="background:rgba(11,107,138,.1)" aria-hidden="true"></div>
       </a>
+
       <a href="angelus.html" class="assoc-card tilt-card reveal" data-delay="120">
-        <div class="ac-icon-wrap" style="background:linear-gradient(135deg,#c0392b,#6e1010)" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-football"/></svg></div>
+        <div class="ac-icon-wrap" style="background:linear-gradient(135deg,#c0392b,#6e1010)" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-football"/></svg>
+        </div>
         <div class="ac-body">
           <h3>Angelus Club</h3>
           <span class="ac-tag">Sport · Jeunesse · Football</span>
           <p>Le club sportif qui forme les talents et représente fièrement Moindzaza Mboini dans les compétitions régionales.</p>
-          <span class="ac-more">Découvrir →</span>
+          <span class="ac-more" aria-hidden="true">Découvrir →</span>
         </div>
-        <div class="ac-glow" style="background:rgba(192,57,43,.08)"></div>
+        <div class="ac-glow" style="background:rgba(192,57,43,.08)" aria-hidden="true"></div>
       </a>
+
       <a href="acm.html" class="assoc-card tilt-card reveal" data-delay="240">
-        <div class="ac-icon-wrap" style="background:linear-gradient(135deg,#d4a24c,#7a5010)" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-book-open"/></svg></div>
+        <div class="ac-icon-wrap" style="background:linear-gradient(135deg,#d4a24c,#7a5010)" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-book-open"/></svg>
+        </div>
         <div class="ac-body">
           <h3>ACM</h3>
           <span class="ac-tag">Culture · Éducation · Journée Culturelle</span>
           <p>Cours de vacances, soutien scolaire et la grande Journée de la Culture — fierté de tout le village.</p>
-          <span class="ac-more">Découvrir →</span>
+          <span class="ac-more" aria-hidden="true">Découvrir →</span>
         </div>
-        <div class="ac-glow" style="background:rgba(212,162,76,.08)"></div>
+        <div class="ac-glow" style="background:rgba(212,162,76,.08)" aria-hidden="true"></div>
       </a>
+
       <a href="twamaya.html" class="assoc-card tilt-card reveal" data-delay="360">
-        <div class="ac-icon-wrap" style="background:linear-gradient(135deg,#3a8f5c,#1a4028)" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-leaf-spark"/></svg></div>
+        <div class="ac-icon-wrap" style="background:linear-gradient(135deg,#3a8f5c,#1a4028)" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-leaf-spark"/></svg>
+        </div>
         <div class="ac-body">
           <h3>Twamaya No Urahafu</h3>
           <span class="ac-tag">Propreté · Environnement</span>
           <p>Association dédiée à la propreté et au cadre de vie, mobilisant les habitants pour embellir notre village.</p>
-          <span class="ac-more">Découvrir →</span>
+          <span class="ac-more" aria-hidden="true">Découvrir →</span>
         </div>
-        <div class="ac-glow" style="background:rgba(58,143,92,.08)"></div>
+        <div class="ac-glow" style="background:rgba(58,143,92,.08)" aria-hidden="true"></div>
       </a>
+
     </div>
   </div>
 </section>
 
-<!-- BEACH TEASER -->
-<section class="beach-teaser">
-  <div class="bt-bg"></div>
-  <div class="bt-overlay"></div>
+<!-- ══ BEACH TEASER ════════════════════════════════ -->
+<section class="beach-teaser" aria-labelledby="beach-heading">
+  <div class="bt-bg" aria-hidden="true"></div>
+  <div class="bt-overlay" aria-hidden="true"></div>
   <div class="bt-content reveal">
     <span class="eyebrow" style="color:var(--aqua)">Destination</span>
-    <h2 class="h2 light mb-md">La Plage de<br/><em>Moindzaza Mboini</em></h2>
-    <p style="color:var(--foam);opacity:.85;max-width:500px;line-height:1.85;margin-bottom:32px;">Eaux turquoise, sable blanc, cocotiers et couchers de soleil exceptionnels. Notre plage est le joyau naturel du village.</p>
+    <h2 class="h2 light mb-md" id="beach-heading">
+      La Plage de<br/><em>Moindzaza Mboini</em>
+    </h2>
+    <p>
+      Eaux turquoise, sable blanc, cocotiers et couchers de soleil exceptionnels.
+      Notre plage est le joyau naturel du village.
+    </p>
     <a href="plage.html" class="btn btn-ocean">Explorer la plage 🌊</a>
   </div>
-  <div class="bt-wave">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+  <div class="bt-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--ivory)"/>
     </svg>
   </div>
 </section>
 
-<!-- NEWS -->
-<section class="section news-section">
+<!-- ══ NEWS ════════════════════════════════════════ -->
+<section class="section news-section" aria-labelledby="news-heading">
   <div class="section-inner">
     <div class="news-header reveal">
       <div>
         <span class="eyebrow">Restez informés</span>
-        <h2 class="h2">Actualités <em>récentes</em></h2>
+        <h2 class="h2" id="news-heading">Actualités <em>récentes</em></h2>
       </div>
     </div>
     <div class="news-grid">
+
       <article class="news-card big-news card reveal" data-delay="0">
-        <div class="nc-visual" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-theater"/></svg></div>
+        <div class="nc-visual" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-theater"/></svg>
+        </div>
         <div class="nc-badge" style="background:var(--gold);color:var(--deep)">ACM</div>
         <div class="nc-body">
-          <time>Juillet 2026</time>
+          <time datetime="2026-07">Juillet 2026</time>
           <h3>Journée de la Culture 2026 — Programme dévoilé</h3>
           <p>L'ACM annonce le thème et le programme de la grande Journée de la Culture. Expositions, spectacles et concours au menu.</p>
           <a href="acm.html" class="nc-link">Lire la suite →</a>
         </div>
       </article>
+
       <article class="news-card card reveal" data-delay="120">
-        <div class="nc-visual sm" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-leaf-spark"/></svg></div>
+        <div class="nc-visual sm" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-leaf-spark"/></svg>
+        </div>
         <div class="nc-badge" style="background:var(--palm);color:var(--white)">Twamaya</div>
         <div class="nc-body">
-          <time>Mai 2026</time>
+          <time datetime="2026-05">Mai 2026</time>
           <h3>Grande opération propreté du littoral</h3>
           <p>Twamaya No Urahafu mobilise 80 bénévoles pour nettoyer la plage et les ruelles.</p>
           <a href="twamaya.html" class="nc-link">Lire →</a>
         </div>
       </article>
+
       <article class="news-card card reveal" data-delay="240">
-        <div class="nc-visual sm" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-football"/></svg></div>
+        <div class="nc-visual sm" aria-hidden="true">
+          <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-football"/></svg>
+        </div>
         <div class="nc-badge" style="background:var(--coral);color:var(--white)">Sport</div>
         <div class="nc-body">
-          <time>Avril 2026</time>
+          <time datetime="2026-04">Avril 2026</time>
           <h3>Angelus Club en finale régionale</h3>
           <p>Après une brillante saison, l'Angelus Club décroche sa place en finale du championnat de Ngazidja.</p>
           <a href="angelus.html" class="nc-link">Lire →</a>
         </div>
       </article>
+
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section reveal">
+<!-- ══ CTA ═════════════════════════════════════════ -->
+<section class="cta-section reveal" aria-labelledby="cta-heading">
   <div class="cta-inner">
     <span class="eyebrow" style="color:var(--aqua)">Rejoignez-nous</span>
-    <h2 class="h2 light mb-md">Contribuez à<br/><em>Moindzaza Mboini</em></h2>
-    <p style="color:var(--foam);opacity:.8;max-width:480px;margin:0 auto 36px;">Habitant, diaspora ou ami du village — votre engagement compte.</p>
-    <div class="flex justify-center gap-md flex-wrap">
+    <h2 class="h2 light mb-md" id="cta-heading">
+      Contribuez à<br/><em>Moindzaza Mboini</em>
+    </h2>
+    <p style="color:var(--foam);opacity:.8;max-width:480px;margin:0 auto 36px;font-size:clamp(.85rem,1.3vw,1rem);line-height:1.8;">
+      Habitant, diaspora ou ami du village — votre engagement compte.
+    </p>
+    <div class="flex justify-center gap-md flex-wrap cta-btns">
       <a href="contact.html" class="btn btn-ocean">Nous contacter</a>
       <a href="acm.html" class="btn btn-outline-light">Rejoindre l'ACM</a>
     </div>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="footer-wave-top">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+<!-- ══ FOOTER ══════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-wave-top" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,30 C480,60 960,0 1440,30 L1440,0 L0,0 Z" fill="var(--ivory)"/>
     </svg>
   </div>
   <div class="footer-grid">
     <div>
-      <div class="nav-logo" style="margin-bottom:0">
-        <div class="nav-logo-mark">🌊</div>
+      <a href="index.html" class="nav-logo" style="margin-bottom:0" aria-label="Moindzaza Mboini — Retour à l'accueil">
+        <div class="nav-logo-mark" aria-hidden="true">🌊</div>
         <div class="nav-logo-text">
           <span class="nav-logo-main">Moindzaza Mboini</span>
           <span class="nav-logo-sub">Ngazidja · Comores</span>
         </div>
-      </div>
-      <p class="footer-brand-desc">Village côtier de Ngazidja, bercé par l'Océan Indien. Riche d'histoire, de culture et de solidarité depuis 1890.</p>
+      </a>
+      <p class="footer-brand-desc">
+        Village côtier de Ngazidja, bercé par l'Océan Indien.
+        Riche d'histoire, de culture et de solidarité depuis 1890.
+      </p>
       <div class="footer-socials">
-        <a class="footer-social" href="#" title="Facebook">📘</a>
-        <a class="footer-social" href="#" title="WhatsApp">💬</a>
-        <a class="footer-social" href="#" title="YouTube">▶️</a>
+        <a class="footer-social" href="#" title="Facebook" aria-label="Suivez-nous sur Facebook">📘</a>
+        <a class="footer-social" href="#" title="WhatsApp" aria-label="Contactez-nous sur WhatsApp">💬</a>
+        <a class="footer-social" href="#" title="YouTube" aria-label="Notre chaîne YouTube">▶️</a>
       </div>
     </div>
-    <div class="footer-col"><h5>Village</h5><a href="index.html">Accueil</a><a href="histoire.html">Histoire</a><a href="plage.html">La Plage</a><a href="contact.html">Contact</a></div>
-    <div class="footer-col"><h5>Associations</h5><a href="comite.html">Comité Local</a><a href="angelus.html">Angelus Club</a><a href="acm.html">ACM</a><a href="twamaya.html">Twamaya No Urahafu</a></div>
-    <div class="footer-col"><h5>Localisation</h5><span>Moindzaza Mboini</span><span>Ngazidja, Comores</span><span>Océan Indien</span></div>
+    <nav class="footer-col" aria-label="Liens village">
+      <h5>Village</h5>
+      <a href="index.html">Accueil</a>
+      <a href="pages/histoires/histoire.html">Histoire</a>
+      <a href="pages/plage.html">La Plage</a>
+      <a href="pages/contact.html">Contact</a>
+    </nav>
+    <nav class="footer-col" aria-label="Liens associations">
+      <h5>Associations</h5>
+      <a href="pages/comite.html">Comité Local</a>
+      <a href="pages/angelus.html">Angelus Club</a>
+      <a href="pages/acm.html">ACM</a>
+      <a href="pages/twamaya.html">Twamaya No Urahafu</a>
+    </nav>
+    <div class="footer-col">
+      <h5>Localisation</h5>
+      <span>Moindzaza Mboini</span>
+      <span>Ngazidja, Comores</span>
+      <span>Océan Indien</span>
+    </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Moindzaza Mboini · Tous droits réservés</p>
-    <div class="footer-bottom-links"><a href="#">Mentions légales</a><a href="#">Confidentialité</a></div>
+    <div class="footer-bottom-links">
+      <a href="#">Mentions légales</a>
+      <a href="#">Confidentialité</a>
+    </div>
   </div>
 </footer>
 
-<button type="button" id="back-top">↑</button>
-<div id="cookie-banner">
+<button type="button" id="back-top" aria-label="Retour en haut de page">↑</button>
+
+<div id="cookie-banner" role="region" aria-label="Consentement aux cookies">
   <p>🍪 Ce site utilise des cookies pour améliorer votre expérience.</p>
   <button type="button" class="btn btn-ocean" id="cookie-accept">Accepter</button>
 </div>
 
-<script src="shared.js"></script>
-<script src="home.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>
