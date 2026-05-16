@@ -10,18 +10,224 @@
   <link rel="stylesheet" href="../css/inner.css"/>
   <link rel="stylesheet" href="../css/components.css"/>
   <style>
-    :root {
-      --accent:       #c0392b;
-      --accent-light: rgba(192,57,43,.1);
-      --accent-mid:   #9a2010;
-    }
-    .page-hero { background: linear-gradient(155deg,#1a0505,#5a0f0f,#c0392b) !important; }
-    .eyebrow   { color: #e05a4a !important; }
-    .h2 em     { color: #c0392b !important; }
-    .tl-dot    { background: #c0392b !important; box-shadow: 0 0 0 5px rgba(192,57,43,.2) !important; }
-    .tl-year   { color: #c0392b !important; }
-    .nc-link, .ac-more { color: #c0392b !important; }
-  </style>
+  :root {
+    --accent:       #1e88e5;
+    --accent-light: rgba(30,136,229,.12);
+    --accent-mid:   #1565c0;
+  }
+
+  /* HERO */
+  .page-hero {
+    background: linear-gradient(155deg,#021b3a,#0b3d91,#1e88e5) !important;
+  }
+
+  .eyebrow {
+    color: #64b5f6 !important;
+  }
+
+  .h2 em {
+    color: #1e88e5 !important;
+  }
+
+  .tl-dot {
+    background: #1e88e5 !important;
+    box-shadow: 0 0 0 5px rgba(30,136,229,.2) !important;
+  }
+
+  .tl-year {
+    color: #1e88e5 !important;
+  }
+
+  .nc-link,
+  .ac-more {
+    color: #1e88e5 !important;
+  }
+
+  /* CARTES FORMATION */
+  .prog-card {
+    border-top: 4px solid var(--accent);
+    transition: .35s ease;
+  }
+
+  .prog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(30,136,229,.15);
+  }
+
+  .prog-icon {
+    background: rgba(30,136,229,.12);
+    color: #1e88e5;
+  }
+
+  .prog-bar {
+    background: linear-gradient(90deg,#1565c0,#42a5f5);
+  }
+
+  /* STATS CARD */
+  .comite-stats-card {
+    background: linear-gradient(135deg,#021b3a,#0b3d91) !important;
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  }
+
+  .csc-num {
+    color: #90caf9;
+  }
+
+  /* PALMARÈS */
+  .palm-card {
+    transition: .35s ease;
+    border-top: 4px solid transparent;
+  }
+
+  .palm-card:hover {
+    transform: translateY(-8px);
+    border-top-color: #1e88e5;
+    box-shadow: 0 18px 40px rgba(30,136,229,.15);
+  }
+
+  .palm-icon {
+    background: rgba(30,136,229,.12);
+    color: #1e88e5;
+  }
+
+  /* MATCHS */
+  .score-num {
+    color: #1565c0;
+    font-weight: 800;
+  }
+
+  .match-badge.win {
+    background: rgba(46,204,113,.12);
+    color: #27ae60;
+  }
+
+  .match-badge.draw {
+    background: rgba(241,196,15,.14);
+    color: #d4ac0d;
+  }
+
+  .match-badge.loss {
+    background: rgba(231,76,60,.12);
+    color: #c0392b;
+  }
+
+  /* AGENDA */
+  .ui-date {
+    background: linear-gradient(135deg,#1565c0,#42a5f5);
+    color: white;
+    border-radius: 16px;
+    padding: 12px;
+    min-width: 75px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(30,136,229,.25);
+  }
+
+  .uid-day {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .uid-month {
+    font-size: .82rem;
+    opacity: .95;
+  }
+
+  .ui-badge {
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 700;
+  }
+
+  .ui-badge.home {
+    background: rgba(30,136,229,.12);
+    color: #1565c0;
+  }
+
+  .ui-badge.away {
+    background: rgba(52,152,219,.12);
+    color: #2980b9;
+  }
+
+  .ui-badge.final {
+    background: rgba(255,215,0,.18);
+    color: #c79b00;
+  }
+
+  /* CTA */
+  .inner-cta {
+    background: linear-gradient(135deg,#021b3a,#0b3d91,#1e88e5);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .inner-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 35%);
+    pointer-events: none;
+  }
+
+  .inner-cta h3,
+  .inner-cta p {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* BOUTON */
+  .btn-ocean {
+    background: white;
+    color: #1565c0 !important;
+    border: none;
+    font-weight: 700;
+    transition: .3s ease;
+  }
+
+  .btn-ocean:hover {
+    transform: translateY(-3px);
+    background: #e3f2fd;
+    box-shadow: 0 12px 30px rgba(255,255,255,.2);
+  }
+
+  /* INFO BOX */
+  .info-box {
+    background: rgba(30,136,229,.08);
+    border-left: 4px solid #1e88e5;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    background: #02162d;
+  }
+
+  .footer-col h5 {
+    color: #64b5f6;
+  }
+
+  .footer-col a:hover {
+    color: #90caf9;
+  }
+
+  /* SCROLL BUTTON */
+  #back-top {
+    background: linear-gradient(135deg,#1565c0,#42a5f5);
+    color: white;
+    border: none;
+    box-shadow: 0 10px 25px rgba(30,136,229,.3);
+  }
+
+  #back-top:hover {
+    transform: translateY(-4px);
+  }
+</style>
 </head>
 <body>
 <div id="progress-bar"></div>
