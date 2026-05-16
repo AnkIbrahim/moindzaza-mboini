@@ -6,6 +6,10 @@
   <meta name="description" content="ACM — Association Culturelle de Moindzaza Mboini. Éducation, culture et Journée de la Culture."/>
   <meta name="theme-color" content="#1a0f00"/>
   <title>ACM — Association Culturelle de Moindzaza Mboini</title>
+  
+  <!-- Kit d'icônes Font Awesome v6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  
   <link rel="stylesheet" href="../css/shared.css"/>
   <link rel="stylesheet" href="../css/inner.css"/>
   <link rel="stylesheet" href="../css/components.css"/>
@@ -20,6 +24,40 @@
     .h2 em     { color: #b87a1a !important; }
     .tl-dot    { background: #d4a24c !important; box-shadow: 0 0 0 5px rgba(212,162,76,.2) !important; }
     .tl-year   { color: #d4a24c !important; }
+
+    /* Intégration et alignement des nouvelles icônes */
+    .ph-deco {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(5rem, 10vw, 8rem);
+      color: rgba(255, 255, 255, 0.08) !important;
+    }
+    .info-box-icon {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-right: 8px;
+    }
+    .cc-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 1.8rem;
+      color: var(--white);
+    }
+    .team-avatar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: rgba(255,255,255,0.9);
+    }
+    .navbar .fa-chevron-down {
+      font-size: 0.75rem;
+      margin-left: 4px;
+      transition: transform 0.2s ease;
+    }
   </style>
 </head>
 <body>
@@ -34,7 +72,7 @@
 <!-- ══ NAVIGATION ══════════════════════════════════ -->
 <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
   <a href="../index.html" class="nav-logo" aria-label="Moindzaza Mboini — Accueil">
-    <div class="nav-logo-mark" aria-hidden="true">🌊</div>
+    <div class="nav-logo-mark" aria-hidden="true"><i class="fa-solid fa-water"></i></div>
     <div class="nav-logo-text">
       <span class="nav-logo-main">Moindzaza Mboini</span>
       <span class="nav-logo-sub">Ngazidja · Comores</span>
@@ -44,7 +82,9 @@
     <div class="nav-item" role="none"><a href="../index.html" class="nav-link" role="menuitem">Accueil</a></div>
     <div class="nav-item" role="none"><a href="histoires/histoire.html" class="nav-link" role="menuitem">Histoire</a></div>
     <div class="nav-item has-drop" role="none">
-      <a href="#" class="nav-link active" role="menuitem" aria-haspopup="true" aria-expanded="false">Associations ▾</a>
+      <a href="#" class="nav-link active" role="menuitem" aria-haspopup="true" aria-expanded="false">
+        Associations <i class="fa-solid fa-chevron-down"></i>
+      </a>
       <div class="nav-drop" role="menu">
         <a href="comite.html" role="menuitem">Comité Local</a>
         <a href="angelus.html" role="menuitem">Angelus Club</a>
@@ -82,7 +122,7 @@
 <!-- ══ PAGE HERO ═══════════════════════════════════ -->
 <header class="page-hero" role="banner">
   <div class="page-hero-overlay" aria-hidden="true"></div>
-  <div class="ph-deco" aria-hidden="true">📚</div>
+  <div class="ph-deco" aria-hidden="true"><i class="fa-solid fa-book-open-reader"></i></div>
   <div class="page-hero-content">
     <span class="page-hero-tag">Culture · Éducation · Jeunesse · Moindzaza Mboini</span>
     <h1>ACM — <em>Association Culturelle</em><br/>de Moindzaza Mboini</h1>
@@ -115,8 +155,7 @@
           Culture — l'événement annuel le plus attendu de Moindzaza Mboini.
         </p>
         <div class="info-box">
-          <p>📚 <strong>Vision :</strong> Que chaque enfant de Moindzaza Mboini ait accès à une
-          éducation de qualité et soit fier de sa culture comorienne.</p>
+          <p><i class="fa-solid fa-graduation-cap info-box-icon"></i> <strong>Vision :</strong> Que chaque enfant de Moindzaza Mboini ait accès à une éducation de qualité et soit fier de sa culture comorienne.</p>
         </div>
       </div>
       <div class="reveal-right">
@@ -253,7 +292,9 @@
 
       <div class="cours-card reveal" data-delay="0">
         <div class="cc-header" style="background:linear-gradient(135deg,#1a0f00,#5a3a00)">
-          <div class="cc-icon" aria-hidden="true">☀️📚</div>
+          <div class="cc-icon" aria-hidden="true">
+            <i class="fa-solid fa-sun"></i><i class="fa-solid fa-book"></i>
+          </div>
           <h4>Cours de Vacances</h4>
           <p>Pendant les grandes vacances scolaires, l'ACM ouvre ses portes pour des cours de révision et d'apprentissage intensif, dans une ambiance motivante et bienveillante.</p>
         </div>
@@ -275,7 +316,9 @@
 
       <div class="cours-card reveal" data-delay="150">
         <div class="cc-header" style="background:linear-gradient(135deg,#073b5c,#0b6b8a)">
-          <div class="cc-icon" aria-hidden="true">🎓📖</div>
+          <div class="cc-icon" aria-hidden="true">
+            <i class="fa-solid fa-user-graduate"></i><i class="fa-solid fa-book-open"></i>
+          </div>
           <h4>Cours de Soutien Scolaire</h4>
           <p>Tout au long de l'année scolaire, des enseignants bénévoles accompagnent les élèves en difficulté pour les aider à rattraper leur retard et à gagner en confiance.</p>
         </div>
@@ -307,28 +350,36 @@
     <div class="team-grid">
 
       <div class="team-card card reveal" data-delay="0">
-        <div class="team-avatar" style="background:linear-gradient(135deg,#d4a24c,#7a5010)" aria-hidden="true">👩🏿‍💼</div>
+        <div class="team-avatar" style="background:linear-gradient(135deg,#d4a24c,#7a5010)" aria-hidden="true">
+          <i class="fa-solid fa-user-tie"></i>
+        </div>
         <h4>Assia Mouhamed</h4>
         <span class="team-role">Présidente ACM</span>
         <p>Enseignante de formation, elle dirige l'ACM avec passion et porte haut la vision culturelle du village.</p>
       </div>
 
       <div class="team-card card reveal" data-delay="100">
-        <div class="team-avatar" style="background:linear-gradient(135deg,#d4a24c,#7a5010)" aria-hidden="true">👨🏿‍🏫</div>
+        <div class="team-avatar" style="background:linear-gradient(135deg,#d4a24c,#7a5010)" aria-hidden="true">
+          <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
         <h4>Said Abdou</h4>
         <span class="team-role">Coordinateur Pédagogique</span>
         <p>Coordonne l'ensemble des cours de soutien et des cours de vacances avec les enseignants bénévoles.</p>
       </div>
 
       <div class="team-card card reveal" data-delay="200">
-        <div class="team-avatar" style="background:linear-gradient(135deg,#d4a24c,#7a5010)" aria-hidden="true">👩🏿‍🎨</div>
+        <div class="team-avatar" style="background:linear-gradient(135deg,#d4a24c,#7a5010)" aria-hidden="true">
+          <i class="fa-solid fa-palette"></i>
+        </div>
         <h4>Rahma Ali</h4>
         <span class="team-role">Responsable Culturel</span>
         <p>Organise la Journée de la Culture et coordonne les activités artistiques et culturelles de l'association.</p>
       </div>
 
       <div class="team-card card reveal" data-delay="300">
-        <div class="team-avatar" style="background:linear-gradient(135deg,#d4a24c,#7a5010)" aria-hidden="true">👨🏿‍💻</div>
+        <div class="team-avatar" style="background:linear-gradient(135deg,#d4a24c,#7a5010)" aria-hidden="true">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
         <h4>Ibrahim Hassani</h4>
         <span class="team-role">Trésorier &amp; Communication</span>
         <p>Gère les finances de l'association et s'occupe de la communication sur les réseaux sociaux.</p>
@@ -357,7 +408,7 @@
   <div class="footer-grid">
     <div>
       <a href="index.html" class="nav-logo" style="margin-bottom:0" aria-label="Moindzaza Mboini — Accueil">
-        <div class="nav-logo-mark" aria-hidden="true">🌊</div>
+        <div class="nav-logo-mark" aria-hidden="true"><i class="fa-solid fa-water"></i></div>
         <div class="nav-logo-text">
           <span class="nav-logo-main">Moindzaza Mboini</span>
           <span class="nav-logo-sub">Ngazidja · Comores</span>
@@ -390,7 +441,7 @@
   </div>
 </footer>
 
-<button type="button" id="back-top" aria-label="Retour en haut de page">↑</button>
+<button type="button" id="back-top" aria-label="Retour en haut de page"><i class="fa-solid fa-arrow-up"></i></button>
 <script src="../js/shared.js"></script>
 <script src="../js/inner.js"></script>
 </body>
