@@ -1,0 +1,490 @@
+{
+  "exam": "6ème et CEPE",
+  "session": 2026,
+  "entries": [
+    {
+      "rank": 1,
+      "nom": "ABDELAZID",
+      "prenom": "AMIR TABIBOU",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 2,
+      "nom": "ABDOULKARIM",
+      "prenom": "",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 3,
+      "nom": "ABIAMDRI",
+      "prenom": "THOURAYA",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 4,
+      "nom": "AHAMADA",
+      "prenom": "FAHAMIYA",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 5,
+      "nom": "ALHAOUTHE",
+      "prenom": "AIDA MOHAMED",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 6,
+      "nom": "AMANE",
+      "prenom": "ALI HAMADA",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 7,
+      "nom": "ANZMIA",
+      "prenom": "YNOUSSA",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 8,
+      "nom": "AYAM",
+      "prenom": "ALI MMADI",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 9,
+      "nom": "DJAINA",
+      "prenom": "DJAIDINE",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 10,
+      "nom": "DJALOUD",
+      "prenom": "HASSANI",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 11,
+      "nom": "HAFSOIT",
+      "prenom": "SANDI ALI ABDALLAH",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 12,
+      "nom": "HAIRIA",
+      "prenom": "FARIDI ABDALLAH",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 13,
+      "nom": "HASSANE",
+      "prenom": "KARIM YAZID",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 14,
+      "nom": "HASSANI",
+      "prenom": "AHMED HASSANI",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 15,
+      "nom": "HOUSNI",
+      "prenom": "BEN OUSSEINE",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 16,
+      "nom": "IBRAHIM",
+      "prenom": "SAID ALI",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 17,
+      "nom": "IHAB",
+      "prenom": "IBOUROI IBRAHIM",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 18,
+      "nom": "ISMAEL",
+      "prenom": "ZAYER OUSSENI",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 19,
+      "nom": "KARISHMA",
+      "prenom": "AHMED",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 20,
+      "nom": "MARIAMA",
+      "prenom": "YAHYA",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 21,
+      "nom": "MOEGNE",
+      "prenom": "YASSER",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 22,
+      "nom": "MOHAMED",
+      "prenom": "NIDJAD",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 23,
+      "nom": "MOINA",
+      "prenom": "AMINA SAID",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 24,
+      "nom": "MOUDJAHID",
+      "prenom": "ABDOU ALI",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 25,
+      "nom": "MOUDJIBOU",
+      "prenom": "ANKIDINE",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 26,
+      "nom": "NADJILA",
+      "prenom": "ANKIDINE",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 27,
+      "nom": "NAFIOU",
+      "prenom": "ISMAEL",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 28,
+      "nom": "NASSABIA",
+      "prenom": "HADJI AHAMADA",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 29,
+      "nom": "RACHIDA",
+      "prenom": "BAKAR",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 30,
+      "nom": "RIDJALI",
+      "prenom": "MABOUROI",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 31,
+      "nom": "SAMIR",
+      "prenom": "MOIRABOU",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 32,
+      "nom": "SANDJEMA",
+      "prenom": "MAOULIDA SOULE",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 33,
+      "nom": "SAYIRA",
+      "prenom": "ISSA SAMOU",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 34,
+      "nom": "SOIFOUATA",
+      "prenom": "MOUSSA MMADI",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 35,
+      "nom": "SOUDEYSSE",
+      "prenom": "SOULE",
+      "sexe": "M",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 36,
+      "nom": "WARNA",
+      "prenom": "ANFREDI",
+      "sexe": "F",
+      "etablissement": "EPP MOINDZAZA MBOINI",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 37,
+      "nom": "ABDOULBAR",
+      "prenom": "NASSUFOU",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 38,
+      "nom": "ABDOURAHMANE",
+      "prenom": "BELELA ISMAEL",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 39,
+      "nom": "AHMED",
+      "prenom": "IBRAHIM MARZOUK",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 40,
+      "nom": "ASSANE",
+      "prenom": "ISSOUF",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 41,
+      "nom": "ASSIMAK",
+      "prenom": "ABOUBACAR",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 42,
+      "nom": "BATOULI",
+      "prenom": "SOULE M'MADI",
+      "sexe": "F",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 43,
+      "nom": "ELMOUBARAKA",
+      "prenom": "JACK ARIFINA",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 44,
+      "nom": "FAEIZE",
+      "prenom": "M'MADI YOUSSOUF",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 45,
+      "nom": "HADJIRA",
+      "prenom": "YOUSSOUF ATHOUMANI",
+      "sexe": "F",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 46,
+      "nom": "KARIMA",
+      "prenom": "HASSANI",
+      "sexe": "F",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 47,
+      "nom": "MARTINE",
+      "prenom": "KARIM AHAMADA",
+      "sexe": "F",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 48,
+      "nom": "MHOUMADI",
+      "prenom": "IDJABOU ANISSA",
+      "sexe": "F",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 49,
+      "nom": "NAFIOUN",
+      "prenom": "MOUSSA SOUFIANE",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 50,
+      "nom": "NAWADI",
+      "prenom": "NOURDINE LAHADJI TOIYB",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 51,
+      "nom": "RIYAD",
+      "prenom": "HAMADA",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 52,
+      "nom": "SALIYA",
+      "prenom": "ALI DJAMBAE",
+      "sexe": "F",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 53,
+      "nom": "SAMIATI",
+      "prenom": "SOIFOINA",
+      "sexe": "F",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 54,
+      "nom": "YASRI",
+      "prenom": "BACAR",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 55,
+      "nom": "YSSOUF",
+      "prenom": "YAKINI",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 56,
+      "nom": "ISSA",
+      "prenom": "ISMAILA HILMA",
+      "sexe": "F",
+      "etablissement": "LA MAISON DES ENFANTS",
+      "cepe": "Oui"
+    },
+    {
+      "rank": 57,
+      "nom": "RALOUIYA",
+      "prenom": "ALI BOINA",
+      "sexe": "F",
+      "etablissement": "IBN KHALDUN",
+      "cepe": "Oui"
+    }
+  ],
+  "summary": {
+    "total_candidats": 69,
+    "total_admis": 57,
+    "total_non_admis": 12,
+    "taux_reussite_global": 82.6,
+    "etablissements": [
+      {
+        "nom": "EPP MOINDZAZA MBOINI",
+        "admis": 36,
+        "part_des_admis": 63.2
+      },
+      {
+        "nom": "GS AIME CESAIRE",
+        "admis": 19,
+        "part_des_admis": 33.3
+      },
+      {
+        "nom": "LA MAISON DES ENFANTS",
+        "admis": 1,
+        "part_des_admis": 1.8
+      },
+      {
+        "nom": "IBN KHALDUN",
+        "admis": 1,
+        "part_des_admis": 1.8
+      }
+    ]
+  }
+}

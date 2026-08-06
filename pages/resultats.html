@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="description" content="Consultez les listes officielles des admis aux examens nationaux CEPE, BEPC et BAC de Moindzaza Mboini." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Résultats des examens — Moindzaza Mboini" />
+  <meta property="og:description" content="Consultez les listes officielles des admis aux examens nationaux CEPE, BEPC et BAC de Moindzaza Mboini." />
+  <meta property="og:url" content="https://moindzaza-mboini.com/pages/resultats.html" />
+  <meta property="og:image" content="https://moindzaza-mboini.com/assets/og-resultats.png" />
+  <title>Résultats des examens — Moindzaza Mboini</title>
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/inner.css" />
+  <link rel="stylesheet" href="../css/resultats.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Résultats des examens - Moindzaza Mboini",
+    "description": "Consultez les listes officielles des admis aux examens nationaux CEPE, BEPC et BAC de Moindzaza Mboini.",
+    "url": "https://moindzaza-mboini.com/pages/resultats.html",
+    "inLanguage": "fr-FR"
+  }
+  </script>
+</head>
+<body>
+<div id="progress-bar"></div>
+<canvas id="bg-canvas"></canvas>
+
+<div id="page-loader">
+  <div class="loader-brand">Résultats des examens</div>
+  <div class="loader-sub">Moindzaza Mboini</div>
+  <div class="loader-waves"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+  <a href="../index.html" class="nav-logo" aria-label="Moindzaza Mboini — Accueil">
+    <div class="nav-logo-mark" aria-hidden="true">🌊</div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-main">Moindzaza Mboini</span>
+      <span class="nav-logo-sub">Ngazidja · Comores</span>
+    </div>
+  </a>
+  <div class="nav-menu" role="menubar">
+    <div class="nav-item" role="none"><a href="../index.html" class="nav-link" role="menuitem">Accueil</a></div>
+    <div class="nav-item" role="none"><a href="histoires/histoire.html" class="nav-link" role="menuitem">Histoire</a></div>
+    <div class="nav-item has-drop" role="none">
+      <a href="#" class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">Associations ▾</a>
+      <div class="nav-drop" role="menu" aria-label="Associations">
+        <a href="comite.html" role="menuitem">Comité Local</a>
+        <a href="angelus.html" role="menuitem">Angelus Club</a>
+        <a href="acm.html" role="menuitem">ACM — Éducation</a>
+        <a href="twamaya.html" role="menuitem">Twamaya No Urahafu</a>
+      </div>
+    </div>
+    <div class="nav-item" role="none"><a href="plage.html" class="nav-link" role="menuitem">La Plage</a></div>
+    <div class="nav-item" role="none"><a href="resultats.html" class="nav-link active" role="menuitem">Résultats des examens</a></div>
+    <div class="nav-item" role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></div>
+  </div>
+  <a href="contact.html" class="nav-cta">Nous Rejoindre</a>
+  <button type="button" class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menu de navigation" aria-modal="true">
+  <span class="mob-cat">Navigation</span>
+  <a href="../index.html">Accueil</a>
+  <a href="histoires/histoire.html">Histoire</a>
+  <span class="mob-cat">Associations</span>
+  <a href="comite.html">Comité Local</a>
+  <a href="angelus.html">Angelus Club</a>
+  <a href="acm.html">ACM — Éducation</a>
+  <a href="twamaya.html">Twamaya No Urahafu</a>
+  <span class="mob-cat">Découvrir</span>
+  <a href="plage.html">La Plage</a>
+  <a href="resultats.html">Résultats des examens</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<header class="page-hero" aria-label="Bannière des résultats des examens">
+  <div class="page-hero-overlay"></div>
+  <div class="ph-deco">🎓</div>
+  <div class="page-hero-content">
+    <span class="page-hero-tag">Résultats officiels · Examens nationaux</span>
+    <h1>Résultats des <em>examens</em></h1>
+    <p>Consultez les listes officielles des admis aux examens nationaux de Moindzaza Mboini.</p>
+  </div>
+  <div class="page-hero-wave"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,50 C480,80 960,10 1440,50 L1440,80 L0,80 Z" fill="var(--ivory)"/></svg></div>
+</header>
+
+<main>
+  <section class="section" aria-labelledby="resultats-heading">
+    <div class="section-inner">
+      <span class="eyebrow center reveal">Examens nationaux</span>
+      <h2 class="h2 center mb-md reveal" id="resultats-heading">Choisissez un examen</h2>
+      <p class="lead center mb-lg reveal">Sélectionnez l'examen et accédez aux listes officielles des admis pour chaque session.</p>
+      <div class="exam-grid" id="exam-cards" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="data-heading">
+    <div class="section-inner">
+      <div class="results-topbar reveal">
+        <div>
+          <span class="eyebrow">Recherche et filtres</span>
+          <h2 class="h2 mb-sm" id="data-heading">Rechercher dans les listes</h2>
+        </div>
+        <div class="result-actions">
+          <button type="button" class="btn btn-outline-dark" id="print-report">Imprimer</button>
+          <button type="button" class="btn btn-sand" id="export-pdf">Exporter PDF</button>
+          <button type="button" class="btn btn-ocean" id="download-csv">Télécharger la liste</button>
+        </div>
+      </div>
+
+      <div class="filters-grid reveal">
+        <div class="filter-group">
+          <label for="search-input">Recherche</label>
+          <input type="search" id="search-input" placeholder="Recherche par nom ou prénom" aria-label="Recherche par nom ou prénom" />
+        </div>
+        <div class="filter-group">
+          <label for="filter-etablissement">Établissement</label>
+          <select id="filter-etablissement" aria-label="Filtrer par établissement"><option value="">Tous les établissements</option></select>
+        </div>
+        <div class="filter-group" id="serie-filter-group">
+          <label for="filter-serie">Série</label>
+          <select id="filter-serie" aria-label="Filtrer par série"><option value="">Toutes les séries</option></select>
+        </div>
+        <div class="filter-group" id="groupe-filter-group">
+          <label for="filter-groupe">Groupe</label>
+          <select id="filter-groupe" aria-label="Filtrer par groupe"><option value="">Tous les groupes</option></select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-mention">Mention</label>
+          <select id="filter-mention" aria-label="Filtrer par mention"><option value="">Toutes les mentions</option></select>
+        </div>
+      </div>
+
+      <div class="stats-grid reveal" id="stats-grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="table-heading">
+    <div class="section-inner">
+      <div id="summary-block" class="hidden"></div>
+      <div class="table-header reveal">
+        <div>
+          <span class="eyebrow">Liste des admis</span>
+          <h2 class="h2" id="table-heading">Résultats</h2>
+          <p class="lead" id="table-summary">Sélectionnez un examen pour afficher les admis.</p>
+        </div>
+        <div class="table-meta">
+          <span id="total-count">0 admis</span>
+          <span id="page-count">Page 0 / 0</span>
+        </div>
+      </div>
+
+      <div class="loader-block hidden" id="exam-loader" aria-hidden="true" aria-live="polite">Chargement des résultats...</div>
+      <div class="error-block hidden" id="exam-error" role="alert"></div>
+
+      <div class="table-card card reveal" id="result-table-card">
+        <div class="table-scroll">
+          <table class="result-table" aria-describedby="table-summary">
+            <thead><tr id="table-head"></tr></thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="no-results hidden" id="no-results">Aucun résultat trouvé pour cette recherche.</div>
+
+      <div class="pagination" id="pagination-controls" aria-label="Pagination des résultats">
+        <button type="button" class="btn btn-outline-dark" id="prev-page">← Précédent</button>
+        <span id="pagination-info">Page 1 sur 1</span>
+        <button type="button" class="btn btn-ocean" id="next-page">Suivant →</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="../js/shared.js"></script>
+<script src="../js/resultats.js"></script>
+</body>
+</html>

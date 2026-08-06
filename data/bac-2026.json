@@ -1,0 +1,111 @@
+{
+  "exam": "BAC",
+  "session": 2026,
+  "entries": [
+    {
+      "rank": 1,
+      "nom": "FAIKA",
+      "prenom": "SOIFOUOINE",
+      "sexe": "",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "A1",
+      "groupe": "1er groupe",
+      "mention": "Assez Bien"
+    },
+    {
+      "rank": 2,
+      "nom": "HAISSATI",
+      "prenom": "HASSANE",
+      "sexe": "",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "A1",
+      "groupe": "1er groupe",
+      "mention": "Passable"
+    },
+    {
+      "rank": 3,
+      "nom": "NACHIATI",
+      "prenom": "INZOUDINE",
+      "sexe": "",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "A1",
+      "groupe": "1er groupe",
+      "mention": "Passable"
+    },
+    {
+      "rank": 4,
+      "nom": "NASRINE",
+      "prenom": "ALI ADAM",
+      "sexe": "",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "A1",
+      "groupe": "1er groupe",
+      "mention": "Passable"
+    },
+    {
+      "rank": 5,
+      "nom": "SOIFIYA",
+      "prenom": "SAINDOU",
+      "sexe": "",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "A1",
+      "groupe": "1er groupe",
+      "mention": "Passable"
+    },
+    {
+      "rank": 6,
+      "nom": "RAFIDA",
+      "prenom": "MOUHAMADI ALI MOINACHE",
+      "sexe": "",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "A4",
+      "groupe": "1er groupe",
+      "mention": "Assez Bien"
+    },
+    {
+      "rank": 7,
+      "nom": "SALIM",
+      "prenom": "HASSANI",
+      "sexe": "",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "A4",
+      "groupe": "1er groupe",
+      "mention": "Passable"
+    },
+    {
+      "rank": 8,
+      "nom": "SAID",
+      "prenom": "MOUGNIMALI",
+      "sexe": "",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "A4",
+      "groupe": "1er groupe",
+      "mention": "Assez Bien"
+    },
+    {
+      "rank": 9,
+      "nom": "AKSOID",
+      "prenom": "ANZIZE",
+      "sexe": "",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "D",
+      "groupe": "1er groupe",
+      "mention": "Passable"
+    }
+  ],
+  "summary": {
+    "total_candidats": 9,
+    "total_admis": 9,
+    "total_non_admis": 0,
+    "taux_reussite_global": 100.0,
+    "etablissements": [
+      {
+        "nom": "GS AIME CESAIRE",
+        "admis": 9,
+        "part_des_admis": 100.0
+      }
+    ],
+    "provisoire": true,
+    "note": "Données provisoires — 2ème groupe et autres établissements pas encore intégrés."
+  }
+}

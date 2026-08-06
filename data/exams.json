@@ -1,0 +1,14 @@
+[
+  {
+    "code": "cepe",
+    "label": "6ème et CEPE",
+    "icon": "📘",
+    "sessions": [2026]
+  },
+  {
+    "code": "bac",
+    "label": "BAC",
+    "icon": "🎓",
+    "sessions": [2026]
+  }
+]

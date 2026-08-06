@@ -1,0 +1,86 @@
+/* ── AJOUT : styles du résumé officiel — à coller dans css/resultats.css ── */
+
+.summary-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 3vw, 32px);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 32px;
+}
+.summary-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--deep);
+  margin-bottom: 20px;
+}
+.summary-totals {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.summary-total {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+}
+.st-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--current);
+}
+.st-lbl {
+  display: block;
+  font-size: .7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.summary-note {
+  font-size: .82rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.summary-schools {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.summary-school-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) 1fr minmax(120px, auto);
+  align-items: center;
+  gap: 14px;
+}
+.ssr-name {
+  font-size: .85rem;
+  color: var(--deep);
+  font-weight: 600;
+}
+.ssr-bar {
+  height: 10px;
+  background: rgba(19,168,196,.12);
+  border-radius: 50px;
+  overflow: hidden;
+}
+.ssr-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--lagoon), var(--aqua));
+  border-radius: 50px;
+}
+.ssr-value {
+  font-size: .78rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .summary-totals { grid-template-columns: repeat(2, 1fr); }
+  .summary-school-row { grid-template-columns: 1fr; gap: 6px; }
+}
