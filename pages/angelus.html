@@ -6,22 +6,262 @@
   <meta name="description" content="Angelus Club — Club de football de Moindzaza Mboini, Ngazidja, Comores."/>
   <meta name="theme-color" content="#1a0505"/>
   <title>Angelus Club — Moindzaza Mboini</title>
+  
+  <!-- Kit d'icônes Font Awesome pour les icônes de développeur -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  
   <link rel="stylesheet" href="../css/shared.css"/>
   <link rel="stylesheet" href="../css/inner.css"/>
   <link rel="stylesheet" href="../css/components.css"/>
   <style>
-    :root {
-      --accent:       #c0392b;
-      --accent-light: rgba(192,57,43,.1);
-      --accent-mid:   #9a2010;
-    }
-    .page-hero { background: linear-gradient(155deg,#1a0505,#5a0f0f,#c0392b) !important; }
-    .eyebrow   { color: #e05a4a !important; }
-    .h2 em     { color: #c0392b !important; }
-    .tl-dot    { background: #c0392b !important; box-shadow: 0 0 0 5px rgba(192,57,43,.2) !important; }
-    .tl-year   { color: #c0392b !important; }
-    .nc-link, .ac-more { color: #c0392b !important; }
-  </style>
+  :root {
+    --accent:       #1e88e5;
+    --accent-light: rgba(30,136,229,.12);
+    --accent-mid:   #1565c0;
+  }
+
+  /* HERO */
+  .page-hero {
+    background: linear-gradient(155deg,#021b3a,#0b3d91,#1e88e5) !important;
+  }
+
+  .eyebrow {
+    color: #64b5f6 !important;
+  }
+
+  .h2 em {
+    color: #1e88e5 !important;
+  }
+
+  .tl-dot {
+    background: #1e88e5 !important;
+    box-shadow: 0 0 0 5px rgba(30,136,229,.2) !important;
+  }
+
+  .tl-year {
+    color: #1e88e5 !important;
+  }
+
+  .nc-link,
+  .ac-more {
+    color: #1e88e5 !important;
+  }
+
+  /* CARTES FORMATION */
+  .prog-card {
+    border-top: 4px solid var(--accent);
+    transition: .35s ease;
+  }
+
+  .prog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(30,136,229,.15);
+  }
+
+  .prog-icon {
+    background: rgba(30,136,229,.12);
+    color: #1e88e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+
+  .prog-bar {
+    background: linear-gradient(90deg,#1565c0,#42a5f5);
+  }
+
+  /* STATS CARD */
+  .comite-stats-card {
+    background: linear-gradient(135deg,#021b3a,#0b3d91) !important;
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  }
+
+  .csc-num {
+    color: #90caf9;
+  }
+
+  /* PALMARÈS */
+  .palm-card {
+    transition: .35s ease;
+    border-top: 4px solid transparent;
+  }
+
+  .palm-card:hover {
+    transform: translateY(-8px);
+    border-top-color: #1e88e5;
+    box-shadow: 0 18px 40px rgba(30,136,229,.15);
+  }
+
+  .palm-icon {
+    background: rgba(30,136,229,.12);
+    color: #1e88e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+
+  /* MATCHS */
+  .score-num {
+    color: #1565c0;
+    font-weight: 800;
+  }
+
+  .match-badge.win {
+    background: rgba(46,204,113,.12);
+    color: #27ae60;
+  }
+
+  .match-badge.draw {
+    background: rgba(241,196,15,.14);
+    color: #d4ac0d;
+  }
+
+  .match-badge.loss {
+    background: rgba(231,76,60,.12);
+    color: #c0392b;
+  }
+
+  /* AGENDA */
+  .ui-date {
+    background: linear-gradient(135deg,#1565c0,#42a5f5);
+    color: white;
+    border-radius: 16px;
+    padding: 12px;
+    min-width: 75px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(30,136,229,.25);
+  }
+
+  .uid-day {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .uid-month {
+    font-size: .82rem;
+    opacity: .95;
+  }
+
+  .ui-badge {
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 700;
+  }
+
+  .ui-badge.home {
+    background: rgba(30,136,229,.12);
+    color: #1565c0;
+  }
+
+  .ui-badge.away {
+    background: rgba(52,152,219,.12);
+    color: #2980b9;
+  }
+
+  .ui-badge.final {
+    background: rgba(255,215,0,.18);
+    color: #c79b00;
+  }
+
+  .ui-venue i {
+    color: #1e88e5;
+    margin-right: 4px;
+  }
+
+  /* CTA */
+  .inner-cta {
+    background: linear-gradient(135deg,#021b3a,#0b3d91,#1e88e5);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .inner-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 35%);
+    pointer-events: none;
+  }
+
+  .inner-cta h3,
+  .inner-cta p {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* BOUTON */
+  .btn-ocean {
+    background: white;
+    color: #1565c0 !important;
+    border: none;
+    font-weight: 700;
+    transition: .3s ease;
+  }
+
+  .btn-ocean:hover {
+    transform: translateY(-3px);
+    background: #e3f2fd;
+    box-shadow: 0 12px 30px rgba(255,255,255,.2);
+  }
+
+  /* INFO BOX */
+  .info-box {
+    background: rgba(30,136,229,.08);
+    border-left: 4px solid #1e88e5;
+    padding: 18px;
+    border-radius: 14px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .info-box i {
+    color: #1e88e5;
+    font-size: 1.2rem;
+    margin-top: 2px;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    background: #02162d;
+  }
+
+  .footer-col h5 {
+    color: #64b5f6;
+  }
+
+  .footer-col a:hover {
+    color: #90caf9;
+  }
+
+  /* SCROLL BUTTON */
+  #back-top {
+    background: linear-gradient(135deg,#1565c0,#42a5f5);
+    color: white;
+    border: none;
+    box-shadow: 0 10px 25px rgba(30,136,229,.3);
+  }
+
+  #back-top:hover {
+    transform: translateY(-4px);
+  }
+</style>
 </head>
 <body>
 <div id="progress-bar"></div>
@@ -34,14 +274,14 @@
 
 <nav class="navbar" id="navbar">
   <a href="../index.html" class="nav-logo">
-    <div class="nav-logo-mark">🌊</div>
+    <div class="nav-logo-mark"><i class="fa-solid fa-water"></i></div>
     <div class="nav-logo-text"><span class="nav-logo-main">Moindzaza Mboini</span><span class="nav-logo-sub">Ngazidja · Comores</span></div>
   </a>
   <div class="nav-menu">
     <div class="nav-item"><a href="../index.html" class="nav-link">Accueil</a></div>
     <div class="nav-item"><a href="histoires/histoire.html" class="nav-link">Histoire</a></div>
     <div class="nav-item has-drop">
-      <a href="#" class="nav-link active">Associations ▾</a>
+      <a href="#" class="nav-link active">Associations <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></a>
       <div class="nav-drop">
         <a href="comite.html">Comité Local</a>
         <a href="angelus.html">Angelus Club</a>
@@ -67,7 +307,7 @@
 <!-- ══ PAGE HERO ═══════════════════════════════════ -->
 <header class="page-hero" role="banner">
   <div class="page-hero-overlay" aria-hidden="true"></div>
-  <div class="ph-deco" aria-hidden="true">⚽</div>
+  <div class="ph-deco" aria-hidden="true"><i class="fa-solid fa-futbol"></i></div>
   <div class="page-hero-content">
     <span class="page-hero-tag">Football · Sport · Jeunesse · Moindzaza Mboini</span>
     <h1><em>Angelus Club</em><br/>de Moindzaza Mboini</h1>
@@ -101,12 +341,14 @@
           en transmettant les valeurs d'une équipe soudée.
         </p>
         <div class="info-box">
-          <p>⚽ <strong>Couleurs du club :</strong> Rouge &amp; Blanc — couleurs de la passion et
+          <i class="fa-solid fa-circle-info"></i>
+          <p><strong>Couleurs du club :</strong> Bleu &amp; Blanc — couleurs de la passion et
           de la pureté, portées fièrement à chaque match.</p>
         </div>
       </div>
       <div class="reveal-right">
-        <div class="comite-stats-card" style="background:linear-gradient(135deg,#1a0505,#5a0f0f)">
+        <!-- Correction de l'inline style pour matcher l'identité bleu/blanc de l'Angelus Club -->
+        <div class="comite-stats-card">
           <div class="csc-item"><span class="csc-num" data-count="85">0</span><span class="csc-lbl">Joueurs inscrits</span></div>
           <div class="csc-item"><span class="csc-num" data-count="5">0</span><span class="csc-lbl">Catégories d'âge</span></div>
           <div class="csc-item"><span class="csc-num" data-count="12">0</span><span class="csc-lbl">Trophées remportés</span></div>
@@ -125,27 +367,27 @@
       Nos <em>catégories</em>
     </h2>
     <div class="program-grid">
-      <div class="prog-card reveal" data-delay="0" style="--prog-color:#c0392b">
+      <div class="prog-card reveal" data-delay="0" style="--prog-color:#1e88e5">
         <div class="prog-icon" aria-hidden="true">
-          <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-shield"/></svg>
+          <i class="fa-solid fa-children"></i>
         </div>
         <h4>École de Football</h4>
         <p><strong>8 à 12 ans</strong> — Initiation au football, développement de la coordination,
         apprentissage des règles et premières notions tactiques dans un cadre ludique.</p>
         <div class="prog-bar" aria-hidden="true"></div>
       </div>
-      <div class="prog-card reveal" data-delay="100" style="--prog-color:#c0392b">
+      <div class="prog-card reveal" data-delay="100" style="--prog-color:#1e88e5">
         <div class="prog-icon" aria-hidden="true">
-          <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-football"/></svg>
+          <i class="fa-solid fa-ranking-star"></i>
         </div>
         <h4>Minimes &amp; Cadets</h4>
         <p><strong>13 à 17 ans</strong> — Perfectionnement technique, introduction à la tactique
         collective, participations aux tournois locaux et régionaux.</p>
         <div class="prog-bar" aria-hidden="true"></div>
       </div>
-      <div class="prog-card reveal" data-delay="200" style="--prog-color:#c0392b">
+      <div class="prog-card reveal" data-delay="200" style="--prog-color:#1e88e5">
         <div class="prog-icon" aria-hidden="true">
-          <svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-trophy"/></svg>
+          <i class="fa-solid fa-shield-halved"></i>
         </div>
         <h4>Équipe Senior</h4>
         <p><strong>18 ans et plus</strong> — L'équipe première qui représente Moindzaza Mboini
@@ -165,32 +407,32 @@
     </h2>
     <div class="palmarès-grid">
       <div class="palm-card reveal" data-delay="0">
-        <div class="palm-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-medal"/></svg></div>
+        <div class="palm-icon" aria-hidden="true"><i class="fa-solid fa-award"></i></div>
         <h4>Champion Régional</h4>
         <p>3 titres de champion de la région de Ngazidja (2018, 2021, 2024)</p>
       </div>
       <div class="palm-card reveal" data-delay="100">
-        <div class="palm-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-trophy"/></svg></div>
+        <div class="palm-icon" aria-hidden="true"><i class="fa-solid fa-trophy"></i></div>
         <h4>Coupe Nationale</h4>
         <p>Finaliste de la Coupe Nationale des Comores en 2022 — une performance historique pour le club.</p>
       </div>
       <div class="palm-card reveal" data-delay="200">
-        <div class="palm-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-star"/></svg></div>
+        <div class="palm-icon" aria-hidden="true"><i class="fa-solid fa-seedling"></i></div>
         <h4>Meilleur Club Formateur</h4>
         <p>Reconnu meilleur club formateur de jeunes joueurs de Ngazidja en 2023.</p>
       </div>
       <div class="palm-card reveal" data-delay="300">
-        <div class="palm-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-medal"/></svg></div>
+        <div class="palm-icon" aria-hidden="true"><i class="fa-solid fa-medal"></i></div>
         <h4>Vice-Champion</h4>
         <p>5 titres de vice-champion régional et 3 places de finaliste en coupe locale.</p>
       </div>
       <div class="palm-card reveal" data-delay="400">
-        <div class="palm-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-star"/></svg></div>
+        <div class="palm-icon" aria-hidden="true"><i class="fa-solid fa-star"></i></div>
         <h4>Joueur de l'Année</h4>
         <p>2 joueurs issus de l'Angelus Club récompensés meilleur joueur du championnat régional.</p>
       </div>
       <div class="palm-card reveal" data-delay="500">
-        <div class="palm-icon" aria-hidden="true"><svg class="svg-icon" viewBox="0 0 24 24"><use href="icons.svg#icon-boot"/></svg></div>
+        <div class="palm-icon" aria-hidden="true"><i class="fa-solid fa-shoe-prints"></i></div>
         <h4>Meilleur Buteur</h4>
         <p>Le titre de meilleur buteur du championnat décroché à 4 reprises par des attaquants du club.</p>
       </div>
@@ -286,7 +528,7 @@
             <div class="ui-info">
               <h4>Angelus Club vs Étoile Bleue</h4>
               <p>Championnat Régional — Journée 18</p>
-              <span class="ui-venue">🏟️ Terrain de Moindzaza Mboini · 15h00</span>
+              <span class="ui-venue"><i class="fa-solid fa-location-dot"></i> Terrain de Moindzaza Mboini · 15h00</span>
             </div>
             <span class="ui-badge home">Domicile</span>
           </div>
@@ -299,7 +541,7 @@
             <div class="ui-info">
               <h4>FC Itsandra vs Angelus Club</h4>
               <p>Championnat Régional — Journée 19</p>
-              <span class="ui-venue">🚌 Déplacement · 14h30</span>
+              <span class="ui-venue"><i class="fa-solid fa-bus"></i> Déplacement · 14h30</span>
             </div>
             <span class="ui-badge away">Extérieur</span>
           </div>
@@ -312,7 +554,7 @@
             <div class="ui-info">
               <h4>FINALE — Championnat Régional</h4>
               <p>Si qualification confirmée</p>
-              <span class="ui-venue">🏆 Stade de Moroni · À confirmer</span>
+              <span class="ui-venue"><i class="fa-solid fa-trophy"></i> Stade de Moroni · À confirmer</span>
             </div>
             <span class="ui-badge final">Finale</span>
           </div>
@@ -329,7 +571,7 @@
   <div class="ic-content">
     <h3 id="cta-heading">Rejoins l'Angelus Club !</h3>
     <p>Tu as du talent ? Tu aimes le football ? Viens t'entraîner avec nous. Toutes les catégories sont ouvertes aux inscriptions.</p>
-    <a href="contact.html" class="btn btn-ocean">S'inscrire au club</a>
+    <a href="contact.html" class="btn btn-ocean"><i class="fa-solid fa-user-plus" style="margin-right: 8px;"></i> S'inscrire au club</a>
   </div>
 </section>
 
@@ -343,7 +585,7 @@
   <div class="footer-grid">
     <div>
       <a href="index.html" class="nav-logo" style="margin-bottom:0" aria-label="Moindzaza Mboini — Accueil">
-        <div class="nav-logo-mark" aria-hidden="true">🌊</div>
+        <div class="nav-logo-mark" aria-hidden="true"><i class="fa-solid fa-water"></i></div>
         <div class="nav-logo-text">
           <span class="nav-logo-main">Moindzaza Mboini</span>
           <span class="nav-logo-sub">Ngazidja · Comores</span>
@@ -367,7 +609,7 @@
     </nav>
     <div class="footer-col">
       <h5>Contact</h5>
-      <span>Moindzaza Mboini</span>
+      <span><i class="fa-solid fa-map-pin" style="margin-right: 6px;"></i> Moindzaza Mboini</span>
       <span>Ngazidja, Comores</span>
     </div>
   </div>
@@ -376,7 +618,7 @@
   </div>
 </footer>
 
-<button type="button" id="back-top" aria-label="Retour en haut de page">↑</button>
+<button type="button" id="back-top" aria-label="Retour en haut de page"><i class="fa-solid fa-arrow-up"></i></button>
 <script src="../js/shared.js"></script>
 <script src="../js/inner.js"></script>
 </body>
