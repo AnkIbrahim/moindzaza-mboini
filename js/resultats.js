@@ -133,7 +133,7 @@ const renderTable = () => {
     </tr>
   `).join('');
 
-  elements.totalCount.textContent = `${filtered.length.toLocaleString('fr-FR')} admis`;
+  elements.totalCount.textContent = `${filtered.length.toLocaleString('fr-FR')} résultat${filtered.length > 1 ? 's' : ''}`;
   const pages = Math.max(1, Math.ceil(filtered.length / pageSize));
   elements.pageCount.textContent = `Page ${page} / ${pages}`;
   elements.paginationInfo.textContent = `Page ${page} sur ${pages}`;
@@ -155,15 +155,19 @@ const renderSummary = () => {
   }
 
   container.classList.remove('hidden');
+  const hasPending = typeof summary.total_en_attente_oral === 'number';
+  const nonAdmisDisplay = (summary.total_non_admis === null || summary.total_non_admis === undefined) ? '?' : summary.total_non_admis;
+  const tauxDisplay = (summary.taux_reussite_global === null || summary.taux_reussite_global === undefined) ? 'À déterminer' : `${summary.taux_reussite_global}%`;
   container.innerHTML = `
     <div class="summary-card">
       <h3>Résumé officiel — ${state.examMeta.exam} ${state.examMeta.session}${summary.provisoire ? ' <span class="summary-badge">Provisoire</span>' : ''}</h3>
       ${summary.provisoire && summary.note ? `<p class="summary-warning">⚠️ ${summary.note}</p>` : ''}
       <div class="summary-totals">
         <div class="summary-total"><span class="st-num">${summary.total_candidats}</span><span class="st-lbl">Candidats</span></div>
-        <div class="summary-total"><span class="st-num">${summary.total_admis}</span><span class="st-lbl">Admis</span></div>
-        <div class="summary-total"><span class="st-num">${summary.total_non_admis}</span><span class="st-lbl">Non admis</span></div>
-        <div class="summary-total"><span class="st-num">${summary.taux_reussite_global}%</span><span class="st-lbl">Taux de réussite global</span></div>
+        <div class="summary-total"><span class="st-num">${summary.total_admis}</span><span class="st-lbl">Admis${hasPending ? ' (1er groupe)' : ''}</span></div>
+        ${hasPending ? `<div class="summary-total"><span class="st-num">${summary.total_en_attente_oral}</span><span class="st-lbl">En attente (oral 2ème groupe)</span></div>` : ''}
+        <div class="summary-total"><span class="st-num">${nonAdmisDisplay}</span><span class="st-lbl">Non admis</span></div>
+        <div class="summary-total"><span class="st-num">${tauxDisplay}</span><span class="st-lbl">Taux de réussite global</span></div>
       </div>
       ${Array.isArray(summary.etablissements) ? `
         <p class="summary-note">Répartition des admis par établissement (part des admis, pas un taux de réussite par école — le détail des non-admis par établissement n'est pas disponible) :</p>
@@ -221,7 +225,7 @@ const loadExam = async (code, session) => {
     renderStats();
     renderTable();
     renderSummary();
-    elements.tableSummary.textContent = `Liste des admis au ${json.exam} — session ${json.session}.`;
+    elements.tableSummary.textContent = `Résultats du ${json.exam} — session ${json.session}.`;
   } catch (err) {
     elements.error.textContent = `Impossible de charger les résultats : ${err.message}`;
     elements.error.classList.remove('hidden');

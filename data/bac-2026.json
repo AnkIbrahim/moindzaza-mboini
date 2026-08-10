@@ -6,7 +6,7 @@
       "rank": 1,
       "nom": "FAIKA",
       "prenom": "SOIFOUOINE",
-      "sexe": "",
+      "sexe": "F",
       "etablissement": "GS AIME CESAIRE",
       "serie": "A1",
       "groupe": "1er groupe",
@@ -16,7 +16,7 @@
       "rank": 2,
       "nom": "HAISSATI",
       "prenom": "HASSANE",
-      "sexe": "",
+      "sexe": "F",
       "etablissement": "GS AIME CESAIRE",
       "serie": "A1",
       "groupe": "1er groupe",
@@ -24,88 +24,149 @@
     },
     {
       "rank": 3,
-      "nom": "NACHIATI",
-      "prenom": "INZOUDINE",
-      "sexe": "",
+      "nom": "SAID",
+      "prenom": "MOUGNIMALI",
+      "sexe": "M",
       "etablissement": "GS AIME CESAIRE",
-      "serie": "A1",
+      "serie": "A4",
       "groupe": "1er groupe",
-      "mention": "Passable"
+      "mention": "Assez Bien"
     },
     {
       "rank": 4,
-      "nom": "NASRINE",
-      "prenom": "ALI ADAM",
-      "sexe": "",
+      "nom": "AKSOIDI",
+      "prenom": "ANZIZE",
+      "sexe": "M",
       "etablissement": "GS AIME CESAIRE",
-      "serie": "A1",
+      "serie": "D",
       "groupe": "1er groupe",
       "mention": "Passable"
     },
     {
       "rank": 5,
-      "nom": "SOIFIYA",
-      "prenom": "SAINDOU",
-      "sexe": "",
+      "nom": "AZDA",
+      "prenom": "SAID",
+      "sexe": "F",
       "etablissement": "GS AIME CESAIRE",
       "serie": "A1",
-      "groupe": "1er groupe",
-      "mention": "Passable"
+      "groupe": "En attente (oral)",
+      "mention": ""
     },
     {
       "rank": 6,
-      "nom": "RAFIDA",
-      "prenom": "MOUHAMADI ALI MOINACHE",
-      "sexe": "",
+      "nom": "AZADI",
+      "prenom": "MACHOUHOULI",
+      "sexe": "M",
       "etablissement": "GS AIME CESAIRE",
-      "serie": "A4",
-      "groupe": "1er groupe",
-      "mention": "Assez Bien"
+      "serie": "A1",
+      "groupe": "En attente (oral)",
+      "mention": ""
     },
     {
       "rank": 7,
-      "nom": "SALIM",
-      "prenom": "HASSANI",
-      "sexe": "",
+      "nom": "HADAD",
+      "prenom": "ALI YOUSSOUF",
+      "sexe": "M",
       "etablissement": "GS AIME CESAIRE",
-      "serie": "A4",
-      "groupe": "1er groupe",
-      "mention": "Passable"
+      "serie": "A1",
+      "groupe": "En attente (oral)",
+      "mention": ""
     },
     {
       "rank": 8,
-      "nom": "SAID",
-      "prenom": "MOUGNIMALI",
-      "sexe": "",
+      "nom": "IBRAHIM",
+      "prenom": "SALIME",
+      "sexe": "M",
       "etablissement": "GS AIME CESAIRE",
-      "serie": "A4",
-      "groupe": "1er groupe",
-      "mention": "Assez Bien"
+      "serie": "A1",
+      "groupe": "En attente (oral)",
+      "mention": ""
     },
     {
       "rank": 9,
-      "nom": "AKSOID",
-      "prenom": "ANZIZE",
-      "sexe": "",
+      "nom": "RAHADA",
+      "prenom": "ALI",
+      "sexe": "F",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "A1",
+      "groupe": "En attente (oral)",
+      "mention": ""
+    },
+    {
+      "rank": 10,
+      "nom": "NADIA",
+      "prenom": "SAID",
+      "sexe": "F",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "A4",
+      "groupe": "En attente (oral)",
+      "mention": ""
+    },
+    {
+      "rank": 11,
+      "nom": "NASRA",
+      "prenom": "IBRAHIM",
+      "sexe": "F",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "A4",
+      "groupe": "En attente (oral)",
+      "mention": ""
+    },
+    {
+      "rank": 12,
+      "nom": "RAMADHOINI",
+      "prenom": "ALI",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "A4",
+      "groupe": "En attente (oral)",
+      "mention": ""
+    },
+    {
+      "rank": 13,
+      "nom": "YOUSRIA",
+      "prenom": "NASSER",
+      "sexe": "F",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "A4",
+      "groupe": "En attente (oral)",
+      "mention": ""
+    },
+    {
+      "rank": 14,
+      "nom": "AMISY",
+      "prenom": "IRFANE",
+      "sexe": "M",
       "etablissement": "GS AIME CESAIRE",
       "serie": "D",
-      "groupe": "1er groupe",
-      "mention": "Passable"
+      "groupe": "En attente (oral)",
+      "mention": ""
+    },
+    {
+      "rank": 15,
+      "nom": "NIDHOIME",
+      "prenom": "AHMED SOILIHI",
+      "sexe": "M",
+      "etablissement": "GS AIME CESAIRE",
+      "serie": "D",
+      "groupe": "En attente (oral)",
+      "mention": ""
     }
   ],
   "summary": {
-    "total_candidats": 9,
-    "total_admis": 9,
-    "total_non_admis": 0,
-    "taux_reussite_global": 100.0,
+    "total_candidats": 23,
+    "total_admis": 4,
+    "total_en_attente_oral": 11,
+    "total_non_admis": null,
+    "taux_reussite_global": null,
+    "provisoire": true,
+    "note": "Résultats provisoires, disponibles uniquement pour l'établissement GS AIME CESAIRE pour le moment (les autres établissements ne sont pas encore disponibles). Sur ces 15 candidats : 4 sont admis directement (1er groupe) et confirmés. 11 sont autorisés à composer l'oral du 2ème groupe — leur résultat final (admis ou non) n'est pas encore connu. Le taux de réussite global sera recalculé dès que ces résultats et ceux des autres établissements seront disponibles.",
     "etablissements": [
       {
         "nom": "GS AIME CESAIRE",
-        "admis": 9,
+        "admis": 4,
         "part_des_admis": 100.0
       }
-    ],
-    "provisoire": true,
-    "note": "Données provisoires — 2ème groupe et autres établissements pas encore intégrés."
+    ]
   }
 }
