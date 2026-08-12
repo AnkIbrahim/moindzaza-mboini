@@ -44,129 +44,186 @@
     },
     {
       "rank": 5,
+      "nom": "HANI-A",
+      "prenom": "HASSANI ALI MOUSSA",
+      "sexe": "F",
+      "etablissement": "IBN KHALDUN",
+      "serie": "D",
+      "groupe": "1er groupe",
+      "mention": "Bien"
+    },
+    {
+      "rank": 6,
+      "nom": "MAKINI",
+      "prenom": "IBRAHIM",
+      "sexe": "F",
+      "etablissement": "IBN KHALDUN",
+      "serie": "A1",
+      "groupe": "1er groupe",
+      "mention": "Assez Bien"
+    },
+    {
+      "rank": 7,
+      "nom": "SAIDOU",
+      "prenom": "MIFTAHOU",
+      "sexe": "M",
+      "etablissement": "IBN KHALDUN",
+      "serie": "A4",
+      "groupe": "1er groupe",
+      "mention": "Passable"
+    },
+    {
+      "rank": 8,
       "nom": "AZDA",
       "prenom": "SAID",
       "sexe": "F",
       "etablissement": "GS AIME CESAIRE",
       "serie": "A1",
-      "groupe": "En attente (oral)",
+      "groupe": "2ème groupe",
       "mention": ""
     },
     {
-      "rank": 6,
+      "rank": 9,
       "nom": "AZADI",
       "prenom": "MACHOUHOULI",
       "sexe": "M",
       "etablissement": "GS AIME CESAIRE",
       "serie": "A1",
-      "groupe": "En attente (oral)",
+      "groupe": "2ème groupe",
       "mention": ""
     },
     {
-      "rank": 7,
+      "rank": 10,
       "nom": "HADAD",
       "prenom": "ALI YOUSSOUF",
       "sexe": "M",
       "etablissement": "GS AIME CESAIRE",
       "serie": "A1",
-      "groupe": "En attente (oral)",
+      "groupe": "2ème groupe",
       "mention": ""
     },
     {
-      "rank": 8,
+      "rank": 11,
       "nom": "IBRAHIM",
       "prenom": "SALIME",
       "sexe": "M",
       "etablissement": "GS AIME CESAIRE",
       "serie": "A1",
-      "groupe": "En attente (oral)",
+      "groupe": "2ème groupe",
       "mention": ""
     },
     {
-      "rank": 9,
+      "rank": 12,
       "nom": "RAHADA",
       "prenom": "ALI",
       "sexe": "F",
       "etablissement": "GS AIME CESAIRE",
       "serie": "A1",
-      "groupe": "En attente (oral)",
+      "groupe": "2ème groupe",
       "mention": ""
     },
     {
-      "rank": 10,
+      "rank": 13,
       "nom": "NADIA",
       "prenom": "SAID",
       "sexe": "F",
       "etablissement": "GS AIME CESAIRE",
       "serie": "A4",
-      "groupe": "En attente (oral)",
+      "groupe": "2ème groupe",
       "mention": ""
     },
     {
-      "rank": 11,
+      "rank": 14,
       "nom": "NASRA",
       "prenom": "IBRAHIM",
       "sexe": "F",
       "etablissement": "GS AIME CESAIRE",
       "serie": "A4",
-      "groupe": "En attente (oral)",
+      "groupe": "2ème groupe",
       "mention": ""
     },
     {
-      "rank": 12,
+      "rank": 15,
       "nom": "RAMADHOINI",
       "prenom": "ALI",
       "sexe": "M",
       "etablissement": "GS AIME CESAIRE",
       "serie": "A4",
-      "groupe": "En attente (oral)",
+      "groupe": "2ème groupe",
       "mention": ""
     },
     {
-      "rank": 13,
+      "rank": 16,
       "nom": "YOUSRIA",
       "prenom": "NASSER",
       "sexe": "F",
       "etablissement": "GS AIME CESAIRE",
       "serie": "A4",
-      "groupe": "En attente (oral)",
+      "groupe": "2ème groupe",
       "mention": ""
     },
     {
-      "rank": 14,
+      "rank": 17,
       "nom": "AMISY",
       "prenom": "IRFANE",
       "sexe": "M",
       "etablissement": "GS AIME CESAIRE",
       "serie": "D",
-      "groupe": "En attente (oral)",
+      "groupe": "2ème groupe",
       "mention": ""
     },
     {
-      "rank": 15,
+      "rank": 18,
       "nom": "NIDHOIME",
       "prenom": "AHMED SOILIHI",
       "sexe": "M",
       "etablissement": "GS AIME CESAIRE",
       "serie": "D",
-      "groupe": "En attente (oral)",
+      "groupe": "2ème groupe",
+      "mention": ""
+    },
+    {
+      "rank": 19,
+      "nom": "DJALALEDINE",
+      "prenom": "SAÏD HAMID",
+      "sexe": "M",
+      "etablissement": "IBN KHALDUN",
+      "serie": "D",
+      "groupe": "2ème groupe",
+      "mention": ""
+    },
+    {
+      "rank": 20,
+      "nom": "RADJABOU",
+      "prenom": "ELAMINE",
+      "sexe": "M",
+      "etablissement": "IBN KHALDUN",
+      "serie": "D",
+      "groupe": "2ème groupe",
       "mention": ""
     }
   ],
   "summary": {
-    "total_candidats": 23,
-    "total_admis": 4,
-    "total_en_attente_oral": 11,
-    "total_non_admis": null,
-    "taux_reussite_global": null,
+    "total_candidats": 26,
+    "total_admis": 20,
+    "total_en_attente_oral": 0,
+    "total_non_admis": 6,
+    "taux_reussite_global": 76.9,
     "provisoire": true,
-    "note": "Résultats provisoires, disponibles uniquement pour l'établissement GS AIME CESAIRE pour le moment (les autres établissements ne sont pas encore disponibles). Sur ces 15 candidats : 4 sont admis directement (1er groupe) et confirmés. 11 sont autorisés à composer l'oral du 2ème groupe — leur résultat final (admis ou non) n'est pas encore connu. Le taux de réussite global sera recalculé dès que ces résultats et ceux des autres établissements seront disponibles.",
+    "note": "Résultats disponibles uniquement pour GS AIME CESAIRE et IBN KHALDUN pour le moment (les autres établissements ne sont pas encore disponibles).",
     "etablissements": [
       {
         "nom": "GS AIME CESAIRE",
-        "admis": 4,
-        "part_des_admis": 100.0
+        "admis": 15,
+        "part_des_admis": 75.0
+      },
+      {
+        "nom": "IBN KHALDUN",
+        "admis": 5,
+        "part_des_admis": 25.0
       }
-    ]
+    ],
+    "total_admis_1er_groupe": 7,
+    "total_admis_2eme_groupe": 13
   }
 }

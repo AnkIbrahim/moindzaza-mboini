@@ -155,7 +155,8 @@ const renderSummary = () => {
   }
 
   container.classList.remove('hidden');
-  const hasPending = typeof summary.total_en_attente_oral === 'number';
+  const hasGroupBreakdown = typeof summary.total_admis_1er_groupe === 'number' && typeof summary.total_admis_2eme_groupe === 'number';
+  const hasPending = !hasGroupBreakdown && typeof summary.total_en_attente_oral === 'number' && summary.total_en_attente_oral > 0;
   const nonAdmisDisplay = (summary.total_non_admis === null || summary.total_non_admis === undefined) ? '?' : summary.total_non_admis;
   const tauxDisplay = (summary.taux_reussite_global === null || summary.taux_reussite_global === undefined) ? 'À déterminer' : `${summary.taux_reussite_global}%`;
   container.innerHTML = `
@@ -164,8 +165,11 @@ const renderSummary = () => {
       ${summary.provisoire && summary.note ? `<p class="summary-warning">⚠️ ${summary.note}</p>` : ''}
       <div class="summary-totals">
         <div class="summary-total"><span class="st-num">${summary.total_candidats}</span><span class="st-lbl">Candidats</span></div>
-        <div class="summary-total"><span class="st-num">${summary.total_admis}</span><span class="st-lbl">Admis${hasPending ? ' (1er groupe)' : ''}</span></div>
-        ${hasPending ? `<div class="summary-total"><span class="st-num">${summary.total_en_attente_oral}</span><span class="st-lbl">En attente (oral 2ème groupe)</span></div>` : ''}
+        <div class="summary-total"><span class="st-num">${summary.total_admis}</span><span class="st-lbl">Admis${hasGroupBreakdown ? ' (total)' : ''}</span></div>
+        ${hasGroupBreakdown ? `
+          <div class="summary-total"><span class="st-num">${summary.total_admis_1er_groupe}</span><span class="st-lbl">Admis (1er groupe)</span></div>
+          <div class="summary-total"><span class="st-num">${summary.total_admis_2eme_groupe}</span><span class="st-lbl">Admis (2ème groupe)</span></div>
+        ` : hasPending ? `<div class="summary-total"><span class="st-num">${summary.total_en_attente_oral}</span><span class="st-lbl">En attente (oral 2ème groupe)</span></div>` : ''}
         <div class="summary-total"><span class="st-num">${nonAdmisDisplay}</span><span class="st-lbl">Non admis</span></div>
         <div class="summary-total"><span class="st-num">${tauxDisplay}</span><span class="st-lbl">Taux de réussite global</span></div>
       </div>
